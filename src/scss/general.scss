@@ -1,0 +1,49 @@
+@import "variables.scss";
+
+@mixin font-base($font-type, $font-size, $line-height) {
+    html {
+        font-family: $font-type, sans-serif;
+        font-size: $font-size;
+        line-height: $line-height;
+        color: $black;
+        background-color: $dark-gray;
+    }
+}
+
+@mixin media($device-type-value) {
+
+    @if ($device-type-value != "mobile") {
+        h1 {
+            font-size: map-get($font-size-value, value-#{$device-type-value}-h2);
+            line-height: map-get($line-height-value, value-#{$device-type-value}-h2);
+            font-weight: nth($font-weight-global, 2);
+            text-transform: nth($text-transfom, 3);
+        }
+
+        h2 {
+            font-size: map-get($font-size-value, value-#{$device-type-value}-h1);
+            line-height: map-get($line-height-value, value-#{$device-type-value}-h1);
+            font-weight: nth($font-weight-global, 2);
+            text-transform: nth($text-transfom, 3);
+        }
+    }
+
+    @else {
+        @media screen and (max-width: 1240px) {
+            h1 {
+                font-size: map-get($font-size-value, value-#{$device-type-value}-h2);
+                line-height: map-get($line-height-value, value-#{$device-type-value}-h2);
+                font-weight: nth($font-weight-global, 2);
+                text-transform: nth($text-transfom, 3);
+            }
+
+            h2 {
+                font-size: map-get($font-size-value, value-#{$device-type-value}-h1);
+                line-height: map-get($line-height-value, value-#{$device-type-value}-h1);
+                font-weight: nth($font-weight-global, 2);
+                text-transform: nth($text-transfom, 3);
+            }
+        }
+    }
+    
+}
