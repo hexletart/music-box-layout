@@ -1,5 +1,7 @@
 @import "general.scss";
 @import "variables.scss";
+@import "flex.scss";
+@import "grid.scss";
 
 @include font-base("Roboto", 18px, 1.5);
 @include media(pc);
