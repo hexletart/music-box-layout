@@ -2,7 +2,14 @@
 @import "variables.scss";
 @import "flex.scss";
 @import "grid.scss";
+@import "padding-margin.scss";
 
-@include font-base("Roboto", 18px, 1.5);
-@include media(pc);
-@include media(mobile);
+@include font-base("Roboto", 18px, 1.5, sans-serif);
+@include media(h1, 60px, 90px, bold, uppercase);
+@include media(h2, 38px, 57px, bold, uppercase);
+@include paragraphs-values(16, 8, 64);
+
+@media screen and (max-width: 1240px) {
+    @include media(h1, 30px, 45px, bold, uppercase);
+    @include media(h2, 18px, 27px, bold, uppercase);
+}

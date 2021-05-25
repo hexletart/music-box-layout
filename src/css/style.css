@@ -1,3 +1,8 @@
+.pad200-tb {
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
 html {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
@@ -18,6 +23,38 @@ h2 {
   line-height: 57px;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.p-13 {
+  font-size: 12.8px;
+}
+
+.p-16 {
+  font-size: 16px;
+}
+
+.p-24 {
+  font-size: 24px;
+}
+
+.p-32 {
+  font-size: 32px;
+}
+
+.p-40 {
+  font-size: 40px;
+}
+
+.p-48 {
+  font-size: 48px;
+}
+
+.p-56 {
+  font-size: 56px;
+}
+
+.p-64 {
+  font-size: 64px;
 }
 
 @media screen and (max-width: 1240px) {

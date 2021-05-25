@@ -1,1 +1,17 @@
 @import "variables.scss";
+
+%flex-hor-center {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+}
+
+%flex-ver-center {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+}
