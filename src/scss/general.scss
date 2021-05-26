@@ -1,26 +1,51 @@
 @import "variables.scss";
 
-@mixin font-base($font-type-value, $font-size-value, $line-height-value, $sans-serif-value) {
+@mixin font-base($font-type-value, $font-size-value, $line-height-value, $sans-serif-value, $color, $color-bg) {
     html {
         font-family: $font-type-value, $sans-serif-value;
         font-size: $font-size-value;
         line-height: $line-height-value;
-        color: $black;
-        background-color: $dark-gray;
+        color: $color;
+        background-color: $color-bg;
     }
 }
 
-@mixin media($heading-type, $font-size-value, $line-height-value, $font-weight-value, $text-transfom-value) {
-    #{$heading-type} {
-        font-size: $font-size-value;
-        line-height: $line-height-value;
-        font-weight: $font-weight-value;
-        text-transform: $text-transfom-value;
+@mixin media($heading-type, $font-size-value, $line-height-value, $font-weight-value: null, $text-transfom-value: null) {
+    @if $text-transfom-value == "null" and $font-weight-value == "null" {
+        #{$heading-type} {
+            font-size: $font-size-value;
+            line-height: $line-height-value;
+        }
+    }
+
+    @if $text-transfom-value != "null" and $font-weight-value == "null" {
+        #{$heading-type} {
+            font-size: $font-size-value;
+            line-height: $line-height-value;
+            text-transform: $text-transfom-value;
+        }
+    }
+
+    @if $text-transfom-value == "null" and $font-weight-value != "null" {
+        #{$heading-type} {
+            font-size: $font-size-value;
+            line-height: $line-height-value;
+            font-weight: $font-weight-value;
+        }
+    }
+
+    @else {
+        #{$heading-type} {
+            font-size: $font-size-value;
+            line-height: $line-height-value;
+            font-weight: $font-weight-value;
+            text-transform: $text-transfom-value;
+        }
     }
 }
 
-@mixin paragraphs-values($font-size-value, $step, $final-font-size-value) {
-    $small-font-size: $font-size-value / 1.25;
+@mixin paragraphs-values($font-size-value, $small-size-denominator, $step, $final-font-size-value) {
+    $small-font-size: $font-size-value / $small-size-denominator;
     .p-#{round($small-font-size)} {
         font-size: #{$small-font-size}px;
     }

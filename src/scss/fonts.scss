@@ -1,0 +1,29 @@
+// font-weight from 100, 200, ... up to 900
+@mixin font-weight($intitial-value, $step, $final-value) {
+    @while $intitial-value <= $final-value {
+        %font-weight-#{$intitial-value} {
+            font-weight: #{$intitial-value};
+        }
+        $intitial-value: $intitial-value + $step;
+    }
+}
+
+@include font-weight(100, 100, 900);
+
+// text-transform
+%text-transform-cap {
+    text-transform: capitalize;
+}
+%text-transform-low {
+    text-transform: lowercase;
+}
+%text-transform-upp {
+    text-transform: uppercase;
+}
+%text-transform-inh {
+    text-transform: inherit;
+}
+%text-transform-none {
+    text-transform: none;
+}
+
