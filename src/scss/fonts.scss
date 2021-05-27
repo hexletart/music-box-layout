@@ -1,5 +1,5 @@
 // font-weight from 100, 200, ... up to 900
-@mixin font-weight($intitial-value, $step, $final-value) {
+@mixin font-weight-fixed($intitial-value, $step, $final-value) {
     @while $intitial-value <= $final-value {
         %font-weight-#{$intitial-value} {
             font-weight: #{$intitial-value};
@@ -8,7 +8,26 @@
     }
 }
 
-@include font-weight(100, 100, 900);
+@mixin paragraphs-values-fixed($font-size-value, $small-size-denominator, $step, $final-font-size-value) {
+    $small-font-size: $font-size-value / $small-size-denominator;
+    .p-#{round($small-font-size)} {
+        font-size: #{$small-font-size}px;
+    }
+    @while $font-size-value <= $final-font-size-value {
+        .p-#{$font-size-value} {
+            font-size: #{$font-size-value}px;
+        }
+        
+        $font-size-value: $font-size-value + $step;
+    }
+}
+
+@mixin paragraphs-values-random ($font-size-value) {
+    .p-#{$font-size-value} {
+            font-size: #{$font-size-value}px;
+    }
+        
+}
 
 // text-transform
 %text-transform-cap {

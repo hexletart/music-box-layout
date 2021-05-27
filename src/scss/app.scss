@@ -4,13 +4,18 @@
 @import "grid.scss";
 @import "padding-margin.scss";
 @import "fonts.scss";
+@import "proportions.scss";
+@import "media.scss";
 
-@include font-base("Roboto", 18px, 1.5, sans-serif, $black, $dark-gray);
+@include html("Roboto", 18px, 1.5, sans-serif, $black, $dark-gray);
 @include media(h1, 60px, 90px, bold, uppercase);
 @include media(h2, 38px, 57px, bold, uppercase);
 @include media(h3, 24px, 45px);
 @include media(h4, 18px, 27px, bold);
-@include paragraphs-values(16, 1.25, 8, 64);
+@include font-weight-fixed(100, 100, 900);
+@include paragraphs-values-random(11);
+@include paragraphs-values-fixed(16, 1.25, 8, 64);
+@include width(1200);
 
 @media screen and (max-width: 1240px) {
     @include media(h1, 30px, 45px, bold, uppercase);
@@ -18,4 +23,3 @@
     @include media(h3, 16px, 24px, bold);
     @include media(h4, 18px, 24px, bold);
 }
-

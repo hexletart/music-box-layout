@@ -1,0 +1,35 @@
+@import "variables.scss";
+
+@mixin media($heading-type, $font-size-value, $line-height-value, $font-weight-value: null, $text-transfom-value: null) {
+    @if $text-transfom-value == "null" and $font-weight-value == "null" {
+        #{$heading-type} {
+            font-size: $font-size-value;
+            line-height: $line-height-value;
+        }
+    }
+
+    @if $text-transfom-value != "null" and $font-weight-value == "null" {
+        #{$heading-type} {
+            font-size: $font-size-value;
+            line-height: $line-height-value;
+            text-transform: $text-transfom-value;
+        }
+    }
+
+    @if $text-transfom-value == "null" and $font-weight-value != "null" {
+        #{$heading-type} {
+            font-size: $font-size-value;
+            line-height: $line-height-value;
+            font-weight: $font-weight-value;
+        }
+    }
+
+    @else {
+        #{$heading-type} {
+            font-size: $font-size-value;
+            line-height: $line-height-value;
+            font-weight: $font-weight-value;
+            text-transform: $text-transfom-value;
+        }
+    }
+}

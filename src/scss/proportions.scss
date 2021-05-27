@@ -1,0 +1,7 @@
+@import "variables.scss";
+
+@mixin width($width-value) {
+    w-#{$width-value} {
+        width: #{$width-value}px;
+    }
+}

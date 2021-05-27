@@ -1,6 +1,6 @@
 @import "variables.scss";
 
-@mixin font-base($font-type-value, $font-size-value, $line-height-value, $sans-serif-value, $color, $color-bg) {
+@mixin html($font-type-value, $font-size-value, $line-height-value, $sans-serif-value, $color, $color-bg) {
     html {
         font-family: $font-type-value, $sans-serif-value;
         font-size: $font-size-value;
@@ -10,50 +10,6 @@
     }
 }
 
-@mixin media($heading-type, $font-size-value, $line-height-value, $font-weight-value: null, $text-transfom-value: null) {
-    @if $text-transfom-value == "null" and $font-weight-value == "null" {
-        #{$heading-type} {
-            font-size: $font-size-value;
-            line-height: $line-height-value;
-        }
-    }
-
-    @if $text-transfom-value != "null" and $font-weight-value == "null" {
-        #{$heading-type} {
-            font-size: $font-size-value;
-            line-height: $line-height-value;
-            text-transform: $text-transfom-value;
-        }
-    }
-
-    @if $text-transfom-value == "null" and $font-weight-value != "null" {
-        #{$heading-type} {
-            font-size: $font-size-value;
-            line-height: $line-height-value;
-            font-weight: $font-weight-value;
-        }
-    }
-
-    @else {
-        #{$heading-type} {
-            font-size: $font-size-value;
-            line-height: $line-height-value;
-            font-weight: $font-weight-value;
-            text-transform: $text-transfom-value;
-        }
-    }
-}
-
-@mixin paragraphs-values($font-size-value, $small-size-denominator, $step, $final-font-size-value) {
-    $small-font-size: $font-size-value / $small-size-denominator;
-    .p-#{round($small-font-size)} {
-        font-size: #{$small-font-size}px;
-    }
-    @while $font-size-value <= $final-font-size-value {
-        .p-#{$font-size-value} {
-            font-size: #{$font-size-value}px;
-        }
-        
-        $font-size-value: $font-size-value + $step;
-    }
+.title-part {
+    @extend %flex-column-center-center;
 }
