@@ -1,6 +1,45 @@
 @import "variables.scss";
 
-.pad200-tb {
-    padding-top: 200px;
-    padding-bottom: 200px;    
+@mixin pad-tb($padding-top-value, $padding-bottom-value) {
+    @if $padding-top-value == $padding-bottom-value {
+        .pad-tb-#{$padding-top-value} {
+            padding-top: #{$padding-top-value}px;
+            padding-bottom: #{$padding-bottom-value}px;
+        }
+    }
+
+    @else {
+        .pad-tb-#{$padding-top-value}-#{$padding-bottom-value} {
+            padding-top: #{$padding-top-value}px;
+            padding-bottom: #{$padding-bottom-value}px;
+        }
+    }
+}
+
+@mixin mar-tb($margin-top-value, $margin-bottom-value) {
+    @if $margin-top-value == $margin-bottom-value {
+        .mar-tb-#{$margin-top-value} {
+            margin-top: #{$margin-top-value}px;
+            margin-bottom: #{$margin-bottom-value}px;
+        }
+    }
+
+    @else {
+        .mar-tb-#{$margin-top-value}-#{$margin-bottom-value} {
+            margin-top: #{$margin-top-value}px;
+            margin-bottom: #{$margin-bottom-value}px;
+        }
+    }
+}
+
+@mixin pad-side($padding-side-name, $padding-value) {
+    .pad-#{$padding-side-name}-#{$padding-value} {
+        padding-#{$padding-side-name}: #{$padding-value}px;
+    }
+}
+
+@mixin mar-side($margin-side-name, $margin-value) {
+    .mar-#{$margin-side-name}-#{$margin-value} {
+        margin-#{$margin-side-name}: #{$margin-value}px;
+    }
 }

@@ -1,13 +1,48 @@
-.title-part {
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Regular.ttf");
+}
+.greet-part-top-left-logo-name {
+  display: block;
+}
+.greet-part-top-rihgt-search {
+  background-color: #3C3B3D;
+  border: none;
+  border-radius: 50px;
+}
+
+.greet-part-top-left-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.greet-part {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+}
+
+.greet-part-top-left, .greet-part-top-left-logo, .greet-part-top-rihgt-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
 }
 
-.pad200-tb {
-  padding-top: 200px;
-  padding-bottom: 200px;
+.greet-part-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.greet-part-top-left-logo-name, .greet-part-top-left-menu * {
+  text-transform: uppercase;
+}
+
+.greet-part-top {
+  width: inherit;
 }
 
 html {
@@ -41,6 +76,10 @@ h4 {
   font-size: 18px;
   line-height: 27px;
   font-weight: bold;
+}
+
+.greet-part-top-left-logo-name, .greet-part-top-left-menu * {
+  font-weight: 700;
 }
 
 .p-11 {
@@ -79,8 +118,40 @@ h4 {
   font-size: 64px;
 }
 
-w-1200 {
+.w-1200 {
   width: 1200px;
+}
+
+.wh-25-25 {
+  width: 25px;
+  height: 25px;
+}
+
+.wh-250-25 {
+  width: 250px;
+  height: 25px;
+}
+
+.pad-tb-200 {
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+.mar-tb-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.mar-right-24 {
+  margin-right: 24px;
+}
+
+.mar-right-88 {
+  margin-right: 88px;
+}
+
+.mar-right-16 {
+  margin-right: 16px;
 }
 
 @media screen and (max-width: 1240px) {

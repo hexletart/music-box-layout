@@ -1,5 +1,10 @@
 @import "variables.scss";
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Regular.ttf');
+  }
+
 @mixin html($font-type-value, $font-size-value, $line-height-value, $sans-serif-value, $color, $color-bg) {
     html {
         font-family: $font-type-value, $sans-serif-value;
@@ -10,6 +15,41 @@
     }
 }
 
-.title-part {
-    @extend %flex-column-center-center;
+.greet-part {
+    @extend %flex-column-flex-start;
+
+    &-top {
+        @extend %flex-row-space-between-center;
+        @extend %width-inh;
+
+        &-left {
+            @extend %flex-row-flex-start-center;
+
+            &-logo {
+                @extend %flex-row-flex-start-center;
+
+                &-name {
+                    display: block;
+                    @extend %font-weight-700;
+                    @extend %text-transform-upp;
+                }
+            }
+
+            &-menu {
+                @extend %flex-row-flex-start;
+
+                * {
+                    @extend %font-weight-700;
+                    @extend %text-transform-upp;
+                }
+            }
+        }
+
+        &-rihgt-search {
+            @extend %flex-row-flex-start-center;
+            background-color: $dark;
+            border: none;
+            border-radius: 50px;
+        }
+    }
 }

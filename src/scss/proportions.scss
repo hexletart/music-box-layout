@@ -1,7 +1,18 @@
 @import "variables.scss";
 
 @mixin width($width-value) {
-    w-#{$width-value} {
+    .w-#{$width-value} {
         width: #{$width-value}px;
     }
+}
+
+@mixin width-height($width-value, $height-value) {
+    .wh-#{$width-value}-#{$height-value} {
+        width: #{$width-value}px;
+        height: #{$height-value}px;
+    }
+}
+
+%width-inh {
+    width: inherit;
 }
