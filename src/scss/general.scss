@@ -3,7 +3,7 @@
 @font-face {
     font-family: 'Roboto';
     src: url('../assets/fonts/Roboto-Regular.ttf');
-  }
+}
 
 @mixin html($font-type-value, $font-size-value, $line-height-value, $sans-serif-value, $color, $color-bg) {
     html {
@@ -15,8 +15,21 @@
     }
 }
 
+body,
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
+body {
+    @extend %flex-column-flex-start-center;
+}
+
 .greet-part {
-    @extend %flex-column-flex-start;
+    @extend %flex-column-flex-start-center;
+
 
     &-top {
         @extend %flex-row-space-between-center;
@@ -30,8 +43,9 @@
 
                 &-name {
                     display: block;
-                    @extend %font-weight-700;
+                    font-weight: bold;
                     @extend %text-transform-upp;
+                    color: $white;
                 }
             }
 
@@ -39,17 +53,67 @@
                 @extend %flex-row-flex-start;
 
                 * {
-                    @extend %font-weight-700;
+                    font-weight: bold;
                     @extend %text-transform-upp;
+                    color: $green;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $white;
+                    }
+
+                    &:focus {
+                        color: $white;
+                    }
                 }
             }
         }
 
         &-rihgt-search {
             @extend %flex-row-flex-start-center;
+            @extend %box-sizing-bor;
             background-color: $dark;
+            color: $white;
             border: none;
             border-radius: 50px;
+            
+
+            &::placeholder {
+                @extend %text-transform-upp;
+                font-size: 13.3px;
+                color: $gray-placeholder;
+            }
+        }
+    }
+
+    &-body {
+        @extend %flex-column-flex-start-center;
+
+        &-prim-head,
+        &-sec-head,
+        &-descr {
+            color: $white;
+        }
+
+        &-form {
+            @extend %flex-row-space-between-center;
+
+            &-left-name,
+            &-right-email {
+                min-width: 270px;
+                min-height: 50px;
+                @extend %box-sizing-bor;
+                font-weight: bold;
+                color: $white;
+                background-color: transparent;
+                border: 2px solid $dark-gray;
+
+                &::placeholder {
+                    color: $white;
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+            }
         }
     }
 }

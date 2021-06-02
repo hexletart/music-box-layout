@@ -13,6 +13,22 @@
     }
 }
 
+%box-sizing-con {
+    box-sizing: content-box;
+}
+
+%box-sizing-bor {
+    box-sizing: border-box;
+}
+
+%box-sizing-pad {
+    box-sizing: padding-box;
+}
+
+%box-sizing-inh {
+    box-sizing: inherit;
+}
+
 %width-inh {
     width: inherit;
 }

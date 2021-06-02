@@ -2,24 +2,60 @@
   font-family: "Roboto";
   src: url("../assets/fonts/Roboto-Regular.ttf");
 }
+body,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
 .greet-part-top-left-logo-name {
   display: block;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.greet-part-top-left-menu * {
+  font-weight: bold;
+  color: #34C176;
+  text-decoration: none;
+}
+.greet-part-top-left-menu *:hover {
+  color: #FFFFFF;
+}
+.greet-part-top-left-menu *:focus {
+  color: #FFFFFF;
 }
 .greet-part-top-rihgt-search {
   background-color: #3C3B3D;
+  color: #FFFFFF;
   border: none;
   border-radius: 50px;
+}
+.greet-part-top-rihgt-search::placeholder {
+  font-size: 13.3px;
+  color: #757575;
+}
+.greet-part-body-prim-head, .greet-part-body-sec-head, .greet-part-body-descr {
+  color: #FFFFFF;
+}
+.greet-part-body-form-left-name, .greet-part-body-form-right-email {
+  min-width: 270px;
+  min-height: 50px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: transparent;
+  border: 2px solid #CACACA;
+}
+.greet-part-body-form-left-name::placeholder, .greet-part-body-form-right-email::placeholder {
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .greet-part-top-left-menu {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-}
-
-.greet-part {
-  display: flex;
-  flex-direction: column;
   justify-content: flex-start;
 }
 
@@ -30,15 +66,26 @@
   align-items: center;
 }
 
-.greet-part-top {
+body, .greet-part, .greet-part-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.greet-part-top, .greet-part-body-form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.greet-part-top-left-logo-name, .greet-part-top-left-menu * {
+.greet-part-top-left-logo-name, .greet-part-top-left-menu *, .greet-part-top-rihgt-search::placeholder {
   text-transform: uppercase;
+}
+
+.greet-part-top-rihgt-search, .greet-part-body-form-left-name, .greet-part-body-form-right-email {
+  box-sizing: border-box;
 }
 
 .greet-part-top {
@@ -76,10 +123,6 @@ h4 {
   font-size: 18px;
   line-height: 27px;
   font-weight: bold;
-}
-
-.greet-part-top-left-logo-name, .greet-part-top-left-menu * {
-  font-weight: 700;
 }
 
 .p-11 {
@@ -122,6 +165,10 @@ h4 {
   width: 1200px;
 }
 
+.w-570 {
+  width: 570px;
+}
+
 .wh-25-25 {
   width: 25px;
   height: 25px;
@@ -152,6 +199,18 @@ h4 {
 
 .mar-right-16 {
   margin-right: 16px;
+}
+
+.pad-left-10 {
+  padding-left: 10px;
+}
+
+.pad-left-20 {
+  padding-left: 20px;
+}
+
+.mar-bottom-2 {
+  margin-bottom: 1.5rem;
 }
 
 @media screen and (max-width: 1240px) {

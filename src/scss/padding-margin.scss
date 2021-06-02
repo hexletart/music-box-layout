@@ -1,45 +1,45 @@
 @import "variables.scss";
 
-@mixin pad-tb($padding-top-value, $padding-bottom-value) {
+@mixin pad-tb($padding-top-value, $padding-bottom-value, $unit-value) {
     @if $padding-top-value == $padding-bottom-value {
-        .pad-tb-#{$padding-top-value} {
-            padding-top: #{$padding-top-value}px;
-            padding-bottom: #{$padding-bottom-value}px;
+        .pad-tb-#{round($padding-top-value)} {
+            padding-top: #{$padding-top-value}#{$unit-value};
+            padding-bottom: #{$padding-bottom-value}#{$unit-value};
         }
     }
 
     @else {
-        .pad-tb-#{$padding-top-value}-#{$padding-bottom-value} {
-            padding-top: #{$padding-top-value}px;
-            padding-bottom: #{$padding-bottom-value}px;
+        .pad-tb-#{round($padding-top-value)}-#{round($padding-bottom-value)} {
+            padding-top: #{$padding-top-value}#{$unit-value};
+            padding-bottom: #{$padding-bottom-value}#{$unit-value};
         }
     }
 }
 
-@mixin mar-tb($margin-top-value, $margin-bottom-value) {
+@mixin mar-tb($margin-top-value, $margin-bottom-value, $unit-value) {
     @if $margin-top-value == $margin-bottom-value {
-        .mar-tb-#{$margin-top-value} {
-            margin-top: #{$margin-top-value}px;
-            margin-bottom: #{$margin-bottom-value}px;
+        .mar-tb-#{round($margin-top-value)} {
+            margin-top: #{$margin-top-value}#{$unit-value};
+            margin-bottom: #{$margin-bottom-value}#{$unit-value};
         }
     }
 
     @else {
-        .mar-tb-#{$margin-top-value}-#{$margin-bottom-value} {
-            margin-top: #{$margin-top-value}px;
-            margin-bottom: #{$margin-bottom-value}px;
+        .mar-tb-#{round($margin-top-value)}-#{round($margin-bottom-value)} {
+            margin-top: #{$margin-top-value}#{$unit-value};
+            margin-bottom: #{$margin-bottom-value}#{$unit-value};
         }
     }
 }
 
-@mixin pad-side($padding-side-name, $padding-value) {
-    .pad-#{$padding-side-name}-#{$padding-value} {
-        padding-#{$padding-side-name}: #{$padding-value}px;
+@mixin pad-side($padding-side-name, $padding-value, $unit-value) {
+    .pad-#{$padding-side-name}-#{round($padding-value)} {
+        padding-#{$padding-side-name}: #{$padding-value}#{$unit-value};
     }
 }
 
-@mixin mar-side($margin-side-name, $margin-value) {
-    .mar-#{$margin-side-name}-#{$margin-value} {
-        margin-#{$margin-side-name}: #{$margin-value}px;
+@mixin mar-side($margin-side-name, $margin-value, $unit-value) {
+    .mar-#{$margin-side-name}-#{round($margin-value)} {
+        margin-#{$margin-side-name}: #{$margin-value}#{$unit-value};
     }
 }

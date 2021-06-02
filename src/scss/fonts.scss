@@ -14,7 +14,7 @@
         font-size: #{$small-font-size}px;
     }
     @while $font-size-value <= $final-font-size-value {
-        .p-#{$font-size-value} {
+        .p-#{round($font-size-value)} {
             font-size: #{$font-size-value}px;
         }
         
@@ -22,9 +22,9 @@
     }
 }
 
-@mixin paragraphs-values-random ($font-size-value) {
-    .p-#{$font-size-value} {
-            font-size: #{$font-size-value}px;
+@mixin paragraphs-values-random ($font-size-value, $unit-value) {
+    .p-#{round($font-size-value)} {
+            font-size: #{$font-size-value}#{$unit-value};
     }
         
 }
