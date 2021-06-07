@@ -1,35 +1,35 @@
 @import "variables.scss";
 
-@mixin media($heading-type, $font-size-value, $line-height-value, $font-weight-value: null, $text-transfom-value: null) {
-    @if $text-transfom-value == "null" and $font-weight-value == "null" {
+@mixin media($heading-type, $unit, $font-size, $line-height, $font-weight: null, $text-transfom: null) {
+    @if $text-transfom == "null" and $font-weight == "null" {
         #{$heading-type} {
-            font-size: $font-size-value;
-            line-height: $line-height-value;
+            font-size: #{$font-size}#{$unit};
+            line-height: #{$line-height}#{$unit};
         }
     }
 
-    @if $text-transfom-value != "null" and $font-weight-value == "null" {
+    @if $text-transfom != "null" and $font-weight == "null" {
         #{$heading-type} {
-            font-size: $font-size-value;
-            line-height: $line-height-value;
-            text-transform: $text-transfom-value;
+            font-size: #{$font-size}#{$unit};
+            line-height: #{$line-height}#{$unit};
+            text-transform: #{$text-transfom};
         }
     }
 
-    @if $text-transfom-value == "null" and $font-weight-value != "null" {
+    @if $text-transfom == "null" and $font-weight != "null" {
         #{$heading-type} {
-            font-size: $font-size-value;
-            line-height: $line-height-value;
-            font-weight: $font-weight-value;
+            font-size: #{$font-size}#{$unit};
+            line-height: #{$line-height}#{$unit};
+            font-weight: #{$font-weight};
         }
     }
 
     @else {
         #{$heading-type} {
-            font-size: $font-size-value;
-            line-height: $line-height-value;
-            font-weight: $font-weight-value;
-            text-transform: $text-transfom-value;
+            font-size: #{$font-size}#{$unit};
+            line-height: #{$line-height}#{$unit};
+            font-weight: #{$font-weight};
+            text-transform: #{$text-transfom};
         }
     }
 }

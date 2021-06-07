@@ -8,25 +8,24 @@
     }
 }
 
-@mixin paragraphs-values-fixed($font-size-value, $small-size-denominator, $step, $final-font-size-value) {
-    $small-font-size: $font-size-value / $small-size-denominator;
+@mixin paragraphs-fixed($font-size, $small-size-denominator, $step, $final-font-size, $unit) {
+    $small-font-size: $font-size / $small-size-denominator;
     .p-#{round($small-font-size)} {
-        font-size: #{$small-font-size}px;
+        font-size: #{$small-font-size}#{$unit};
     }
-    @while $font-size-value <= $final-font-size-value {
-        .p-#{round($font-size-value)} {
-            font-size: #{$font-size-value}px;
+    @while $font-size <= $final-font-size {
+        .p-#{round($font-size)} {
+            font-size: #{$font-size}#{$unit};
         }
         
-        $font-size-value: $font-size-value + $step;
+        $font-size: $font-size + $step;
     }
 }
 
-@mixin paragraphs-values-random ($font-size-value, $unit-value) {
-    .p-#{round($font-size-value)} {
-            font-size: #{$font-size-value}#{$unit-value};
-    }
-        
+@mixin paragraphs-random ($font-size, $unit) {
+    .p-#{round($font-size)}-r {
+            font-size: #{$font-size}#{$unit};
+    }   
 }
 
 // text-transform

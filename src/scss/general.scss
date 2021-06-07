@@ -5,13 +5,14 @@
     src: url('../assets/fonts/Roboto-Regular.ttf');
 }
 
-@mixin html($font-type-value, $font-size-value, $line-height-value, $sans-serif-value, $color, $color-bg) {
+@mixin html($font-type, $serif-type, $font-size, $line-height, $color, $color-bg, $unit-1, $unit-2: null) {
     html {
-        font-family: $font-type-value, $sans-serif-value;
-        font-size: $font-size-value;
-        line-height: $line-height-value;
-        color: $color;
-        background-color: $color-bg;
+        font-family: $font-type,
+        #{$serif-type};
+        font-size: #{$font-size}#{$unit-1};
+        line-height: #{$line-height}#{$unit-2};
+        color: #{$color};
+        background-color: #{$color-bg};
     }
 }
 
@@ -28,12 +29,28 @@ body {
 }
 
 .greet-part {
+    position: relative;
     @extend %flex-column-flex-start-center;
+    width: 100%;
 
+    &::before {
+        position: absolute;
+        @extend %bg-positioning;
+        @extend %img-main-greet-part;
+        z-index: 0;
+        content: '';
+    }
 
     &-top {
+        position: absolute;
+        top: 25px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 1200px;
         @extend %flex-row-space-between-center;
         @extend %width-inh;
+        z-index: 200;
 
         &-left {
             @extend %flex-row-flex-start-center;
@@ -55,14 +72,12 @@ body {
                 * {
                     font-weight: bold;
                     @extend %text-transform-upp;
-                    color: $green;
+                    color: $dark-gray;
                     text-decoration: none;
 
-                    &:hover {
-                        color: $white;
-                    }
-
-                    &:focus {
+                    &:hover,
+                    &:focus,
+                    &:active {
                         color: $white;
                     }
                 }
@@ -76,7 +91,7 @@ body {
             color: $white;
             border: none;
             border-radius: 50px;
-            
+
 
             &::placeholder {
                 @extend %text-transform-upp;
@@ -87,7 +102,9 @@ body {
     }
 
     &-body {
+        position: relative;
         @extend %flex-column-flex-start-center;
+        z-index: 100;
 
         &-prim-head,
         &-sec-head,
@@ -96,24 +113,34 @@ body {
         }
 
         &-form {
-            @extend %flex-row-space-between-center;
+            @extend %flex-column-flex-start-center;
 
-            &-left-name,
-            &-right-email {
-                min-width: 270px;
-                min-height: 50px;
-                @extend %box-sizing-bor;
-                font-weight: bold;
-                color: $white;
-                background-color: transparent;
-                border: 2px solid $dark-gray;
+            &-top {
+                @extend %flex-row-space-between-center;
+                width: inherit;
 
-                &::placeholder {
-                    color: $white;
-                    font-size: 14px;
+                &-name,
+                &-email {
+                    @extend %box-sizing-bor;
                     font-weight: bold;
+                    color: $white;
+                    background-color: transparent;
+                    border: 2px solid $dark-gray;
+                    border-radius: 3px;
+
+                    &::placeholder {
+                        color: $white;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
                 }
             }
+        }
+
+        &-button {
+            text-align: center;
+            @extend %text-transform-upp;
+            color: $white;
         }
     }
 }

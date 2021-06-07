@@ -1,45 +1,77 @@
 @import "variables.scss";
 
-@mixin pad-tb($padding-top-value, $padding-bottom-value, $unit-value) {
-    @if $padding-top-value == $padding-bottom-value {
-        .pad-tb-#{round($padding-top-value)} {
-            padding-top: #{$padding-top-value}#{$unit-value};
-            padding-bottom: #{$padding-bottom-value}#{$unit-value};
+@mixin pad-ver($padding-t, $padding-b, $unit) {
+    @if $padding-t == $padding-b {
+        .pad-ver-#{round($padding-t)} {
+            padding-top: #{$padding-t}#{$unit};
+            padding-bottom: #{$padding-b}#{$unit};
         }
     }
 
     @else {
-        .pad-tb-#{round($padding-top-value)}-#{round($padding-bottom-value)} {
-            padding-top: #{$padding-top-value}#{$unit-value};
-            padding-bottom: #{$padding-bottom-value}#{$unit-value};
+        .pad-ver-#{round($padding-t)}-#{round($padding-b)} {
+            padding-top: #{$padding-t}#{$unit};
+            padding-bottom: #{$padding-b}#{$unit};
         }
     }
 }
 
-@mixin mar-tb($margin-top-value, $margin-bottom-value, $unit-value) {
-    @if $margin-top-value == $margin-bottom-value {
-        .mar-tb-#{round($margin-top-value)} {
-            margin-top: #{$margin-top-value}#{$unit-value};
-            margin-bottom: #{$margin-bottom-value}#{$unit-value};
+@mixin mar-ver($margin-t, $margin-b, $unit) {
+    @if $margin-t == $margin-b {
+        .mar-ver-#{round($margin-t)} {
+            margin-top: #{$margin-t}#{$unit};
+            margin-bottom: #{$margin-b}#{$unit};
         }
     }
 
     @else {
-        .mar-tb-#{round($margin-top-value)}-#{round($margin-bottom-value)} {
-            margin-top: #{$margin-top-value}#{$unit-value};
-            margin-bottom: #{$margin-bottom-value}#{$unit-value};
+        .mar-ver-#{round($margin-t)}-#{round($margin-b)} {
+            margin-top: #{$margin-t}#{$unit};
+            margin-bottom: #{$margin-b}#{$unit};
         }
     }
 }
 
-@mixin pad-side($padding-side-name, $padding-value, $unit-value) {
-    .pad-#{$padding-side-name}-#{round($padding-value)} {
-        padding-#{$padding-side-name}: #{$padding-value}#{$unit-value};
+@mixin pad-gor($padding-r, $padding-l, $unit) {
+    @if $padding-r == $padding-l {
+        .pad-gor-#{round($padding-r)} {
+            padding-right: #{$padding-r}#{$unit};
+            padding-left: #{$padding-l}#{$unit};
+        }
+    }
+
+    @else {
+        .pad-gor-#{round($padding-r)}-#{round($padding-l)} {
+            padding-right: #{$padding-r}#{$unit};
+            padding-left: #{$padding-l}#{$unit};
+        }
     }
 }
 
-@mixin mar-side($margin-side-name, $margin-value, $unit-value) {
-    .mar-#{$margin-side-name}-#{round($margin-value)} {
-        margin-#{$margin-side-name}: #{$margin-value}#{$unit-value};
+@mixin mar-gor($margin-r, $margin-l, $unit) {
+    @if $margin-r == $margin-l {
+        .mar-gor-#{round($margin-r)} {
+            margin-right: #{$margin-r}#{$unit};
+            margin-left: #{$margin-l}#{$unit};
+        }
+    }
+
+    @else {
+        .mar-gor-#{round($margin-r)}-#{round($margin-l)} {
+            margin-right: #{$margin-r}#{$unit};
+            margin-left: #{$margin-l}#{$unit};
+        }
+    }
+}
+
+@mixin mar-side($margin-s, $margin, $unit) {
+    .mar-#{$margin-s}-#{round($margin)} {
+        margin-#{$margin-s}: #{$margin}#{$unit};
+    }
+}
+
+@mixin pad-side($padding-s, $padding, $unit) {
+    .pad-#{$padding-s}-#{round($padding)} {
+        padding-#{$padding-s}: #{$padding}#{$unit};
     }
 }

@@ -1,15 +1,24 @@
 @import "variables.scss";
 
-@mixin width($width-value) {
-    .w-#{$width-value} {
-        width: #{$width-value}px;
+@mixin width($width, $unit) {
+    .w-#{round($width)} {
+        width: #{$width}#{$unit};
     }
 }
 
-@mixin width-height($width-value, $height-value) {
-    .wh-#{$width-value}-#{$height-value} {
-        width: #{$width-value}px;
-        height: #{$height-value}px;
+@mixin width-height($width, $height, $unit) {
+    @if $width == $height {
+        .wh-#{$width} {
+            width: #{$width}#{$unit};
+            height: #{$height}#{$unit};
+        }
+    }
+
+    @else {
+        .wh-#{$width}-#{$height} {
+            width: #{$width}#{$unit};
+            height: #{$height}#{$unit};
+        }
     }
 }
 
