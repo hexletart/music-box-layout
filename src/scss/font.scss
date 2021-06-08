@@ -1,0 +1,20 @@
+@import "variables.scss";
+@import "font-function.scss";
+@import "font-mixin.scss";
+
+// text-transform
+%text-transform-cap {
+    text-transform: capitalize;
+}
+%text-transform-low {
+    text-transform: lowercase;
+}
+%text-transform-upp {
+    text-transform: uppercase;
+}
+%text-transform-inh {
+    text-transform: inherit;
+}
+%text-transform-none {
+    text-transform: none;
+}

@@ -1,4 +1,12 @@
 @import "variables.scss";
+@import "flex.scss";
+@import "grid.scss";
+@import "padding-margin.scss";
+@import "font.scss";
+@import "size.scss";
+@import "media.scss";
+@import "button.scss";
+@import "image.scss";
 
 @font-face {
     font-family: 'Roboto';
@@ -28,6 +36,13 @@ body {
     @extend %flex-column-flex-start-center;
 }
 
+@media screen and (max-width: 1240px) {
+    .greet-part-top {
+        width: 100%;
+        @include flex-mobile();
+    }
+}
+
 .greet-part {
     position: relative;
     @extend %flex-column-flex-start-center;
@@ -47,9 +62,7 @@ body {
         left: 0;
         right: 0;
         margin: 0 auto;
-        width: 1200px;
         @extend %flex-row-space-between-center;
-        @extend %width-inh;
         z-index: 200;
 
         &-left {
@@ -135,12 +148,11 @@ body {
                     }
                 }
             }
-        }
-
-        &-button {
-            text-align: center;
-            @extend %text-transform-upp;
-            color: $white;
+            &-button {
+                text-align: center;
+                @extend %text-transform-upp;
+                color: $white;
+            }
         }
     }
 }

@@ -1,3 +1,53 @@
+.greet-part-top-left-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.greet-part-top-rihgt-search, .greet-part-top-left-logo, .greet-part-top-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.greet-part-body-form, .greet-part-body, .greet-part, body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.greet-part-body-form-top, .greet-part-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.greet-part-body-form-button, .greet-part-top-rihgt-search::placeholder, .greet-part-top-left-menu *, .greet-part-top-left-logo-name {
+  text-transform: uppercase;
+}
+
+.greet-part-body-form-top-name, .greet-part-body-form-top-email, .greet-part-top-rihgt-search {
+  box-sizing: border-box;
+}
+
+.greet-part::before {
+  background-image: url("../assets/images/banner.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.greet-part::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
 @font-face {
   font-family: "Roboto";
   src: url("../assets/fonts/Roboto-Regular.ttf");
@@ -10,6 +60,14 @@ h4 {
   margin: 0;
 }
 
+@media screen and (max-width: 1240px) {
+  .greet-part-top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
 .greet-part {
   position: relative;
   width: 100%;
@@ -25,7 +83,6 @@ h4 {
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 1200px;
   z-index: 200;
 }
 .greet-part-top-left-logo-name {
@@ -73,7 +130,7 @@ h4 {
   font-size: 14px;
   font-weight: bold;
 }
-.greet-part-body-button {
+.greet-part-body-form-button {
   text-align: center;
   color: #FFFFFF;
 }
@@ -105,16 +162,12 @@ body, .greet-part, .greet-part-body, .greet-part-body-form {
   align-items: center;
 }
 
-.greet-part-top-left-logo-name, .greet-part-top-left-menu *, .greet-part-top-rihgt-search::placeholder, .greet-part-body-button {
+.greet-part-top-left-logo-name, .greet-part-top-left-menu *, .greet-part-top-rihgt-search::placeholder, .greet-part-body-form-button {
   text-transform: uppercase;
 }
 
 .greet-part-top-rihgt-search, .greet-part-body-form-top-name, .greet-part-body-form-top-email {
   box-sizing: border-box;
-}
-
-.greet-part-top {
-  width: inherit;
 }
 
 .greet-part::before {
@@ -205,8 +258,8 @@ h4 {
   font-size: 64px;
 }
 
-.w-1200 {
-  width: 1200px;
+.max-w-1200 {
+  max-width: 1200px;
 }
 
 .w-570 {

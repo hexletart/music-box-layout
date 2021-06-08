@@ -3,11 +3,11 @@
 @import "flex.scss";
 @import "grid.scss";
 @import "padding-margin.scss";
-@import "fonts.scss";
-@import "proportions.scss";
+@import "font.scss";
+@import "size.scss";
 @import "media.scss";
 @import "button.scss";
-@import "pictures.scss";
+@import "image.scss";
 
 @include html("Roboto", sans-serif, 18, 1.5, $black, $dark-gray, px);
 @include media(h1, px, 60, 90, bold, uppercase);
@@ -18,11 +18,11 @@
 @include paragraphs-random(11, px);
 @include paragraphs-random(13.3, px);
 @include paragraphs-fixed(16, 1.25, 8, 64, px);
-@include width(1200, px);
-@include width(570, px);
-@include width-height(25, 25, px);
-@include width-height(250, 25, px);
-@include width-height(270, 50, px);
+@include width(px, 1200, max);
+@include width(px, 570);
+@include width-height(px, 25, 25);
+@include width-height(px, 250, 25);
+@include width-height(px, 270, 50);
 
 @include mar-ver(0, 0, px);
 @include mar-side(right, 24, px);

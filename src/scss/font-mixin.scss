@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 // font-weight from 100, 200, ... up to 900
 @mixin font-weight-fixed($intitial-value, $step, $final-value) {
     @while $intitial-value <= $final-value {
@@ -27,21 +29,3 @@
             font-size: #{$font-size}#{$unit};
     }   
 }
-
-// text-transform
-%text-transform-cap {
-    text-transform: capitalize;
-}
-%text-transform-low {
-    text-transform: lowercase;
-}
-%text-transform-upp {
-    text-transform: uppercase;
-}
-%text-transform-inh {
-    text-transform: inherit;
-}
-%text-transform-none {
-    text-transform: none;
-}
-
