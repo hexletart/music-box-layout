@@ -5,24 +5,24 @@
 @import "padding-margin.scss";
 @import "font.scss";
 @import "size.scss";
-@import "media.scss";
 @import "button.scss";
 @import "image.scss";
 
 @include html("Roboto", sans-serif, 18, 1.5, $black, $dark-gray, px);
-@include media(h1, px, 60, 90, bold, uppercase);
-@include media(h2, px, 38, 57, bold, uppercase);
-@include media(h3, px, 24, 45);
-@include media(h4, px, 18, 27, bold);
+@include heading-set(h1, px, 60, 90, bold, uppercase);
+@include heading-set(h2, px, 38, 57, bold, uppercase);
+@include heading-set(h3, px, 24, 45);
+@include heading-set(h4, px, 18, 27, bold);
 @include font-weight-fixed(100, 100, 900);
 @include paragraphs-random(11, px);
 @include paragraphs-random(13.3, px);
 @include paragraphs-fixed(16, 1.25, 8, 64, px);
+@include height(px, 50);
+@include width(px, 270, min);
 @include width(px, 1200, max);
 @include width(px, 570);
 @include width-height(px, 25, 25);
 @include width-height(px, 250, 25);
-@include width-height(px, 270, 50);
 
 @include mar-ver(0, 0, px);
 @include mar-side(right, 24, px);
@@ -40,10 +40,3 @@
 @include grid-fr(1, 1, 2, 2);
 
 @include button(access, 570px, auto, 5px, $white, $green, $green-act);
-
-@media screen and (max-width: 1240px) {
-    @include media(h1, px, 30, 45, bold, uppercase);
-    @include media(h2, px, 18, 27, bold, uppercase);
-    @include media(h3, px, 16, 24, bold);
-    @include media(h4, px, 18, 24, bold);
-}

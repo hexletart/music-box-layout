@@ -13,6 +13,19 @@
     }
 }
 
+@mixin height($unit, $height, $min-max: null) {
+    @if $min-max == null {
+        .h-#{round($height)} {
+            height: #{$height}#{$unit};
+        }
+    }
+    @else {
+        .#{$min-max}-h-#{round($height)} {
+            #{$min-max}-height: #{$height}#{$unit};
+        }
+    }
+}
+
 @mixin width-height($unit, $width, $height) {
     @if $width==$height {
         .wh-#{$width} {
