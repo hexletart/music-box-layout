@@ -1,267 +1,3 @@
-.greet-part-top-left-menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-.greet-part-top-rihgt-search, .greet-part-top-left-logo, .greet-part-top-left {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.greet-part-body-form, .greet-part-body, .greet-part, body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.greet-part-body-form-top, .greet-part-top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.greet-part-body-form-button, .greet-part-top-rihgt-search::placeholder, .greet-part-top-left-menu *, .greet-part-top-left-logo-name {
-  text-transform: uppercase;
-}
-
-.greet-part-body-form-top-name, .greet-part-body-form-top-email, .greet-part-top-rihgt-search {
-  box-sizing: border-box;
-}
-
-.greet-part::before {
-  background-image: url("../assets/images/banner.png");
-  background-position: center;
-  background-size: cover;
-}
-
-.greet-part::before {
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-}
-
-@media screen and (max-width: 1240px) {
-  h1 {
-    font-size: 30px;
-    line-height: 45px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  h2 {
-    font-size: 18px;
-    line-height: 27px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  h3 {
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: bold;
-  }
-
-  h4 {
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: bold;
-  }
-}
-@media screen and (max-width: 1240px) {
-  .greet-part-top {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-}
-.greet-part-top-left-menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-.greet-part-top-rihgt-search, .greet-part-top-left-logo, .greet-part-top-left {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.greet-part-body-form, .greet-part-body, .greet-part, body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.greet-part-body-form-top, .greet-part-top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.greet-part-body-form-button, .greet-part-top-rihgt-search::placeholder, .greet-part-top-left-menu *, .greet-part-top-left-logo-name {
-  text-transform: uppercase;
-}
-
-.greet-part-body-form-top-name, .greet-part-body-form-top-email, .greet-part-top-rihgt-search {
-  box-sizing: border-box;
-}
-
-.greet-part::before {
-  background-image: url("../assets/images/banner.png");
-  background-position: center;
-  background-size: cover;
-}
-
-.greet-part::before {
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../assets/fonts/Roboto-Regular.ttf");
-}
-body,
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
-}
-
-.greet-part {
-  position: relative;
-  width: 100%;
-}
-.greet-part::before {
-  position: absolute;
-  z-index: 0;
-  content: "";
-}
-.greet-part-top {
-  position: absolute;
-  top: 25px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  z-index: 200;
-}
-.greet-part-top-left-logo-name {
-  display: block;
-  font-weight: bold;
-  color: #FFFFFF;
-}
-.greet-part-top-left-menu * {
-  font-weight: bold;
-  color: #CACACA;
-  text-decoration: none;
-}
-.greet-part-top-left-menu *:hover, .greet-part-top-left-menu *:focus, .greet-part-top-left-menu *:active {
-  color: #FFFFFF;
-}
-.greet-part-top-rihgt-search {
-  background-color: #3C3B3D;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 50px;
-}
-.greet-part-top-rihgt-search::placeholder {
-  font-size: 13.3px;
-  color: #757575;
-}
-.greet-part-body {
-  position: relative;
-  z-index: 100;
-}
-.greet-part-body-prim-head, .greet-part-body-sec-head, .greet-part-body-descr {
-  color: #FFFFFF;
-}
-.greet-part-body-form-top {
-  width: inherit;
-}
-.greet-part-body-form-top-name, .greet-part-body-form-top-email {
-  font-weight: bold;
-  color: #FFFFFF;
-  background-color: transparent;
-  border: 2px solid #CACACA;
-  border-radius: 3px;
-}
-.greet-part-body-form-top-name::placeholder, .greet-part-body-form-top-email::placeholder {
-  color: #FFFFFF;
-  font-size: 14px;
-  font-weight: bold;
-}
-.greet-part-body-form-button {
-  text-align: center;
-  color: #FFFFFF;
-}
-
-.greet-part-top-left-menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-.greet-part-top-left, .greet-part-top-left-logo, .greet-part-top-rihgt-search {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-body, .greet-part, .greet-part-body, .greet-part-body-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.greet-part-top, .greet-part-body-form-top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.greet-part-top-left-logo-name, .greet-part-top-left-menu *, .greet-part-top-rihgt-search::placeholder, .greet-part-body-form-button {
-  text-transform: uppercase;
-}
-
-.greet-part-top-rihgt-search, .greet-part-body-form-top-name, .greet-part-body-form-top-email {
-  box-sizing: border-box;
-}
-
-.greet-part::before {
-  background-image: url("../assets/images/banner.png");
-  background-position: center;
-  background-size: cover;
-}
-
-.greet-part::before {
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-}
-
 html {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
@@ -416,19 +152,177 @@ h4 {
   grid-template-columns: repeat(2, 2fr);
 }
 
-.btn-access {
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Regular.ttf");
+}
+body,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+.greet-part {
+  position: relative;
+  width: 100%;
+}
+.greet-part::before {
+  position: absolute;
+  z-index: 0;
+  content: "";
+}
+.greet-part-top {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 200;
+}
+.greet-part-top-left-logo-name {
+  display: block;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.greet-part-top-left-menu * {
+  font-weight: bold;
+  color: #CACACA;
+  text-decoration: none;
+}
+.greet-part-top-left-menu *:hover, .greet-part-top-left-menu *:focus, .greet-part-top-left-menu *:active {
+  color: #FFFFFF;
+}
+.greet-part-top-rihgt-search {
+  background-color: #3C3B3D;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 50px;
+}
+.greet-part-top-rihgt-search::placeholder {
+  font-size: 13.3px;
+  color: #757575;
+}
+.greet-part-body {
+  position: relative;
+  z-index: 100;
+}
+.greet-part-body-prim-head, .greet-part-body-sec-head, .greet-part-body-descr {
+  color: #FFFFFF;
+}
+.greet-part-body-form-top {
+  width: inherit;
+}
+.greet-part-body-form-top-name, .greet-part-body-form-top-email {
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: transparent;
+  border: 2px solid #CACACA;
+  border-radius: 3px;
+}
+.greet-part-body-form-top-name::placeholder, .greet-part-body-form-top-email::placeholder {
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: bold;
+}
+@media screen and (max-width: 1240px) {
+  h1 {
+    font-size: 30px;
+    line-height: 45px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+  }
+
+  .greet-part-top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+.greet-part-top-rihgt-search, .greet-part-body-form-top-name, .greet-part-body-form-top-email {
+  box-sizing: border-box;
+}
+
+.greet-part-top-left-logo-name, .greet-part-top-left-menu *, .greet-part-top-rihgt-search::placeholder, .greet-part-body-form-button {
+  text-transform: uppercase;
+}
+
+.greet-part-top-left-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.greet-part-top-left, .greet-part-top-left-logo, .greet-part-top-rihgt-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+body, .greet-part, .greet-part-body, .greet-part-body-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.greet-part-top, .greet-part-body-form-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.greet-part::before {
+  background-image: url("../assets/images/banner.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.greet-part::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.greet-part-body-form-button {
   width: 570px;
   height: auto;
   border-radius: 5px;
   background-color: #34C176;
-  color: #FFFFFF;
+  color: white;
   border: none;
 }
-.btn-access:hover {
+.greet-part-body-form-button:hover {
   transition: box-shadow 0.15s;
   box-shadow: inset 0 0 4px 4px #237e4d;
 }
-.btn-access:active {
+.greet-part-body-form-button:active {
   background-color: #237e4d;
 }
 

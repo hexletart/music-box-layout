@@ -1,0 +1,234 @@
+//html
+@mixin html($font-type, $serif-type, $font-size, $line-height, $color, $color-bg, $unit-1, $unit-2: null) {
+    html {
+        font-family: $font-type,
+        #{$serif-type};
+        font-size: #{$font-size}#{$unit-1};
+        line-height: #{$line-height}#{$unit-2};
+        color: #{$color};
+        background-color: #{$color-bg};
+    }
+}
+
+//fonts
+@mixin heading-set($heading-type, $unit, $font-size, $line-height, $font-weight: null, $text-transfom: null) {
+    @if $text-transfom == "null" and $font-weight == "null" {
+        #{$heading-type} {
+            font-size: #{$font-size}#{$unit};
+            line-height: #{$line-height}#{$unit};
+        }
+    }
+
+    @if $text-transfom != "null" and $font-weight == "null" {
+        #{$heading-type} {
+            font-size: #{$font-size}#{$unit};
+            line-height: #{$line-height}#{$unit};
+            text-transform: #{$text-transfom};
+        }
+    }
+
+    @if $text-transfom == "null" and $font-weight != "null" {
+        #{$heading-type} {
+            font-size: #{$font-size}#{$unit};
+            line-height: #{$line-height}#{$unit};
+            font-weight: #{$font-weight};
+        }
+    }
+
+    @else {
+        #{$heading-type} {
+            font-size: #{$font-size}#{$unit};
+            line-height: #{$line-height}#{$unit};
+            font-weight: #{$font-weight};
+            text-transform: #{$text-transfom};
+        }
+    }
+}
+
+// fonts, font-weight from 100, 200, ... up to 900
+@mixin font-weight-fixed($intitial-value, $step, $final-value) {
+    @while $intitial-value <= $final-value {
+        %font-weight-#{$intitial-value} {
+            font-weight: #{$intitial-value};
+        }
+        $intitial-value: $intitial-value + $step;
+    }
+}
+
+@mixin paragraphs-fixed($font-size, $small-size-denominator, $step, $final-font-size, $unit) {
+    $small-font-size: $font-size / $small-size-denominator;
+    .p-#{round($small-font-size)} {
+        font-size: #{$small-font-size}#{$unit};
+    }
+    @while $font-size <= $final-font-size {
+        .p-#{round($font-size)} {
+            font-size: #{$font-size}#{$unit};
+        }
+        
+        $font-size: $font-size + $step;
+    }
+}
+
+@mixin paragraphs-random ($font-size, $unit) {
+    .p-#{round($font-size)}-r {
+            font-size: #{$font-size}#{$unit};
+    }   
+}
+
+//paddings and margins
+@mixin pad-ver($padding-t, $padding-b, $unit) {
+    @if $padding-t == $padding-b {
+        .pad-ver-#{round($padding-t)} {
+            padding-top: #{$padding-t}#{$unit};
+            padding-bottom: #{$padding-b}#{$unit};
+        }
+    }
+
+    @else {
+        .pad-ver-#{round($padding-t)}-#{round($padding-b)} {
+            padding-top: #{$padding-t}#{$unit};
+            padding-bottom: #{$padding-b}#{$unit};
+        }
+    }
+}
+
+@mixin mar-ver($margin-t, $margin-b, $unit) {
+    @if $margin-t == $margin-b {
+        .mar-ver-#{round($margin-t)} {
+            margin-top: #{$margin-t}#{$unit};
+            margin-bottom: #{$margin-b}#{$unit};
+        }
+    }
+
+    @else {
+        .mar-ver-#{round($margin-t)}-#{round($margin-b)} {
+            margin-top: #{$margin-t}#{$unit};
+            margin-bottom: #{$margin-b}#{$unit};
+        }
+    }
+}
+
+@mixin pad-gor($padding-r, $padding-l, $unit) {
+    @if $padding-r == $padding-l {
+        .pad-gor-#{round($padding-r)} {
+            padding-right: #{$padding-r}#{$unit};
+            padding-left: #{$padding-l}#{$unit};
+        }
+    }
+
+    @else {
+        .pad-gor-#{round($padding-r)}-#{round($padding-l)} {
+            padding-right: #{$padding-r}#{$unit};
+            padding-left: #{$padding-l}#{$unit};
+        }
+    }
+}
+
+@mixin mar-gor($margin-r, $margin-l, $unit) {
+    @if $margin-r == $margin-l {
+        .mar-gor-#{round($margin-r)} {
+            margin-right: #{$margin-r}#{$unit};
+            margin-left: #{$margin-l}#{$unit};
+        }
+    }
+
+    @else {
+        .mar-gor-#{round($margin-r)}-#{round($margin-l)} {
+            margin-right: #{$margin-r}#{$unit};
+            margin-left: #{$margin-l}#{$unit};
+        }
+    }
+}
+
+@mixin mar-side($margin-s, $margin, $unit) {
+    .mar-#{$margin-s}-#{round($margin)} {
+        margin-#{$margin-s}: #{$margin}#{$unit};
+    }
+}
+
+@mixin pad-side($padding-s, $padding, $unit) {
+    .pad-#{$padding-s}-#{round($padding)} {
+        padding-#{$padding-s}: #{$padding}#{$unit};
+    }
+}
+
+//flex
+@mixin flex-mobile() {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+//grid
+@mixin grid-fr($rows-value, $rows-amount, $columns-value, $columns-amount) {
+    .grid-fr-#{$rows-value}-#{$columns-value} {
+        display: grid;
+        grid-template-rows: repeat(#{$rows-amount}, #{$rows-value}fr);
+        grid-template-columns: repeat(#{$columns-amount}, #{$columns-value}fr);
+    }
+}
+
+//buttons
+@mixin button($name, $width, $height, $radius, $col, $col-bg-1, $col-bg-2) {
+    .btn-#{$name} {
+        width: #{$width};
+        height: #{$height};
+        border-radius: #{$radius};
+        background-color: #{$col-bg-1};
+        color: #{$col};
+        border: none;
+
+
+        &:hover {
+            transition: box-shadow 0.15s;
+            box-shadow: inset 0 0 4px 4px #{$col-bg-2};
+        }
+
+        &:active {
+            background-color: #{$col-bg-2};
+        }
+    }
+}
+
+//width and height
+@mixin width($unit, $width, $min-max: null) {
+    @if $min-max == null {
+        .w-#{round($width)} {
+            width: #{$width}#{$unit};
+        }
+    }
+    @else {
+        .#{$min-max}-w-#{round($width)} {
+            #{$min-max}-width: #{$width}#{$unit};
+        }
+    }
+}
+
+@mixin height($unit, $height, $min-max: null) {
+    @if $min-max == null {
+        .h-#{round($height)} {
+            height: #{$height}#{$unit};
+        }
+    }
+    @else {
+        .#{$min-max}-h-#{round($height)} {
+            #{$min-max}-height: #{$height}#{$unit};
+        }
+    }
+}
+
+@mixin width-height($unit, $width, $height) {
+    @if $width==$height {
+        .wh-#{$width} {
+            width: #{$width}#{$unit};
+            height: #{$height}#{$unit};
+        }
+    }
+
+    @else {
+        .wh-#{$width}-#{$height} {
+            width: #{$width}#{$unit};
+            height: #{$height}#{$unit};
+        }
+    }
+}

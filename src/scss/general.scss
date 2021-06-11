@@ -1,27 +1,38 @@
-@import "variables.scss";
-@import "general-media.scss";
-@import "flex.scss";
-@import "grid.scss";
-@import "padding-margin.scss";
-@import "font.scss";
-@import "size.scss";
-@import "button.scss";
-@import "image.scss";
+@include html("Roboto", sans-serif, 18, 1.5, $black, $dark-gray, px);
+@include heading-set(h1, px, 60, 90, bold, uppercase);
+@include heading-set(h2, px, 38, 57, bold, uppercase);
+@include heading-set(h3, px, 24, 45);
+@include heading-set(h4, px, 18, 27, bold);
+@include font-weight-fixed(100, 100, 900);
+@include paragraphs-random(11, px);
+@include paragraphs-random(13.3, px);
+@include paragraphs-fixed(16, 1.25, 8, 64, px);
+@include height(px, 50);
+@include width(px, 270, min);
+@include width(px, 1200, max);
+@include width(px, 570);
+@include width-height(px, 25, 25);
+@include width-height(px, 250, 25);
+
+@include mar-ver(0, 0, px);
+@include mar-side(right, 24, px);
+@include mar-side(right, 88, px);
+@include mar-side(right, 16, px);
+@include mar-side(top, 32, px);
+@include mar-side(bottom, 1.5, rem);
+
+@include pad-side(left, 10, px);
+@include pad-gor(10, 20, px);
+@include pad-gor(30, 30, px);
+@include pad-ver(200, 200, px);
+@include pad-ver(20, 20, px);
+
+@include grid-fr(1, 1, 2, 2);
+
 
 @font-face {
     font-family: 'Roboto';
     src: url('../assets/fonts/Roboto-Regular.ttf');
-}
-
-@mixin html($font-type, $serif-type, $font-size, $line-height, $color, $color-bg, $unit-1, $unit-2: null) {
-    html {
-        font-family: $font-type,
-        #{$serif-type};
-        font-size: #{$font-size}#{$unit-1};
-        line-height: #{$line-height}#{$unit-2};
-        color: #{$color};
-        background-color: #{$color-bg};
-    }
 }
 
 body,
@@ -142,10 +153,20 @@ body {
                 }
             }
             &-button {
-                text-align: center;
+                @extend %greet-part-btn;
                 @extend %text-transform-upp;
-                color: $white;
             }
         }
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    @include heading-set(h1, px, 30, 45, bold, uppercase);
+    @include heading-set(h2, px, 18, 27, bold, uppercase);
+    @include heading-set(h3, px, 16, 24, bold);
+    @include heading-set(h4, px, 18, 24, bold);
+    .greet-part-top {
+        width: 100%;
+        @include flex-mobile();
     }
 }
