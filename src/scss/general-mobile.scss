@@ -11,7 +11,7 @@
             @include flex-mobile-column-start();
             padding-left: 20px;
             padding-right: 20px;
-            max-width: 800px;
+            max-width: 700px;
 
             &-left {
                 @include flex-mobile-column-start();
@@ -32,9 +32,14 @@
         }
 
         &-body {
+            padding-top: 250px;
             padding-left: 20px;
             padding-right: 20px;
-            max-width: 800px;            
+            max-width: 700px;
+            
+            &-descr {
+                margin-top: 16px;
+            }
 
             &-form {
                 width: 100%;
@@ -43,13 +48,10 @@
                     @include flex-mobile-column-center();
 
                     &-name, &-email {
-                        width: inherit;
-                        min-width: 110px;
-                    }
-
-                    &-descr {
                         width: 100%;
-                    } 
+                        min-width: 110px;
+                        max-width: 600px;
+                    }
                 }
 
                 &-button {
