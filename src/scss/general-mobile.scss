@@ -1,0 +1,61 @@
+@media screen and (max-width: 1240px) {
+    @include heading-set(h1, px, 30, 45, bold, uppercase);
+    @include heading-set(h2, px, 18, 27, bold, uppercase);
+    @include heading-set(h3, px, 16, 24, bold);
+    @include heading-set(h4, px, 18, 24, bold);
+
+    .greet-part {
+        width: 100vw;
+
+        &-top {
+            @include flex-mobile-column-start();
+            padding-left: 20px;
+            padding-right: 20px;
+            max-width: 800px;
+
+            &-left {
+                @include flex-mobile-column-start();
+
+                &-menu {
+                    @include flex-mobile-column-start();
+                    @include mar-ver-1();
+                }
+            }
+
+            &-rihgt {
+                width: 100%;
+
+                * {
+                    width: 100%;
+                }
+            }
+        }
+
+        &-body {
+            padding-left: 20px;
+            padding-right: 20px;
+            max-width: 800px;            
+
+            &-form {
+                width: 100%;
+
+                &-top {
+                    @include flex-mobile-column-center();
+
+                    &-name, &-email {
+                        width: inherit;
+                        min-width: 110px;
+                    }
+
+                    &-descr {
+                        width: 100%;
+                    } 
+                }
+
+                &-button {
+                    width: inherit;
+                }
+            }
+        }
+    }
+}

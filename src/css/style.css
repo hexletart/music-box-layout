@@ -6,6 +6,14 @@ html {
   background-color: #CACACA;
 }
 
+body,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
 h1 {
   font-size: 60px;
   line-height: 90px;
@@ -97,6 +105,11 @@ h4 {
   height: 25px;
 }
 
+.mar-gor-20 {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
 .mar-ver-0 {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -126,8 +139,8 @@ h4 {
   padding-left: 10px;
 }
 
-.pad-gor-10-20 {
-  padding-right: 10px;
+.pad-gor-20 {
+  padding-right: 20px;
   padding-left: 20px;
 }
 
@@ -146,24 +159,10 @@ h4 {
   padding-bottom: 20px;
 }
 
-.grid-fr-1-2 {
-  display: grid;
-  grid-template-rows: repeat(1, 1fr);
-  grid-template-columns: repeat(2, 2fr);
-}
-
 @font-face {
   font-family: "Roboto";
   src: url("../assets/fonts/Roboto-Regular.ttf");
 }
-body,
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
-}
-
 .greet-part {
   position: relative;
   width: 100%;
@@ -175,7 +174,7 @@ h4 {
 }
 .greet-part-top {
   position: absolute;
-  top: 25px;
+  padding-top: 25px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -187,9 +186,10 @@ h4 {
   color: #FFFFFF;
 }
 .greet-part-top-left-menu * {
-  font-weight: bold;
+  display: block;
   color: #CACACA;
   text-decoration: none;
+  font-weight: bold;
 }
 .greet-part-top-left-menu *:hover, .greet-part-top-left-menu *:focus, .greet-part-top-left-menu *:active {
   color: #FFFFFF;
@@ -210,12 +210,15 @@ h4 {
 }
 .greet-part-body-prim-head, .greet-part-body-sec-head, .greet-part-body-descr {
   color: #FFFFFF;
+  width: 100%;
+  text-align: center;
 }
 .greet-part-body-form-top {
   width: inherit;
 }
 .greet-part-body-form-top-name, .greet-part-body-form-top-email {
   font-weight: bold;
+  text-align: center;
   color: #FFFFFF;
   background-color: transparent;
   border: 2px solid #CACACA;
@@ -225,40 +228,6 @@ h4 {
   color: #FFFFFF;
   font-size: 14px;
   font-weight: bold;
-}
-@media screen and (max-width: 1240px) {
-  h1 {
-    font-size: 30px;
-    line-height: 45px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  h2 {
-    font-size: 18px;
-    line-height: 27px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  h3 {
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: bold;
-  }
-
-  h4 {
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: bold;
-  }
-
-  .greet-part-top {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
 }
 .greet-part-top-rihgt-search, .greet-part-body-form-top-name, .greet-part-body-form-top-email {
   box-sizing: border-box;
@@ -324,6 +293,91 @@ body, .greet-part, .greet-part-body, .greet-part-body-form {
 }
 .greet-part-body-form-button:active {
   background-color: #237e4d;
+}
+
+@media screen and (max-width: 1240px) {
+  h1 {
+    font-size: 30px;
+    line-height: 45px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+  }
+
+  .greet-part {
+    width: 100vw;
+  }
+  .greet-part-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 800px;
+  }
+  .greet-part-top-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .greet-part-top-left-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .greet-part-top-rihgt {
+    width: 100%;
+  }
+  .greet-part-top-rihgt * {
+    width: 100%;
+  }
+  .greet-part-body {
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 800px;
+  }
+  .greet-part-body-form {
+    width: 100%;
+  }
+  .greet-part-body-form-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .greet-part-body-form-top-name, .greet-part-body-form-top-email {
+    width: inherit;
+    min-width: 110px;
+  }
+  .greet-part-body-form-top-descr {
+    width: 100%;
+  }
+  .greet-part-body-form-button {
+    width: inherit;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

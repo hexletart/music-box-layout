@@ -76,6 +76,11 @@
 }
 
 //paddings and margins
+@mixin mar-ver-1() {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 @mixin pad-ver($padding-t, $padding-b, $unit) {
     @if $padding-t == $padding-b {
         .pad-ver-#{round($padding-t)} {
@@ -153,10 +158,18 @@
 }
 
 //flex
-@mixin flex-mobile() {
+@mixin flex-mobile-column-start() {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+    align-items: flex-start;
+}
+
+@mixin flex-mobile-column-center() {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+    align-items: center;
 }
 
 //grid
