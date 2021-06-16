@@ -6,19 +6,23 @@
 
     .greet-part {
         width: 100vw;
-
+        
         &-top {
-            @include flex-mobile-column-start();
+            @include flex-column-flex-start-flex-start;
             padding-left: 20px;
             padding-right: 20px;
             max-width: 700px;
 
             &-left {
-                @include flex-mobile-column-start();
+                @include flex-column-flex-start-flex-start;
+
+                &-logo-name {
+                    margin-right: 0;
+                }
 
                 &-menu {
-                    @include flex-mobile-column-start();
-                    @include mar-ver-1();
+                    @include flex-column-flex-start-flex-start;
+                    @include mar-ver-1;
                 }
             }
 
@@ -45,7 +49,7 @@
                 width: 100%;
 
                 &-top {
-                    @include flex-mobile-column-center();
+                    @include flex-column-flex-start-center;
 
                     &-name, &-email {
                         width: 100%;

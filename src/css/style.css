@@ -1,9 +1,20 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Regular.ttf");
+}
 html {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   line-height: 1.5;
   color: #08020D;
   background-color: #CACACA;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 body,
@@ -159,16 +170,25 @@ h4 {
   padding-bottom: 20px;
 }
 
-@font-face {
-  font-family: "Roboto";
-  src: url("../assets/fonts/Roboto-Regular.ttf");
-}
 .greet-part {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
 }
 .greet-part::before {
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-image: url("../assets/images/banner.png");
+  background-position: center;
+  background-size: cover;
   z-index: 0;
   content: "";
 }
@@ -178,15 +198,38 @@ h4 {
   left: 0;
   right: 0;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   z-index: 200;
+}
+.greet-part-top-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.greet-part-top-left-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 .greet-part-top-left-logo-name {
   display: block;
   font-weight: bold;
+  text-transform: uppercase;
   color: #FFFFFF;
+}
+.greet-part-top-left-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 .greet-part-top-left-menu * {
   display: block;
+  text-transform: uppercase;
   color: #CACACA;
   text-decoration: none;
   font-weight: bold;
@@ -195,17 +238,27 @@ h4 {
   color: #FFFFFF;
 }
 .greet-part-top-rihgt-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
   background-color: #3C3B3D;
   color: #FFFFFF;
   border: none;
   border-radius: 50px;
 }
 .greet-part-top-rihgt-search::placeholder {
+  text-transform: uppercase;
   font-size: 13.3px;
   color: #757575;
 }
 .greet-part-body {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   z-index: 100;
 }
 .greet-part-body-prim-head, .greet-part-body-sec-head, .greet-part-body-descr {
@@ -213,10 +266,21 @@ h4 {
   width: 100%;
   text-align: center;
 }
+.greet-part-body-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 .greet-part-body-form-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   width: inherit;
 }
 .greet-part-body-form-top-name, .greet-part-body-form-top-email {
+  box-sizing: border-box;
   font-weight: bold;
   text-align: center;
   color: #FFFFFF;
@@ -229,56 +293,6 @@ h4 {
   font-size: 14px;
   font-weight: bold;
 }
-.greet-part-top-rihgt-search, .greet-part-body-form-top-name, .greet-part-body-form-top-email {
-  box-sizing: border-box;
-}
-
-.greet-part-top-left-logo-name, .greet-part-top-left-menu *, .greet-part-top-rihgt-search::placeholder, .greet-part-body-form-button {
-  text-transform: uppercase;
-}
-
-.greet-part-top-left-menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-.greet-part-top-left, .greet-part-top-left-logo, .greet-part-top-rihgt-search {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-body, .greet-part, .greet-part-body, .greet-part-body-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.greet-part-top, .greet-part-body-form-top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.greet-part::before {
-  background-image: url("../assets/images/banner.png");
-  background-position: center;
-  background-size: cover;
-}
-
-.greet-part::before {
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-}
-
 .greet-part-body-form-button {
   width: 570px;
   height: auto;
@@ -286,6 +300,7 @@ body, .greet-part, .greet-part-body, .greet-part-body-form {
   background-color: #34C176;
   color: white;
   border: none;
+  text-transform: uppercase;
 }
 .greet-part-body-form-button:hover {
   transition: box-shadow 0.15s;
@@ -339,6 +354,9 @@ body, .greet-part, .greet-part-body, .greet-part-body-form {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+  }
+  .greet-part-top-left-logo-name {
+    margin-right: 0;
   }
   .greet-part-top-left-menu {
     display: flex;
