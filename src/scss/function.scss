@@ -1,0 +1,7 @@
+@function rem-to-px($values) {
+    $result: ();
+    @each $value in $values {
+        $result: append($result, ($value * $rem-base)); 
+    }
+    @return #{$result};
+}

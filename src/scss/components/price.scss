@@ -1,0 +1,15 @@
+@mixin price-value {
+    .price-value {  
+        font-size: rem-to-px(4);
+        line-height: 1em;
+        }
+}
+
+@mixin price-unit {
+    .price-unit {
+        padding-left: rem-to-px(1);
+        font-size: rem-to-px(2);
+        vertical-align: top;
+        text-transform: uppercase;
+    }
+}

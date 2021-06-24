@@ -10,44 +10,97 @@
 </head>
 
 <body>
-    <header class="greet-part" id="page-description">
-        <div class="greet-part-top max-w-1200">
+    <div class="greet-part" id="page-description">
+
+        <header class="greet-part-top max-w-1200">
             <div class="greet-part-top-left">
                 <div class="greet-part-top-left-logo">
-                    <img class="greet-part-top-left-logo-img wh-25 mar-right-16" src="assets/images/logo.svg"
-                        alt="music-logo">
-                    <p class="greet-part-top-left-logo-name p-11-r mar-right-88 mar-ver-0">music box</p>
+                    <img class="wh-25 mar-right-16" src="assets/images/logo.svg" alt="music-logo">
+                    <p class="p-11-r mar-right-88 mar-ver-0">music box</p>
                 </div>
                 <div class="greet-part-top-left-menu">
-                    <a class="p-11-r mar-right-24" href="#">главная</a>
-                    <a class="p-11-r mar-right-24" href="#">каталог</a>
-                    <a class="p-11-r mar-right-24" href="#">исполнители</a>
-                    <a class="p-11-r mar-right-24" href="#">контакты</a>
+                    <div class="mar-right-24"><a class="p-11-r" href="#">главная</a></div>
+                    <div class="mar-right-24"><a class="p-11-r" href="#">каталог</a></div>
+                    <div class="mar-right-24"><a class="p-11-r" href="#">исполнители</a></div>
+                    <div class="mar-right-24"><a class="p-11-r" href="#">контакты</a></div>
                 </div>
             </div>
-            <form class="greet-part-top-rihgt" action="#">
-                <input class="greet-part-top-rihgt-search wh-250-25 pad-left-10" type="text" name="search"
-                    placeholder="поиск...">
+            <form class="greet-part-top-right" action="#">
+                <input class="wh-250-25 pad-gor-10" type="text" name="search" placeholder="поиск...">
             </form>
-        </div>
+        </header>
 
-        <section class="greet-part-body pad-ver-200 max-w-1200" id="page-description">
-            <h1 class="greet-part-body-prim-head">Онлайн музыка где угодно</h1>
-            <h2 class="greet-part-body-sec-head">Без ограничений</h2>
-            <p class="greet-part-body-descr p-16 mar-top-32">Получите доступ всего за несколько шагов. Заполните форму ниже и
+        <section class="greet-part-body pad-ver-200 max-w-1200">
+            <h1>Онлайн музыка где угодно</h1>
+            <h2>Без ограничений</h2>
+            <p class="p-16 mar-top-32">Получите доступ всего за несколько шагов. Заполните форму
+                ниже и
                 откройте мир музыки</p>
             <form class="greet-part-body-form w-570" action="#">
                 <div class="greet-part-body-form-top">
-                    <input class="greet-part-body-form-top-name mar-bottom-2 pad-gor-20 p-16 min-w-270 h-50" type="text" name="name"
+                    <input class="mar-bottom-2 pad-gor-20 p-16 min-w-270 h-50" type="text" name="name"
                         placeholder="Имя">
-                    <input class="greet-part-body-form-top-email mar-bottom-2 pad-gor-10-20 p-16 min-w-270 h-50" type="text" name="email"
+                    <input class="mar-bottom-2 pad-gor-20 p-16 min-w-270 h-50" type="text" name="email"
                         placeholder="Email">
                 </div>
-                <button class="greet-part-body-form-button pad-ver-20 pad-gor-30 p-13-r" type="submit">Получить доступ</button>
+                <a class="btn p-13-r" type="submit">Получить доступ</a>
             </form>
         </section>
 
-    </header>
+    </div>
+
+    <main>
+
+        <section class="subscription-part pad-top-100" id="page-pricing">
+            <h2 class="mar-bottom-50">формы подписки</h2>
+            <div class="subscription-part-body max-w-1200">
+                <div class="subscription-part-body-free">
+                    <img class="subscription-part-body-free-img" src="assets/images/subscribe_1.png">
+                    <div class="pad-gor-2">
+                        <h3 class="mar-bottom-200">Бесплатная</h3>
+                        <p>
+                            <span class="price-value">0</span>
+                            <span class="price-unit">руб.</span>
+                        </p>
+                        <a class="btn p-16" href="#">Оформить</a>
+                        <p class="subscription-part-body-free-note">Оплата в месяц. Бесплатный тариф предоставляет
+                            доступ ко всей коллекции музыки. Присутствует реклама</p>
+                    </div>
+                </div>
+                <div class="subscription-part-body-standart">
+                    <img class="subscription-part-body-standart-img" src="assets/images/subscribe_2.png">
+                    <div class="pad-gor-2">
+                        <h3 class="mar-bottom-200">Стандартная</h3>
+                        <p>
+                            <span class="price-value">250</span>
+                            <span class="price-unit">руб.</span>
+                        </p>
+                        <a class="btn p-16" href="#">Оформить</a>
+                        <p class="subscription-part-body-standart-note">Оплата в месяц. Стандартный тариф предоставляет
+                            доступ ко всей коллекции музыки в среднем качестве</p>
+                    </div>
+                </div>
+                <div class="subscription-part-body-premium">
+                    <img class="subscription-part-body-premium-img" src="assets/images/subscribe_3.png">
+                    <div class="pad-gor-2">
+                        <h3 class="mar-bottom-200">Премиум</h3>
+                        <p>
+                            <span class="price-value">500</span>
+                            <span class="price-unit">руб.</span>
+                        </p>
+                        <a class="btn p-16" href="#">Оформить</a>
+                        <p class="subscription-part-body-premium-note">Оплата в месяц. Премиум тариф предоставляет
+                            доступ ко всей коллекции музыки в высоком качестве</p>
+                    </div>
+                </div>
+            </div>
+            <p class="subscription-part-body-note">На всех тарифах возможно прослушивание музыки с мобильных устройств.
+                На премиум тарифе вы можете скачать все композиции на ваше устройство и слушать музыку без подключения к
+                интернету</p>
+        </section>
+
+    </main>
+
 </body>
 
 </html>

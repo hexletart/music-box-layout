@@ -1,0 +1,17 @@
+@mixin greet-part-input-search {
+    box-sizing: border-box;
+    background-color: $dark;
+    color: $white;
+    border: none;
+    border-radius: 50px;
+}
+
+@mixin greet-part-input-main {
+    box-sizing: border-box;
+    font-weight: bold;
+    text-align: center;
+    color: $white;
+    background-color: transparent;
+    border: 2px solid $dark-gray;
+    border-radius: 3px;
+}

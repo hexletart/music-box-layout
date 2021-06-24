@@ -3,3 +3,9 @@
     background-position: center;
     background-size: cover;
 }
+
+@mixin img-subscription-part-free {
+    background-image: url('../assets/images/subscribe_1.png');
+    background-position: center;
+    background-size: 100%;
+}

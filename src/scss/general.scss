@@ -3,13 +3,21 @@
     src: url('../assets/fonts/Roboto-Regular.ttf');
 }
 
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('../assets/fonts/Roboto-Bold.ttf');
+}
+
 @include html("Roboto", sans-serif, 18, 1.5, $black, $dark-gray, px);
 
-body {
+body,
+main {
     @include flex-column-flex-start-center;
+    width: 100%;
 }
 
 body,
+main,
 h1,
 h2,
 h3,
@@ -17,10 +25,10 @@ h4 {
     margin: 0;
 }
 
-@include heading-set(h1, px, 60, 90, bold, uppercase);
-@include heading-set(h2, px, 38, 57, bold, uppercase);
-@include heading-set(h3, px, 24, 45);
-@include heading-set(h4, px, 18, 27, bold);
+@include heading-set(h1, px, 60, 90, Roboto-Bold, uppercase);
+@include heading-set(h2, px, 38, 57, Roboto-Bold, uppercase);
+@include heading-set(h3, px, 24, 45, Roboto);
+@include heading-set(h4, px, 18, 27, Roboto-Bold);
 
 @include font-weight-fixed(100, 100, 900);
 @include paragraphs-random(11, px);
@@ -40,13 +48,22 @@ h4 {
 @include mar-side(right, 88, px);
 @include mar-side(right, 16, px);
 @include mar-side(top, 32, px);
+@include mar-side(bottom, 50, px);
+@include mar-side(bottom, 200, px);
 @include mar-side(bottom, 1.5, rem);
 
-@include pad-side(left, 10, px);
+@include pad-gor(10, 10, px);
 @include pad-gor(20, 20, px);
 @include pad-gor(30, 30, px);
 @include pad-ver(200, 200, px);
 @include pad-ver(20, 20, px);
+@include pad-gor(1.5, 1.5, rem);
+@include pad-side(top, 100, px);
+
+@include price-value;
+@include price-unit;
+
+@include btn;
 
 .greet-part {
     position: relative;
@@ -76,59 +93,65 @@ h4 {
             &-logo {
                 @include flex-row-flex-start-center;
 
-                &-name {
+                img {
+                    vertical-align: middle;
+                }
+
+                p {
                     display: block;
-                    font-weight: bold;
                     text-transform: uppercase;
                     color: $white;
+                    line-height: inherit
                 }
             }
 
             &-menu {
-                @include flex-row-flex-start;
+                @include flex-row-flex-start-center;
 
                 * {
-                    display: block;
-                    text-transform: uppercase;
-                    color: $dark-gray;
-                    text-decoration: none;
-                    font-weight: bold;
+                    @include flex-row-flex-start-center;
 
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        color: $white;
+                    * {
+                        text-transform: uppercase;
+                        color: $dark-gray;
+                        text-decoration: none;
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            color: $white;
+                        }
                     }
                 }
             }
         }
 
-        &-rihgt-search {
+        &-right {
             @include flex-row-flex-start-center;
-            box-sizing: border-box;
-            background-color: $dark;
-            color: $white;
-            border: none;
-            border-radius: 50px;
 
+            input {
+                @include greet-part-input-search;
 
-            &::placeholder {
-                text-transform: uppercase;
-                font-size: 13.3px;
-                color: $gray-placeholder;
+                &::placeholder {
+                    text-transform: uppercase;
+                    font-size: 13.3px;
+                    color: $gray-placeholder;
+                }
             }
         }
     }
+
 
     &-body {
         position: relative;
         @include flex-column-flex-start-center;
         z-index: 100;
+        color: $white;
 
-        &-prim-head,
-        &-sec-head,
-        &-descr {
-            color: $white;
+        h1,
+        h2,
+        p {
+
             width: 100%;
             text-align: center;
         }
@@ -140,15 +163,8 @@ h4 {
                 @include flex-row-space-between-center;
                 width: inherit;
 
-                &-name,
-                &-email {
-                    box-sizing: border-box;
-                    font-weight: bold;
-                    text-align: center;
-                    color: $white;
-                    background-color: transparent;
-                    border: 2px solid $dark-gray;
-                    border-radius: 3px;
+                input {
+                    @include greet-part-input-main;
 
                     &::placeholder {
                         color: $white;
@@ -158,9 +174,62 @@ h4 {
                 }
             }
 
-            &-button {
-                @include greet-part-btn;
-                text-transform: uppercase;
+            a {
+                background-color: $green;
+                color: white;
+                @include btn-decoration-greet-part;
+            }
+        }
+    }
+}
+
+.subscription-part {
+    position: relative;
+    @include flex-column-flex-start-center;
+    width: inherit;
+    background-color: $black;
+
+    * {
+        color: $white;
+    }
+
+    &-body {
+        @include flex-row-space-between-flex-start;
+        width: inherit;
+
+        &-free,
+        &-standart,
+        &-premium {
+            display: block;
+            position: relative;
+            border-radius: 1rem;
+
+            img {
+                vertical-align: middle;
+            }
+
+            div {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                @include flex-column-center-center;
+                box-sizing: border-box;
+
+                h3 {
+                    margin-top: rem-to-px(1.5);
+                    text-transform: uppercase;
+                    line-height: 1.5;
+                }
+
+                p {
+                    margin: 0;
+                }
+
+                a {
+                    border: 1px solid $white;
+                    margin-top: 40px;
+                    @include btn-decoration-subscription-part;
+                }
             }
         }
     }

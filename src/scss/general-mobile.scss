@@ -1,12 +1,12 @@
 @media screen and (max-width: 1240px) {
-    @include heading-set(h1, px, 30, 45, bold, uppercase);
-    @include heading-set(h2, px, 18, 27, bold, uppercase);
-    @include heading-set(h3, px, 16, 24, bold);
-    @include heading-set(h4, px, 18, 24, bold);
+    @include heading-set(h1, px, 30, 45, Roboto-Bold, uppercase);
+    @include heading-set(h2, px, 18, 27, Roboto-Bold, uppercase);
+    @include heading-set(h3, px, 16, 24, Roboto-Bold);
+    @include heading-set(h4, px, 18, 24, Roboto-Bold);
 
     .greet-part {
-        width: 100vw;
-        
+        width: 100%;
+
         &-top {
             @include flex-column-flex-start-flex-start;
             padding-left: 20px;
@@ -16,7 +16,7 @@
             &-left {
                 @include flex-column-flex-start-flex-start;
 
-                &-logo-name {
+                p {
                     margin-right: 0;
                 }
 
@@ -26,7 +26,7 @@
                 }
             }
 
-            &-rihgt {
+            &-right {
                 width: 100%;
 
                 * {
@@ -39,9 +39,8 @@
             padding-top: 250px;
             padding-left: 20px;
             padding-right: 20px;
-            max-width: 700px;
-            
-            &-descr {
+
+            p {
                 margin-top: 16px;
             }
 
@@ -51,15 +50,11 @@
                 &-top {
                     @include flex-column-flex-start-center;
 
-                    &-name, &-email {
+                    input {
                         width: 100%;
                         min-width: 110px;
                         max-width: 600px;
                     }
-                }
-
-                &-button {
-                    width: inherit;
                 }
             }
         }

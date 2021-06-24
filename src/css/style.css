@@ -2,6 +2,10 @@
   font-family: "Roboto";
   src: url("../assets/fonts/Roboto-Regular.ttf");
 }
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../assets/fonts/Roboto-Bold.ttf");
+}
 html {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
@@ -10,14 +14,17 @@ html {
   background-color: #CACACA;
 }
 
-body {
+body,
+main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: 100%;
 }
 
 body,
+main,
 h1,
 h2,
 h3,
@@ -28,26 +35,31 @@ h4 {
 h1 {
   font-size: 60px;
   line-height: 90px;
-  font-weight: bold;
+  font-family: "Roboto-Bold", sans-serif;
   text-transform: uppercase;
+  font-weight: inherit;
 }
 
 h2 {
   font-size: 38px;
   line-height: 57px;
-  font-weight: bold;
+  font-family: "Roboto-Bold", sans-serif;
   text-transform: uppercase;
+  font-weight: inherit;
 }
 
 h3 {
   font-size: 24px;
   line-height: 45px;
+  font-family: "Roboto", sans-serif;
+  font-weight: inherit;
 }
 
 h4 {
   font-size: 18px;
   line-height: 27px;
-  font-weight: bold;
+  font-family: "Roboto-Bold", sans-serif;
+  font-weight: inherit;
 }
 
 .p-11-r {
@@ -142,11 +154,20 @@ h4 {
   margin-top: 32px;
 }
 
+.mar-bottom-50 {
+  margin-bottom: 50px;
+}
+
+.mar-bottom-200 {
+  margin-bottom: 200px;
+}
+
 .mar-bottom-2 {
   margin-bottom: 1.5rem;
 }
 
-.pad-left-10 {
+.pad-gor-10 {
+  padding-right: 10px;
   padding-left: 10px;
 }
 
@@ -168,6 +189,39 @@ h4 {
 .pad-ver-20 {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.pad-gor-2 {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.pad-top-100 {
+  padding-top: 100px;
+}
+
+.price-value {
+  font-size: 64px;
+  line-height: 1em;
+}
+
+.price-unit {
+  padding-left: 16px;
+  font-size: 32px;
+  vertical-align: top;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: block;
+  box-sizing: border-box;
+  height: auto;
+  width: inherit;
+  padding: 20px 30px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5px;
 }
 
 .greet-part {
@@ -216,39 +270,49 @@ h4 {
   justify-content: flex-start;
   align-items: center;
 }
-.greet-part-top-left-logo-name {
+.greet-part-top-left-logo img {
+  vertical-align: middle;
+}
+.greet-part-top-left-logo p {
   display: block;
-  font-weight: bold;
   text-transform: uppercase;
   color: #FFFFFF;
+  line-height: inherit;
 }
 .greet-part-top-left-menu {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
 }
 .greet-part-top-left-menu * {
-  display: block;
-  text-transform: uppercase;
-  color: #CACACA;
-  text-decoration: none;
-  font-weight: bold;
-}
-.greet-part-top-left-menu *:hover, .greet-part-top-left-menu *:focus, .greet-part-top-left-menu *:active {
-  color: #FFFFFF;
-}
-.greet-part-top-rihgt-search {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+}
+.greet-part-top-left-menu * * {
+  text-transform: uppercase;
+  color: #CACACA;
+  text-decoration: none;
+}
+.greet-part-top-left-menu * *:hover, .greet-part-top-left-menu * *:focus, .greet-part-top-left-menu * *:active {
+  color: #FFFFFF;
+}
+.greet-part-top-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.greet-part-top-right input {
   box-sizing: border-box;
   background-color: #3C3B3D;
   color: #FFFFFF;
   border: none;
   border-radius: 50px;
 }
-.greet-part-top-rihgt-search::placeholder {
+.greet-part-top-right input::placeholder {
   text-transform: uppercase;
   font-size: 13.3px;
   color: #757575;
@@ -260,9 +324,11 @@ h4 {
   justify-content: flex-start;
   align-items: center;
   z-index: 100;
-}
-.greet-part-body-prim-head, .greet-part-body-sec-head, .greet-part-body-descr {
   color: #FFFFFF;
+}
+.greet-part-body h1,
+.greet-part-body h2,
+.greet-part-body p {
   width: 100%;
   text-align: center;
 }
@@ -279,7 +345,7 @@ h4 {
   align-items: center;
   width: inherit;
 }
-.greet-part-body-form-top-name, .greet-part-body-form-top-email {
+.greet-part-body-form-top input {
   box-sizing: border-box;
   font-weight: bold;
   text-align: center;
@@ -288,57 +354,113 @@ h4 {
   border: 2px solid #CACACA;
   border-radius: 3px;
 }
-.greet-part-body-form-top-name::placeholder, .greet-part-body-form-top-email::placeholder {
+.greet-part-body-form-top input::placeholder {
   color: #FFFFFF;
   font-size: 14px;
   font-weight: bold;
 }
-.greet-part-body-form-button {
-  width: 570px;
-  height: auto;
-  border-radius: 5px;
+.greet-part-body-form a {
   background-color: #34C176;
   color: white;
-  border: none;
-  text-transform: uppercase;
 }
-.greet-part-body-form-button:hover {
+.greet-part-body-form a:hover {
   transition: box-shadow 0.15s;
   box-shadow: inset 0 0 4px 4px #237e4d;
 }
-.greet-part-body-form-button:active {
+.greet-part-body-form a:active {
   background-color: #237e4d;
+}
+
+.subscription-part {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: inherit;
+  background-color: #08020D;
+}
+.subscription-part * {
+  color: #FFFFFF;
+}
+.subscription-part-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: inherit;
+}
+.subscription-part-body-free, .subscription-part-body-standart, .subscription-part-body-premium {
+  display: block;
+  position: relative;
+  border-radius: 1rem;
+}
+.subscription-part-body-free img, .subscription-part-body-standart img, .subscription-part-body-premium img {
+  vertical-align: middle;
+}
+.subscription-part-body-free div, .subscription-part-body-standart div, .subscription-part-body-premium div {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.subscription-part-body-free div h3, .subscription-part-body-standart div h3, .subscription-part-body-premium div h3 {
+  margin-top: 24px;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+.subscription-part-body-free div p, .subscription-part-body-standart div p, .subscription-part-body-premium div p {
+  margin: 0;
+}
+.subscription-part-body-free div a, .subscription-part-body-standart div a, .subscription-part-body-premium div a {
+  border: 1px solid #FFFFFF;
+  margin-top: 40px;
+}
+.subscription-part-body-free div a:hover, .subscription-part-body-standart div a:hover, .subscription-part-body-premium div a:hover {
+  transition: box-shadow 0.15s;
+  box-shadow: inset 0 0 4px 4px #FFFFFF;
+}
+.subscription-part-body-free div a:active, .subscription-part-body-standart div a:active, .subscription-part-body-premium div a:active {
+  font-family: "Roboto-Bold", sans-serif;
 }
 
 @media screen and (max-width: 1240px) {
   h1 {
     font-size: 30px;
     line-height: 45px;
-    font-weight: bold;
+    font-family: "Roboto-Bold", sans-serif;
     text-transform: uppercase;
+    font-weight: inherit;
   }
 
   h2 {
     font-size: 18px;
     line-height: 27px;
-    font-weight: bold;
+    font-family: "Roboto-Bold", sans-serif;
     text-transform: uppercase;
+    font-weight: inherit;
   }
 
   h3 {
     font-size: 16px;
     line-height: 24px;
-    font-weight: bold;
+    font-family: "Roboto-Bold", sans-serif;
+    font-weight: inherit;
   }
 
   h4 {
     font-size: 18px;
     line-height: 24px;
-    font-weight: bold;
+    font-family: "Roboto-Bold", sans-serif;
+    font-weight: inherit;
   }
 
   .greet-part {
-    width: 100vw;
+    width: 100%;
   }
   .greet-part-top {
     display: flex;
@@ -355,7 +477,7 @@ h4 {
     justify-content: flex-start;
     align-items: flex-start;
   }
-  .greet-part-top-left-logo-name {
+  .greet-part-top-left p {
     margin-right: 0;
   }
   .greet-part-top-left-menu {
@@ -366,19 +488,18 @@ h4 {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-  .greet-part-top-rihgt {
+  .greet-part-top-right {
     width: 100%;
   }
-  .greet-part-top-rihgt * {
+  .greet-part-top-right * {
     width: 100%;
   }
   .greet-part-body {
     padding-top: 250px;
     padding-left: 20px;
     padding-right: 20px;
-    max-width: 700px;
   }
-  .greet-part-body-descr {
+  .greet-part-body p {
     margin-top: 16px;
   }
   .greet-part-body-form {
@@ -390,13 +511,10 @@ h4 {
     justify-content: flex-start;
     align-items: center;
   }
-  .greet-part-body-form-top-name, .greet-part-body-form-top-email {
+  .greet-part-body-form-top input {
     width: 100%;
     min-width: 110px;
     max-width: 600px;
-  }
-  .greet-part-body-form-button {
-    width: inherit;
   }
 }
 

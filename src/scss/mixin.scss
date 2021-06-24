@@ -11,27 +11,14 @@
 }
 
 //fonts
-@mixin heading-set($heading-type, $unit, $font-size, $line-height, $font-weight: null, $text-transfom: null) {
-    @if $text-transfom == "null" and $font-weight == "null" {
+@mixin heading-set($heading-type, $unit, $font-size, $line-height, $font-family, $text-transfom: null) {
+    
+    @if $text-transfom == "null" {
         #{$heading-type} {
             font-size: #{$font-size}#{$unit};
             line-height: #{$line-height}#{$unit};
-        }
-    }
-
-    @if $text-transfom != "null" and $font-weight == "null" {
-        #{$heading-type} {
-            font-size: #{$font-size}#{$unit};
-            line-height: #{$line-height}#{$unit};
-            text-transform: #{$text-transfom};
-        }
-    }
-
-    @if $text-transfom == "null" and $font-weight != "null" {
-        #{$heading-type} {
-            font-size: #{$font-size}#{$unit};
-            line-height: #{$line-height}#{$unit};
-            font-weight: #{$font-weight};
+            font-family: "#{$font-family}", sans-serif;
+            font-weight: inherit;
         }
     }
 
@@ -39,8 +26,9 @@
         #{$heading-type} {
             font-size: #{$font-size}#{$unit};
             line-height: #{$line-height}#{$unit};
-            font-weight: #{$font-weight};
+            font-family: "#{$font-family}", sans-serif;
             text-transform: #{$text-transfom};
+            font-weight: inherit;
         }
     }
 }
