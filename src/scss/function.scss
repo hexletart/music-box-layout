@@ -5,3 +5,11 @@
     }
     @return #{$result};
 }
+
+@function px-convert-rem ($values) {
+    $result: ();
+    @each $value in $values {
+        $result: append($result, (($value / $actual-rem) * 1rem));
+    }
+    @return #{$result};
+}

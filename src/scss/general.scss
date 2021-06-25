@@ -44,6 +44,7 @@ h4 {
 
 @include mar-gor(20, 20, px);
 @include mar-ver(0, 0, px);
+@include mar-ver(64, 64, px);
 @include mar-side(right, 24, px);
 @include mar-side(right, 88, px);
 @include mar-side(right, 16, px);
@@ -206,6 +207,7 @@ h4 {
 
             img {
                 vertical-align: middle;
+                height: 615px;
             }
 
             div {
@@ -221,16 +223,25 @@ h4 {
                     line-height: 1.5;
                 }
 
-                p {
-                    margin: 0;
-                }
-
                 a {
                     border: 1px solid $white;
                     margin-top: 40px;
                     @include btn-decoration-subscription-part;
                 }
             }
+
+            &-price {
+                margin: 0;
+            }
+
+            &-note {
+                text-align: center;
+            }
         }
+    }
+
+    p {
+        text-align: center;
+        margin: px-convert-rem(40px 0px 0px);
     }
 }

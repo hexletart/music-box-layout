@@ -138,6 +138,11 @@ h4 {
   margin-bottom: 0px;
 }
 
+.mar-ver-64 {
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+
 .mar-right-24 {
   margin-right: 24px;
 }
@@ -369,6 +374,8 @@ h4 {
 }
 .greet-part-body-form a:active {
   background-color: #237e4d;
+  font-family: "Roboto-Bold", sans-serif;
+  box-shadow: inset 0 0 4px 4px #34C176;
 }
 
 .subscription-part {
@@ -397,6 +404,7 @@ h4 {
 }
 .subscription-part-body-free img, .subscription-part-body-standart img, .subscription-part-body-premium img {
   vertical-align: middle;
+  height: 615px;
 }
 .subscription-part-body-free div, .subscription-part-body-standart div, .subscription-part-body-premium div {
   position: absolute;
@@ -413,9 +421,6 @@ h4 {
   text-transform: uppercase;
   line-height: 1.5;
 }
-.subscription-part-body-free div p, .subscription-part-body-standart div p, .subscription-part-body-premium div p {
-  margin: 0;
-}
 .subscription-part-body-free div a, .subscription-part-body-standart div a, .subscription-part-body-premium div a {
   border: 1px solid #FFFFFF;
   margin-top: 40px;
@@ -426,6 +431,20 @@ h4 {
 }
 .subscription-part-body-free div a:active, .subscription-part-body-standart div a:active, .subscription-part-body-premium div a:active {
   font-family: "Roboto-Bold", sans-serif;
+}
+.subscription-part-body-free div a:hover + p, .subscription-part-body-standart div a:hover + p, .subscription-part-body-premium div a:hover + p {
+  transition: color 0.15s;
+  color: red;
+}
+.subscription-part-body-free-price, .subscription-part-body-standart-price, .subscription-part-body-premium-price {
+  margin: 0;
+}
+.subscription-part-body-free-note, .subscription-part-body-standart-note, .subscription-part-body-premium-note {
+  text-align: center;
+}
+.subscription-part p {
+  text-align: center;
+  margin: 2.2222222222rem 0rem 0rem;
 }
 
 @media screen and (max-width: 1240px) {
