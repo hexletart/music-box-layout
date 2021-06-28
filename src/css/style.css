@@ -7,8 +7,8 @@
   src: url("../assets/fonts/Roboto-Bold.ttf");
 }
 html {
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
+  font-family: Roboto, sans-serif;
+  font-size: 1rem;
   line-height: 1.5;
   color: #08020D;
   background-color: #CACACA;
@@ -33,73 +33,76 @@ h4 {
 }
 
 h1 {
-  font-size: 60px;
-  line-height: 90px;
+  font-size: 3.3333333333rem;
+  line-height: 5rem;
   font-family: "Roboto-Bold", sans-serif;
   text-transform: uppercase;
   font-weight: inherit;
 }
 
 h2 {
-  font-size: 38px;
-  line-height: 57px;
+  font-size: 2.1111111111rem;
+  line-height: 3.1666666667rem;
   font-family: "Roboto-Bold", sans-serif;
   text-transform: uppercase;
   font-weight: inherit;
 }
 
 h3 {
-  font-size: 24px;
-  line-height: 45px;
+  font-size: 1.3333333333rem;
+  line-height: 2.5rem;
   font-family: "Roboto", sans-serif;
   font-weight: inherit;
 }
 
 h4 {
-  font-size: 18px;
-  line-height: 27px;
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-family: "Roboto-Bold", sans-serif;
   font-weight: inherit;
 }
 
-.p-11-r {
-  font-size: 11px;
-}
-
-.p-13-r {
-  font-size: 13.3px;
-}
-
 .p-13 {
-  font-size: 12.8px;
-}
-
-.p-16 {
-  font-size: 16px;
+  font-size: 0.7111111111rem;
+  line-height: 1.5;
 }
 
 .p-24 {
-  font-size: 24px;
+  font-size: 1.3333333333rem;
+  line-height: 1.5;
 }
 
-.p-32 {
-  font-size: 32px;
+.p-23 {
+  font-size: 1.2777777778rem;
+  line-height: 1.5;
 }
 
 .p-40 {
-  font-size: 40px;
+  font-size: 2.2222222222rem;
+  line-height: 1.5;
 }
 
 .p-48 {
-  font-size: 48px;
+  font-size: 2.6666666667rem;
+  line-height: 1.5;
 }
 
 .p-56 {
-  font-size: 56px;
+  font-size: 3.1111111111rem;
+  line-height: 1.5;
 }
 
 .p-64 {
-  font-size: 64px;
+  font-size: 3.5555555556rem;
+  line-height: 1.5;
+}
+
+.p-11-r {
+  font-size: 0.6111111111rem;
+}
+
+.p-13-r {
+  font-size: 0.7388888889rem;
 }
 
 .h-50 {
@@ -128,43 +131,38 @@ h4 {
   height: 25px;
 }
 
-.mar-gor-20 {
-  margin-right: 20px;
-  margin-left: 20px;
-}
-
 .mar-ver-0 {
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .mar-ver-64 {
-  margin-top: 64px;
-  margin-bottom: 64px;
+  margin-top: 3.5555555556rem;
+  margin-bottom: 3.5555555556rem;
 }
 
 .mar-right-24 {
-  margin-right: 24px;
+  margin-right: 1.3333333333rem;
 }
 
 .mar-right-88 {
-  margin-right: 88px;
+  margin-right: 4.8888888889rem;
 }
 
 .mar-right-16 {
-  margin-right: 16px;
+  margin-right: 0.8888888889rem;
 }
 
 .mar-top-32 {
-  margin-top: 32px;
+  margin-top: 1.7777777778rem;
 }
 
 .mar-bottom-50 {
-  margin-bottom: 50px;
+  margin-bottom: 2.7777777778rem;
 }
 
 .mar-bottom-200 {
-  margin-bottom: 200px;
+  margin-bottom: 11.1111111111rem;
 }
 
 .mar-bottom-2 {
@@ -172,28 +170,13 @@ h4 {
 }
 
 .pad-gor-10 {
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 0.5555555556rem;
+  padding-left: 0.5555555556rem;
 }
 
 .pad-gor-20 {
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
-.pad-gor-30 {
-  padding-right: 30px;
-  padding-left: 30px;
-}
-
-.pad-ver-200 {
-  padding-top: 200px;
-  padding-bottom: 200px;
-}
-
-.pad-ver-20 {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-right: 1.1111111111rem;
+  padding-left: 1.1111111111rem;
 }
 
 .pad-gor-2 {
@@ -201,18 +184,23 @@ h4 {
   padding-left: 1.5rem;
 }
 
+.pad-ver-200 {
+  padding-top: 11.1111111111rem;
+  padding-bottom: 11.1111111111rem;
+}
+
 .pad-top-100 {
-  padding-top: 100px;
+  padding-top: 5.5555555556rem;
 }
 
 .price-value {
-  font-size: 64px;
+  font-size: 3.5555555556rem;
   line-height: 1em;
 }
 
 .price-unit {
-  padding-left: 16px;
-  font-size: 32px;
+  padding-left: 0.8888888889rem;
+  font-size: 1.7777777778rem;
   vertical-align: top;
   text-transform: uppercase;
 }
@@ -222,11 +210,11 @@ h4 {
   box-sizing: border-box;
   height: auto;
   width: inherit;
-  padding: 20px 30px;
+  padding: 1.1111111111rem 1.6666666667rem;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
-  border-radius: 5px;
+  border-radius: 0.2777777778rem;
 }
 
 .greet-part {
@@ -290,19 +278,28 @@ h4 {
   justify-content: flex-start;
   align-items: center;
 }
-.greet-part-top-left-menu * {
+.greet-part-top-left-menu div {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
-.greet-part-top-left-menu * * {
+.greet-part-top-left-menu div a {
   text-transform: uppercase;
   color: #CACACA;
   text-decoration: none;
 }
-.greet-part-top-left-menu * *:hover, .greet-part-top-left-menu * *:focus, .greet-part-top-left-menu * *:active {
+.greet-part-top-left-menu div a:focus, .greet-part-top-left-menu div a:active {
   color: #FFFFFF;
+}
+.greet-part-top-left-menu div .hover {
+  color: #FFFFFF;
+}
+.greet-part-top-left-menu:hover div a:hover {
+  color: #FFFFFF;
+}
+.greet-part-top-left-menu:hover div a:not(:hover) {
+  color: #CACACA;
 }
 .greet-part-top-right {
   display: flex;
@@ -315,7 +312,7 @@ h4 {
   background-color: #3C3B3D;
   color: #FFFFFF;
   border: none;
-  border-radius: 50px;
+  border-radius: 2.7777777778rem;
 }
 .greet-part-top-right input::placeholder {
   text-transform: uppercase;
@@ -356,8 +353,8 @@ h4 {
   text-align: center;
   color: #FFFFFF;
   background-color: transparent;
-  border: 2px solid #CACACA;
-  border-radius: 3px;
+  border: 0.1111111111rem solid #CACACA;
+  border-radius: 0.1666666667rem;
 }
 .greet-part-body-form-top input::placeholder {
   color: #FFFFFF;
@@ -370,16 +367,15 @@ h4 {
 }
 .greet-part-body-form a:hover {
   transition: box-shadow 0.15s;
-  box-shadow: inset 0 0 4px 4px #237e4d;
+  box-shadow: inset 0 0 0.2222222222rem 0.2222222222rem #237e4d;
 }
 .greet-part-body-form a:active {
   background-color: #237e4d;
   font-family: "Roboto-Bold", sans-serif;
-  box-shadow: inset 0 0 4px 4px #34C176;
+  box-shadow: inset 0 0 0.2222222222rem 0.2222222222rem #34C176;
 }
 
 .subscription-part {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -417,7 +413,7 @@ h4 {
   box-sizing: border-box;
 }
 .subscription-part-body-free div h3, .subscription-part-body-standart div h3, .subscription-part-body-premium div h3 {
-  margin-top: 24px;
+  margin-top: 1.3333333333rem;
   text-transform: uppercase;
   line-height: 1.5;
 }
@@ -427,7 +423,7 @@ h4 {
 }
 .subscription-part-body-free div a:hover, .subscription-part-body-standart div a:hover, .subscription-part-body-premium div a:hover {
   transition: box-shadow 0.15s;
-  box-shadow: inset 0 0 4px 4px #FFFFFF;
+  box-shadow: inset 0 0 0.2222222222rem 0.2222222222rem #FFFFFF;
 }
 .subscription-part-body-free div a:active, .subscription-part-body-standart div a:active, .subscription-part-body-premium div a:active {
   font-family: "Roboto-Bold", sans-serif;
@@ -442,38 +438,38 @@ h4 {
 .subscription-part-body-free-note, .subscription-part-body-standart-note, .subscription-part-body-premium-note {
   text-align: center;
 }
-.subscription-part p {
+.subscription-part > p {
   text-align: center;
   margin: 2.2222222222rem 0rem 0rem;
 }
 
 @media screen and (max-width: 1240px) {
   h1 {
-    font-size: 30px;
-    line-height: 45px;
+    font-size: 1.6666666667rem;
+    line-height: 2.5rem;
     font-family: "Roboto-Bold", sans-serif;
     text-transform: uppercase;
     font-weight: inherit;
   }
 
   h2 {
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-family: "Roboto-Bold", sans-serif;
     text-transform: uppercase;
     font-weight: inherit;
   }
 
   h3 {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 0.8888888889rem;
+    line-height: 1.3333333333rem;
     font-family: "Roboto-Bold", sans-serif;
     font-weight: inherit;
   }
 
   h4 {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.3333333333rem;
     font-family: "Roboto-Bold", sans-serif;
     font-weight: inherit;
   }
@@ -504,8 +500,8 @@ h4 {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
   .greet-part-top-right {
     width: 100%;
@@ -534,6 +530,21 @@ h4 {
     width: 100%;
     min-width: 110px;
     max-width: 600px;
+  }
+
+  .subscription-part {
+    padding-left: px-convert-rem(20px);
+    padding-right: px-convert-rem(20px);
+    box-sizing: border-box;
+  }
+  .subscription-part-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .subscription-part-body-free:nth-child(-n+2), .subscription-part-body-standart:nth-child(-n+2), .subscription-part-body-premium:nth-child(-n+2) {
+    margin-bottom: px-convert-rem(50px);
   }
 }
 

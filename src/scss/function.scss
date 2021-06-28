@@ -1,15 +1,17 @@
-@function rem-to-px($values) {
+@function px-rem($values) {
     $result: ();
+
     @each $value in $values {
-        $result: append($result, ($value * $rem-base)); 
+        @if $value == 0 {
+            $result: append($result, 0);
+        } @else {
+            $result: append($result, (($value / $rem) * 1rem));
+        }
     }
+
     @return #{$result};
 }
 
-@function px-convert-rem ($values) {
-    $result: ();
-    @each $value in $values {
-        $result: append($result, (($value / $actual-rem) * 1rem));
-    }
-    @return #{$result};
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
 }

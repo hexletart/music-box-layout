@@ -1,11 +1,11 @@
 @mixin img-main-greet-part {
-    background-image: url('../assets/images/banner.png');
+    background-image: url("../assets/images/banner.png");
     background-position: center;
     background-size: cover;
 }
 
 @mixin img-subscription-part-free {
-    background-image: url('../assets/images/subscribe_1.png');
+    background-image: url("../assets/images/subscribe_1.png");
     background-position: center;
     background-size: 100%;
 }

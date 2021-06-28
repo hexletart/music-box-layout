@@ -3,7 +3,7 @@
     background-color: $dark;
     color: $white;
     border: none;
-    border-radius: 50px;
+    border-radius: px-rem(50px);
 }
 
 @mixin greet-part-input-main {
@@ -12,6 +12,6 @@
     text-align: center;
     color: $white;
     background-color: transparent;
-    border: 2px solid $dark-gray;
-    border-radius: 3px;
+    border: px-rem(2px) solid $dark-gray;
+    border-radius: px-rem(3px);
 }
