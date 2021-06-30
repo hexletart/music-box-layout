@@ -1,17 +1,19 @@
 @media screen and (max-width: 1240px) {
     @include heading-set(h1, 30px, 45px, Roboto-Bold, uppercase);
-    @include heading-set(h2, 18px, 27px, Roboto-Bold, uppercase);
-    @include heading-set(h3, 16px, 24px, Roboto-Bold);
-    @include heading-set(h4, 18px, 24px, Roboto-Bold);
+    @include heading-set(h2, 18px, 27px, Roboto, uppercase);
+    @include heading-set(h3, 16px, 24px, Roboto);
+    @include heading-set(h4, 18px, 24px, Roboto);
 
     .greet-part {
-        width: 100%;
+        &-top,
+        &-body {
+            max-width: px-rem(750px);
+        }
 
         &-top {
             @include flex-column-flex-start-flex-start;
-            padding-left: 20px;
-            padding-right: 20px;
-            max-width: 700px;
+            padding-left: px-rem(20px);
+            padding-right: px-rem(20px);
 
             &-left {
                 @include flex-column-flex-start-flex-start;
@@ -22,8 +24,8 @@
 
                 &-menu {
                     @include flex-column-flex-start-flex-start;
-                    margin-top: 1.5rem;
-                    margin-bottom: 1.5rem;
+                    margin-top: px-rem(16px);
+                    margin-bottom: px-rem(16px);
                 }
             }
 
@@ -37,12 +39,12 @@
         }
 
         &-body {
-            padding-top: 250px;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-top: px-rem(250px);
+            padding-left: px-rem(20px);
+            padding-right: px-rem(20px);
 
             p {
-                margin-top: 16px;
+                margin-top: px-rem(16px);
             }
 
             &-form {
@@ -53,8 +55,8 @@
 
                     input {
                         width: 100%;
-                        min-width: 110px;
-                        max-width: 600px;
+                        min-width: px-rem(110px);
+                        max-width: px-rem(600px);
                     }
                 }
             }
@@ -62,20 +64,44 @@
     }
 
     .subscription-part {
-        padding-left: px-convert-rem(20px);
-        padding-right: px-convert-rem(20px);
-        box-sizing: border-box;
+        &-body,
+        > p {
+            width: inherit;
+            padding-left: px-rem(20px);
+            padding-right: px-rem(20px);
+            box-sizing: border-box;
+        }
 
         &-body {
             @include flex-column-flex-start-center;
+            width: inherit;
 
             &-free,
             &-standart,
             &-premium {
-                &:nth-child(-n+2) {
-                    margin-bottom: px-convert-rem(50px);
+                box-sizing: border-box;
+                height: 595px;
+                overflow-y: hidden;
+
+                img {
+                    box-sizing: border-box;
+                    object-fit: cover;
+                    object-position: 0 0;
+                }
+
+                &:nth-child(-n + 2) {
+                    margin-bottom: px-rem(50px);
+                }
+
+                div h3 {
+                    margin-top: px-rem(16px);
                 }
             }
+        }
+
+        > p {
+            text-align: center;
+            margin: px-rem(40px 0px 0px);
         }
     }
 }

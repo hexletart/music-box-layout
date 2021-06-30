@@ -1,8 +1,8 @@
 @mixin price-value {
-    .price-value {  
+    .price-value {
         font-size: px-rem(64px);
         line-height: 1em;
-        }
+    }
 }
 
 @mixin price-unit {

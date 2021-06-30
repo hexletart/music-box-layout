@@ -9,7 +9,7 @@
 @mixin greet-part-input-main {
     box-sizing: border-box;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     color: $white;
     background-color: transparent;
     border: px-rem(2px) solid $dark-gray;

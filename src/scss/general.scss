@@ -34,12 +34,12 @@ h4 {
 @include paragraphs-random(11px);
 @include paragraphs-random(13.3px);
 
-@include height(px, 50);
-@include width(px, 270, min);
-@include width(px, 1200, max);
-@include width(px, 570);
-@include width-height(px, 25, 25);
-@include width-height(px, 250, 25);
+@include height(50px);
+@include width(270px, min);
+@include width(1200px, max);
+@include width(570px);
+@include width-height(25px);
+@include width-height(250px, 25px);
 
 @include mar-ver(0);
 @include mar-ver(64px);
@@ -70,6 +70,12 @@ h4 {
     @include flex-column-flex-start-center;
     width: 100%;
 
+    &-top,
+    &-body {
+        width: inherit;
+        box-sizing: border-box;
+    }
+
     &::before {
         position: absolute;
         @include bg-positioning;
@@ -80,7 +86,7 @@ h4 {
 
     &-top {
         position: absolute;
-        padding-top: 25px;
+        padding-top: px-rem(25px);
         left: 0;
         right: 0;
         margin: 0 auto;
@@ -147,7 +153,7 @@ h4 {
 
                 &::placeholder {
                     text-transform: uppercase;
-                    font-size: 13.3px;
+                    font-size: px-rem(13.3px);
                     color: $gray-placeholder;
                 }
             }
@@ -163,7 +169,7 @@ h4 {
         h1,
         h2,
         p {
-            width: 100%;
+            width: inherit;
             text-align: center;
         }
 
@@ -179,7 +185,7 @@ h4 {
 
                     &::placeholder {
                         color: $white;
-                        font-size: 14px;
+                        font-size: px-rem(14px);
                         font-weight: bold;
                     }
                 }
@@ -216,7 +222,7 @@ h4 {
 
             img {
                 vertical-align: middle;
-                height: 615px;
+                height: px-rem(615px);
             }
 
             div {
@@ -234,7 +240,7 @@ h4 {
 
                 a {
                     border: 1px solid $white;
-                    margin-top: 40px;
+                    margin-top: px-rem(40px);
                     @include btn-decoration-subscription-part;
                 }
             }
