@@ -1,4 +1,4 @@
-//html
+// HTML
 @mixin html($font-type, $serif-type, $font-size, $line-height, $color, $color-bg) {
     html {
         font-family: #{$font-type}, #{$serif-type};
@@ -9,332 +9,145 @@
     }
 }
 
-//fonts
+// FONT
 @mixin heading-set($heading-type, $font-size, $line-height, $font-family, $text-transfom: null) {
-    @if unit($font-size) == "px" and unit($line-height) == "px" {
-        @if $text-transfom== "null" {
-            #{$heading-type} {
-                font-size: px-rem($font-size);
-                line-height: px-rem($line-height);
-                font-family: "#{$font-family}", sans-serif;
-                font-weight: inherit;
-            }
-        } @else {
-            #{$heading-type} {
-                font-size: px-rem($font-size);
-                line-height: px-rem($line-height);
-                font-family: "#{$font-family}", sans-serif;
-                text-transform: #{$text-transfom};
-                font-weight: inherit;
-            }
+    @if $text-transfom== "null" {
+        #{$heading-type} {
+            font-size: #{$font-size};
+            line-height: #{$line-height};
+            font-family: "#{$font-family}", sans-serif;
+            font-weight: inherit;
         }
-    }
-
-    @if unit($font-size) == "px" and unit($line-height) != "px" {
-        @if $text-transfom== "null" {
-            #{$heading-type} {
-                font-size: px-rem($font-size);
-                line-height: #{$line-height};
-                font-family: "#{$font-family}", sans-serif;
-                font-weight: inherit;
-            }
-        } @else {
-            #{$heading-type} {
-                font-size: px-rem($font-size);
-                line-height: #{$line-height};
-                font-family: "#{$font-family}", sans-serif;
-                text-transform: #{$text-transfom};
-                font-weight: inherit;
-            }
-        }
-    }
-
-    @if unit($font-size) != "px" and unit($line-height) == "px" {
-        @if $text-transfom== "null" {
-            #{$heading-type} {
-                font-size: #{$font-size};
-                line-height: px-rem($line-height);
-                font-family: "#{$font-family}", sans-serif;
-                font-weight: inherit;
-            }
-        } @else {
-            #{$heading-type} {
-                font-size: #{$font-size};
-                line-height: px-rem($line-height);
-                font-family: "#{$font-family}", sans-serif;
-                text-transform: #{$text-transfom};
-                font-weight: inherit;
-            }
-        }
-    }
-
-    @if unit($font-size) != "px" and unit($line-height) != "px" {
-        @if $text-transfom== "null" {
-            #{$heading-type} {
-                font-size: #{$font-size};
-                line-height: #{$line-height};
-                font-family: "#{$font-family}", sans-serif;
-                font-weight: inherit;
-            }
-        } @else {
-            #{$heading-type}ddd {
-                font-size: #{$font-size};
-                line-height: #{$line-height};
-                font-family: "#{$font-family}", sans-serif;
-                text-transform: #{$text-transfom};
-                font-weight: inherit;
-            }
+    } @else {
+        #{$heading-type} {
+            font-size: #{$font-size};
+            line-height: #{$line-height};
+            font-family: "#{$font-family}", sans-serif;
+            text-transform: #{$text-transfom};
+            font-weight: inherit;
         }
     }
 }
 
 @mixin paragraphs-fixed {
-    @each $font-size in $font-sizes {
-        .p-#{strip-unit(round($font-size))} {
-            font-size: px-rem($font-size);
+    @each $value in $font-size {
+        .p-#{rem-selector-name(#{$value})} {
+            font-size: #{$value};
             line-height: 1.5;
         }
     }
 }
 
-@mixin paragraphs-random($font-size) {
-    .p-#{strip-unit(round($font-size))}-r {
-        font-size: px-rem($font-size);
-    }
-}
-
-//paddings and margins
+// PADDING AND MARGIN
 @mixin pad-ver($padding-t, $padding-b: null) {
     @if $padding-b == null {
-        @if unit($padding-t) == "px" {
-            .pad-ver-#{round(strip-unit($padding-t))} {
-                padding-top: px-rem($padding-t);
-                padding-bottom: px-rem($padding-t);
-            }
-        } @else {
-            .pad-ver-#{round(strip-unit($padding-t))} {
-                padding-top: #{$padding-t};
-                padding-bottom: #{$padding-t};
-            }
+        .pad-ver-#{rem-selector-name(#{$padding-t})} {
+            padding-top: #{$padding-t};
+            padding-bottom: #{$padding-t};
         }
     } @else {
-        @if unit($padding-t) == "px" {
-            .pad-ver-#{round(strip-unit($padding-t))}-#{round(strip-unit($padding-b))} {
-                padding-top: px-rem($padding-t);
-                padding-bottom: px-rem($padding-b);
-            }
-        } @else {
-            .pad-ver-#{round(strip-unit($padding-t))}-#{round(strip-unit($padding-b))} {
-                padding-top: #{$padding-t};
-                padding-bottom: #{$padding-b};
-            }
+        .pad-ver-#{rem-selector-name(#{$padding-t})}-#{rem-selector-name(#{$padding-b})} {
+            padding-top: #{$padding-t};
+            padding-bottom: #{$padding-b};
         }
     }
 }
 
 @mixin pad-gor($padding-r, $padding-l: null) {
     @if $padding-l == null {
-        @if unit($padding-r) == "px" {
-            .pad-gor-#{round(strip-unit($padding-r))} {
-                padding-right: px-rem($padding-r);
-                padding-left: px-rem($padding-r);
-            }
-        } @else {
-            .pad-gor-#{round(strip-unit($padding-r))} {
-                padding-right: #{$padding-r};
-                padding-left: #{$padding-r};
-            }
+        .pad-gor-#{rem-selector-name(#{$padding-r})} {
+            padding-right: #{$padding-r};
+            padding-left: #{$padding-r};
         }
     } @else {
-        @if unit($padding-r) == "px" {
-            .pad-gor-#{round(strip-unit($padding-r))}-#{round(strip-unit($padding-l))} {
-                padding-right: px-rem($padding-r);
-                padding-left: px-rem($padding-l);
-            }
-        } @else {
-            .pad-gor-#{round(strip-unit($padding-r))}-#{round(strip-unit($padding-l))} {
-                padding-right: #{$padding-r};
-                padding-left: #{$padding-l};
-            }
+        .pad-gor-#{rem-selector-name(#{$padding-r})}-#{rem-selector-name(#{$padding-l})} {
+            padding-right: #{$padding-r};
+            padding-left: #{$padding-l};
         }
     }
 }
 
 @mixin mar-ver($margin-t, $margin-b: null) {
     @if $margin-b == null {
-        @if unit($margin-t) == "px" {
-            .mar-ver-#{round(strip-unit($margin-t))} {
-                margin-top: px-rem($margin-t);
-                margin-bottom: px-rem($margin-t);
-            }
-        } @else {
-            .mar-ver-#{round(strip-unit($margin-t))} {
-                margin-top: #{$margin-t};
-                margin-bottom: #{$margin-t};
-            }
+        .mar-ver-#{rem-selector-name(#{$margin-t})} {
+            margin-top: #{$margin-t};
+            margin-bottom: #{$margin-t};
         }
     } @else {
-        @if unit($margin-t) == "px" {
-            .mar-ver-#{round(strip-unit($margin-t))}-#{round(strip-unit($margin-b))} {
-                margin-top: px-rem($margin-t);
-                margin-bottom: px-rem($margin-b);
-            }
-        } @else {
-            .mar-ver-#{round(strip-unit($margin-t))}-#{round(strip-unit($margin-b))} {
-                margin-top: #{$margin-t};
-                margin-bottom: #{$margin-b};
-            }
+        .mar-ver-#{rem-selector-name(#{$margin-t})}-#{rem-selector-name(#{$margin-b})} {
+            margin-top: #{$margin-t};
+            margin-bottom: #{$margin-b};
         }
     }
 }
 
 @mixin mar-gor($margin-r, $margin-l: null) {
     @if $margin-l == null {
-        @if unit($margin-r) == "px" {
-            .mar-gor-#{round(strip-unit($margin-r))} {
-                margin-right: px-rem($margin-r);
-                margin-left: px-rem($margin-r);
-            }
-        } @else {
-            .mar-gor-#{round(strip-unit($margin-r))} {
-                margin-right: #{$margin-r};
-                margin-left: #{$margin-r};
-            }
+        .mar-gor-#{rem-selector-name(#{$margin-r})} {
+            margin-right: #{$margin-r};
+            margin-left: #{$margin-r};
         }
     } @else {
-        @if unit($margin-r) == "px" {
-            .mar-gor-#{round(strip-unit($margin-r))}-#{round(strip-unit($margin-l))} {
-                margin-right: px-rem($margin-r);
-                margin-left: px-rem($margin-l);
-            }
-        } @else {
-            .mar-gor-#{round(strip-unit($margin-r))}-#{round(strip-unit($margin-l))} {
-                margin-right: #{$margin-r};
-                margin-left: #{$margin-l};
-            }
+        .mar-gor-#{rem-selector-name(#{$margin-r})}-#{rem-selector-name(#{$margin-l})} {
+            margin-right: #{$margin-r};
+            margin-left: #{$margin-l};
         }
     }
 }
 
 @mixin mar-side($margin-s, $margin) {
-    @if unit($margin) == "px" {
-        .mar-#{$margin-s}-#{round(strip-unit($margin))} {
-            margin-#{$margin-s}: px-rem($margin);
-        }
-    } @else {
-        .mar-#{$margin-s}-#{round(strip-unit($margin))} {
-            margin-#{$margin-s}: #{$margin};
-        }
+    .mar-#{$margin-s}-#{rem-selector-name(#{$margin})} {
+        margin-#{$margin-s}: #{$margin};
     }
 }
 
 @mixin pad-side($padding-s, $padding) {
-    @if unit($padding) == "px" {
-        .pad-#{$padding-s}-#{round(strip-unit($padding))} {
-            padding-#{$padding-s}: px-rem($padding);
-        }
-    } @else {
-        .pad-#{$padding-s}-#{round($padding)} {
-            padding-#{$padding-s}: #{$padding};
-        }
+    .pad-#{$padding-s}-#{rem-selector-name(#{$padding})} {
+        padding-#{$padding-s}: #{$padding};
     }
 }
 
-//flex
-@mixin flex-mobile-column-start() {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-@mixin flex-mobile-column-center() {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-//width and height
+// WIDTH AND HEIGHT
 @mixin width($width, $min-max: null) {
     @if $min-max == null {
-        @if unit($width) == "px" {
-            .w-#{round(strip-unit($width))} {
-                width: px-rem($width);
-            }
-        } @else {
-            .w-#{round(strip-unit($width))} {
-                width: #{$width};
-            }
+        .w-#{rem-selector-name(#{$width})} {
+            width: #{$width};
         }
     } @else {
-        @if unit($width) == "px" {
-            .#{$min-max}-w-#{round(strip-unit($width))} {
-                #{$min-max}-width: px-rem($width);
-            }
-        } @else {
-            .#{$min-max}-w-#{round(strip-unit($width))} {
-                #{$min-max}-width: #{$width};
-            }
+        .#{$min-max}-w-#{rem-selector-name(#{$width})} {
+            #{$min-max}-width: #{$width};
         }
     }
 }
 
 @mixin height($height, $min-max: null) {
     @if $min-max == null {
-        @if unit($height) == "px" {
-            .h-#{round(strip-unit($height))} {
-                height: px-rem($height);
-            }
-        } @else {
-            .h-#{round(strip-unit($height))} {
-                height: #{$height};
-            }
+        .h-#{rem-selector-name(#{$height})} {
+            height: #{$height};
         }
     } @else {
-        @if unit($height) == "px" {
-            .#{$min-max}-h-#{round(strip-unit($height))} {
-                #{$min-max}-height: px-rem($height);
-            }
-        } @else {
-            .#{$min-max}-h-#{round(strip-unit($height))} {
-                #{$min-max}-height: #{$height};
-            }
+        .#{$min-max}-h-#{rem-selector-name(#{$height})} {
+            #{$min-max}-height: #{$height};
         }
     }
 }
 
 @mixin width-height($width, $height: null) {
     @if $height == null {
-        @if unit($width) == "px" {
-            .wh-#{round(strip-unit($width))} {
-                width: px-rem($width);
-                height: px-rem($width);
-            }
-        } @else {
-            .wh-#{round(strip-unit($width))} {
-                width: #{$width};
-                height: #{$width};
-            }
+        .wh-#{rem-selector-name(#{$width})} {
+            width: #{$width};
+            height: #{$width};
         }
     } @else {
-        @if unit($width) == "px" and unit($height) == "px" {
-            .wh-#{round(strip-unit($width))}-#{round(strip-unit($height))} {
-                width: px-rem($width);
-                height: px-rem($height);
-            }
-        } @else {
-            .wh-#{round(strip-unit($width))}-#{round(strip-unit($height))} {
-                width: #{$width};
-                height: #{$height};
-            }
+        .wh-#{rem-selector-name(#{$width})}-#{rem-selector-name(#{$height})} {
+            width: #{$width};
+            height: #{$height};
         }
     }
 }
 
-// Flex-mixins
-// rows
-
+// FLEX-MIXIN
+// row
 @mixin flex {
     display: flex;
 }
@@ -518,8 +331,7 @@
     align-items: flex-end;
 }
 
-//columns
-
+// column
 @mixin flex-column {
     display: flex;
     flex-direction: column;
@@ -699,8 +511,7 @@
     align-items: flex-end;
 }
 
-//bg
-
+// BG
 @mixin bg-positioning {
     top: 0;
     left: 0;
@@ -711,11 +522,76 @@
     margin: 0 auto;
 }
 
-//grid
-@mixin grid-fr($rows-value, $rows-amount, $columns-value, $columns-amount) {
-    .grid-fr-#{$rows-value}-#{$columns-value} {
+// GRID-MIXIN
+// row
+@mixin grid-rows-repeat-gap($rows-amount, $rows-value, $row-gap: null) {
+    @if $row-gap == null {
         display: grid;
-        grid-template-rows: repeat(#{$rows-amount}, #{$rows-value}fr);
-        grid-template-columns: repeat(#{$columns-amount}, #{$columns-value}fr);
+        grid-template-rows: repeat($rows-amount, #{$rows-value});
+    } @else {
+        display: grid;
+        grid-template-rows: repeat($rows-amount, #{$rows-value});
+        grid-row-gap: #{$row-gap};
+    }
+}
+
+@mixin grid-rows-certain-gap($rows, $row-gap: null) {
+    @if $row-gap == null {
+        display: grid;
+        grid-template-rows: #{$rows};
+    } @else {
+        display: grid;
+        grid-template-rows: #{$rows};
+        grid-row-gap: #{$row-gap};
+    }
+}
+
+// column
+@mixin grid-columns-repeat-gap($columns-amount, $columns-value, $column-gap: null) {
+    @if $column-gap == null {
+        display: grid;
+        grid-template-columns: repeat($columns-amount, #{$columns-value});
+    } @else {
+        display: grid;
+        grid-template-columns: repeat($columns-amount, #{$columns-value});
+        grid-column-gap: #{$column-gap};
+    }
+}
+
+@mixin grid-columns-certain-gap($columns, $column-gap: null) {
+    @if $column-gap == null {
+        display: grid;
+        grid-template-columns: #{$columns};
+    } @else {
+        display: grid;
+        grid-template-columns: #{$columns};
+        grid-column-gap: #{$column-gap};
+    }
+}
+
+// both
+@mixin grid-rows-columns-repeat-gap($rows-amount, $rows-value, $columns-amount, $columns-value, $grid-gap: null) {
+    @if $grid-gap == null {
+        display: grid;
+        grid-template-rows: repeat($rows-amount, #{$rows-value});
+        grid-template-columns: repeat($columns-amount, #{$columns-value});
+    } @else {
+        display: grid;
+        grid-template-rows: repeat($rows-amount, #{$rows-value});
+        grid-template-columns: repeat($columns-amount, #{$columns-value});
+        grid-gap: #{$grid-gap};
+    }
+}
+
+@mixin grid-rows-columns-certain-gap($rows, $columns, $grid-gap: null) {
+    @if $grid-gap == null {
+        display: grid;
+        grid-template-rows: #{$rows};
+        grid-template-columns: #{$columns};
+    } @else {
+        display: grid;
+        grid-template-rows: #{$rows};
+        grid-template-columns: #{$columns};
+        grid-gap: #{$grid-gap};
     }
 }

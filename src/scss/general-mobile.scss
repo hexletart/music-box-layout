@@ -1,8 +1,8 @@
 @media screen and (max-width: 1240px) {
-    @include heading-set(h1, 30px, 45px, Roboto-Bold, uppercase);
-    @include heading-set(h2, 18px, 27px, Roboto, uppercase);
-    @include heading-set(h3, 16px, 24px, Roboto);
-    @include heading-set(h4, 18px, 24px, Roboto);
+    @include heading-set(h1, px-rem(30px), px-rem(45px), Roboto-Bold, uppercase);
+    @include heading-set(h2, px-rem(18px), px-rem(27px), Roboto, uppercase);
+    @include heading-set(h3, px-rem(16px), px-rem(24px), Roboto);
+    @include heading-set(h4, px-rem(18px), px-rem(24px), Roboto);
 
     .greet-part {
         &-top,
@@ -32,7 +32,7 @@
             &-right {
                 width: 100%;
 
-                * {
+                input {
                     width: 100%;
                 }
             }
@@ -64,13 +64,8 @@
     }
 
     .subscription-part {
-        &-body,
-        > p {
-            width: inherit;
-            padding-left: px-rem(20px);
-            padding-right: px-rem(20px);
-            box-sizing: border-box;
-        }
+        padding-left: px-rem(20px);
+        padding-right: px-rem(20px);
 
         &-body {
             @include flex-column-flex-start-center;
@@ -80,7 +75,7 @@
             &-standart,
             &-premium {
                 box-sizing: border-box;
-                height: 595px;
+                height: px-rem(595px);
                 overflow-y: hidden;
 
                 img {
@@ -102,6 +97,40 @@
         > p {
             text-align: center;
             margin: px-rem(40px 0px 0px);
+        }
+    }
+
+    .news-part-body {
+        padding-left: px-rem(20px);
+        padding-right: px-rem(20px);
+
+        &-first,
+        &-second {
+            @include grid-rows-columns-repeat-gap(2, auto, 1, auto, px-rem(50px));
+            align-items: center;
+
+            > img {
+                width: 100%;
+            }
+            
+            &-content {
+                &-top {
+                    p {
+                        margin-top: px-rem(16px);
+                        margin-bottom: px-rem(24px);
+                    }
+                }
+            }
+        }
+
+        &-second {
+            > img {
+                order: 1;
+            }
+
+            &-content {
+                order: 2;
+            }
         }
     }
 }

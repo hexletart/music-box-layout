@@ -25,45 +25,56 @@ h4 {
     margin: 0;
 }
 
-@include heading-set(h1, 60px, 90px, Roboto-Bold, uppercase);
-@include heading-set(h2, 38px, 57px, Roboto-Bold, uppercase);
-@include heading-set(h3, 24px, 45px, Roboto);
-@include heading-set(h4, 18px, 27px, Roboto-Bold);
+main {
+    background-color: $black;
+}
+
+img {
+    vertical-align: middle;
+}
+
+@include heading-set(h1, px-rem(60px), px-rem(90px), Roboto-Bold, uppercase);
+@include heading-set(h2, px-rem(38px), px-rem(57px), Roboto-Bold, uppercase);
+@include heading-set(h3, px-rem(24px), px-rem(45px), Roboto);
+@include heading-set(h4, px-rem(18px), px-rem(27px), Roboto-Bold);
 
 @include paragraphs-fixed;
-@include paragraphs-random(11px);
-@include paragraphs-random(13.3px);
 
-@include height(50px);
-@include width(270px, min);
-@include width(1200px, max);
-@include width(570px);
-@include width-height(25px);
-@include width-height(250px, 25px);
+@include height(px-rem(50px));
+@include width(px-rem(270px), min);
+@include width(px-rem(1200px), max);
+@include width(px-rem(570px));
+@include width-height(px-rem(25px));
+@include width-height(px-rem(250px), px-rem(25px));
 
 @include mar-ver(0);
-@include mar-ver(64px);
+@include mar-ver(px-rem(64px));
+@include mar-ver(px-rem(30px), px-rem(24px));
+@include mar-ver(0, px-rem(40px));
+@include mar-ver(px-rem(24px), px-rem(200px));
 
-@include mar-side(right, 24px);
-@include mar-side(right, 88px);
-@include mar-side(right, 16px);
-@include mar-side(top, 32px);
-@include mar-side(bottom, 50px);
-@include mar-side(bottom, 200px);
-@include mar-side(bottom, 1.5rem);
+@include mar-side(top, px-rem(32px));
+@include mar-side(right, px-rem(16px));
+@include mar-side(right, px-rem(24px));
+@include mar-side(right, px-rem(88px));
+@include mar-side(bottom, px-rem(24px));
+@include mar-side(bottom, px-rem(48px));
+@include mar-side(bottom, px-rem(50px));
 
-@include pad-gor(10px);
-@include pad-gor(20px);
-@include pad-gor(1.5rem);
+@include pad-gor(px-rem(10px));
+@include pad-gor(px-rem(20px));
+@include pad-gor(px-rem(24px));
 
-@include pad-ver(200px);
+@include pad-ver(px-rem(200px));
 
-@include pad-side(top, 100px);
+@include pad-side(top, px-rem(100px));
 
 @include price-value;
 @include price-unit;
 
 @include btn;
+
+@include sr-only;
 
 .greet-part {
     position: relative;
@@ -98,10 +109,6 @@ h4 {
 
             &-logo {
                 @include flex-row-flex-start-center;
-
-                img {
-                    vertical-align: middle;
-                }
 
                 p {
                     display: block;
@@ -193,8 +200,8 @@ h4 {
 
             a {
                 background-color: $green;
-                color: white;
-                @include btn-decoration-greet-part;
+                @include btn-decoration-green;
+                padding: px-rem(20px 30px);
             }
         }
     }
@@ -202,8 +209,6 @@ h4 {
 
 .subscription-part {
     @include flex-column-flex-start-center;
-    width: inherit;
-    background-color: $black;
 
     * {
         color: $white;
@@ -211,7 +216,7 @@ h4 {
 
     &-body {
         @include flex-row-space-between-flex-start;
-        width: inherit;
+        width: 100%;
 
         &-free,
         &-standart,
@@ -221,7 +226,6 @@ h4 {
             border-radius: 1rem;
 
             img {
-                vertical-align: middle;
                 height: px-rem(615px);
             }
 
@@ -233,20 +237,15 @@ h4 {
                 box-sizing: border-box;
 
                 h3 {
-                    margin-top: px-rem(24px);
                     text-transform: uppercase;
                     line-height: 1.5;
                 }
 
                 a {
                     border: 1px solid $white;
-                    margin-top: px-rem(40px);
-                    @include btn-decoration-subscription-part;
+                    @include btn-decoration-transparent-orange;
+                    padding: px-rem(20px 30px);
                 }
-            }
-
-            &-price {
-                margin: 0;
             }
 
             &-note {
@@ -258,5 +257,52 @@ h4 {
     > p {
         text-align: center;
         margin: px-rem(40px 0px 0px);
+        width: inherit;
+    }
+}
+
+.news-part {
+    @include flex-column-flex-start-center;
+    color: $white;
+
+    &-body {
+        @include grid-rows-repeat-gap(2, auto, px-rem(65px));
+
+        &-first,
+        &-second {
+            @include grid-rows-columns-repeat-gap(1, auto, 2, auto, px-rem(50px));
+
+            img {
+                width: inherit;
+            }
+
+            &-content {
+                text-align: left;
+
+                &-footer {
+                    &-author {
+                        @include grid-columns-repeat-gap(3, min-content, px-rem(16px));
+                        align-items: center;
+                        white-space: nowrap;
+
+                        * {
+                            margin: 0;
+                        }
+
+                        .up-orange {
+                            text-transform: uppercase;
+                            color: $orange;
+                        }
+                    }
+
+                    a {
+                        @include btn-decoration-transparent;
+                        padding: px-rem(16px 30px);
+                        border: 1px solid $white;
+                        width: fit-content;
+                    }
+                }
+            }
+        }
     }
 }

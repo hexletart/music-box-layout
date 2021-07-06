@@ -4,39 +4,40 @@
         box-sizing: border-box;
         height: auto;
         width: inherit;
-
-        padding: px-rem(20px 30px);
-
         text-decoration: none;
+        color: white;
         text-align: center;
         text-transform: uppercase;
         border-radius: px-rem(5px);
     }
 }
 
-@mixin btn-decoration-greet-part {
+@mixin btn-decoration-green {
     &:hover {
         transition: box-shadow 0.15s;
-        box-shadow: inset px-rem(0 0 4px 4px) $green-hover;
+        box-shadow: inset px-rem(0 0 8px 2px) $green-hover;
     }
 
     &:active {
         background-color: $green-hover;
         font-family: "Roboto-Bold", sans-serif;
-        box-shadow: inset px-rem(0 0 4px 4px) $green;
+        box-shadow: inset px-rem(0 0 8px 2px) $green;
     }
 }
 
-@mixin btn-decoration-subscription-part {
+@mixin btn-decoration-transparent {
     &:hover {
         transition: box-shadow 0.15s;
-        box-shadow: inset px-rem(0 0 4px 4px) $white;
+        box-shadow: inset px-rem(0 0 8px 1px) $white;
     }
 
     &:active {
         font-family: "Roboto-Bold", sans-serif;
     }
+}
 
+@mixin btn-decoration-transparent-orange {
+    @include btn-decoration-transparent;
     &:hover + p {
         transition: color 0.15s;
         color: red;
