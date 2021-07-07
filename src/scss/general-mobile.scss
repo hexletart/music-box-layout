@@ -4,6 +4,12 @@
     @include heading-set(h3, px-rem(16px), px-rem(24px), Roboto);
     @include heading-set(h4, px-rem(18px), px-rem(24px), Roboto);
 
+    header,
+    section {
+        padding-left: px-rem(20px);
+        padding-right: px-rem(20px);
+    }
+
     .greet-part {
         &-top,
         &-body {
@@ -12,8 +18,6 @@
 
         &-top {
             @include flex-column-flex-start-flex-start;
-            padding-left: px-rem(20px);
-            padding-right: px-rem(20px);
 
             &-left {
                 @include flex-column-flex-start-flex-start;
@@ -40,8 +44,6 @@
 
         &-body {
             padding-top: px-rem(250px);
-            padding-left: px-rem(20px);
-            padding-right: px-rem(20px);
 
             p {
                 margin-top: px-rem(16px);
@@ -64,9 +66,6 @@
     }
 
     .subscription-part {
-        padding-left: px-rem(20px);
-        padding-right: px-rem(20px);
-
         &-body {
             @include flex-column-flex-start-center;
             width: inherit;
@@ -101,9 +100,6 @@
     }
 
     .news-part-body {
-        padding-left: px-rem(20px);
-        padding-right: px-rem(20px);
-
         &-first,
         &-second {
             @include grid-rows-columns-repeat-gap(2, auto, 1, auto, px-rem(50px));
@@ -112,7 +108,7 @@
             > img {
                 width: 100%;
             }
-            
+
             &-content {
                 &-top {
                     p {
@@ -125,6 +121,20 @@
 
         &-second {
             > img {
+                order: 1;
+            }
+
+            &-content {
+                order: 2;
+            }
+        }
+    }
+
+    .mobile-app {
+        &-body {
+            @include grid-rows-columns-repeat-gap(2, auto, 1, auto);
+
+            img {
                 order: 1;
             }
 
