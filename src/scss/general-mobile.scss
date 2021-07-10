@@ -1,8 +1,8 @@
 @media screen and (max-width: 1240px) {
-    @include heading-set(h1, px-rem(30px), px-rem(45px), Roboto-Bold, uppercase);
-    @include heading-set(h2, px-rem(18px), px-rem(27px), Roboto, uppercase);
-    @include heading-set(h3, px-rem(16px), px-rem(24px), Roboto);
-    @include heading-set(h4, px-rem(18px), px-rem(24px), Roboto);
+    @include heading-set(h1, px-rem(30px), px-rem(45px), Roboto-Bold, $white, uppercase);
+    @include heading-set(h2, px-rem(18px), px-rem(27px), Roboto, $white, uppercase);
+    @include heading-set(h3, px-rem(16px), px-rem(24px), Roboto, $white);
+    @include heading-set(h4, px-rem(18px), px-rem(24px), Roboto, $white);
 
     header,
     section {
@@ -10,10 +10,14 @@
         padding-right: px-rem(20px);
     }
 
+    main {
+        max-width: px-rem(850px);
+    }
+
     .greet-part {
         &-top,
         &-body {
-            max-width: px-rem(750px);
+            max-width: px-rem(850px);
         }
 
         &-top {
@@ -140,6 +144,31 @@
 
             &-content {
                 order: 2;
+            }
+        }
+    }
+
+    .footer {
+        &-top-content,
+        &-bottom-content {
+            padding-left: px-rem(20px);
+            padding-right: px-rem(20px);
+            max-width: px-rem(850px);
+        }
+
+        &-top {
+            padding: px-rem(62px) 0;
+
+            &-content {
+                @include grid-rows-columns-repeat-gap(4, auto, 1, auto, px-rem(30px));
+            }
+        }
+
+        &-bottom {
+            padding: px-rem(48px) 0;
+
+            &-content {
+                @include grid-rows-columns-repeat-gap(5, auto, 1, auto, px-rem(16px));
             }
         }
     }

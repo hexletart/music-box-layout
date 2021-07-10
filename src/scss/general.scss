@@ -8,10 +8,11 @@
     src: url("../assets/fonts/Roboto-Bold.ttf");
 }
 
-@include html("Roboto", sans-serif, px-rem(16px), 1.5, $black, $dark-gray);
+@include html("Roboto", sans-serif, px-rem(16px), 1.5, $dark-gray, $black);
 
 body,
-main {
+main,
+footer {
     @include flex-column-flex-start-center;
     width: 100%;
 }
@@ -25,12 +26,6 @@ h4 {
     margin: 0;
 }
 
-main {
-    color: $white;
-    background-color: $black;
-    box-sizing: border-box;
-}
-
 img {
     vertical-align: middle;
 }
@@ -39,10 +34,10 @@ p {
     font-size: px-rem(16px);
 }
 
-@include heading-set(h1, px-rem(60px), px-rem(90px), Roboto-Bold, uppercase);
-@include heading-set(h2, px-rem(38px), px-rem(57px), Roboto-Bold, uppercase);
-@include heading-set(h3, px-rem(24px), px-rem(45px), Roboto);
-@include heading-set(h4, px-rem(18px), px-rem(27px), Roboto-Bold);
+@include heading-set(h1, px-rem(60px), px-rem(90px), Roboto-Bold, $white, uppercase);
+@include heading-set(h2, px-rem(38px), px-rem(57px), Roboto-Bold, $white, uppercase);
+@include heading-set(h3, px-rem(24px), px-rem(45px), Roboto, $white);
+@include heading-set(h4, px-rem(18px), px-rem(27px), Roboto-Bold, $white);
 
 @include paragraphs-fixed;
 
@@ -73,6 +68,8 @@ p {
 
 @include pad-ver(px-rem(200px));
 @include pad-ver(px-rem(100px));
+@include pad-ver(3rem);
+@include pad-ver(2rem);
 
 @include pad-side(top, px-rem(100px));
 
@@ -84,6 +81,8 @@ p {
 @include btn;
 
 @include sr-only;
+
+@include footer-bg-gradient;
 
 .greet-part {
     position: relative;
@@ -122,7 +121,6 @@ p {
                 p {
                     display: block;
                     text-transform: uppercase;
-                    color: $white;
                     line-height: inherit;
                 }
             }
@@ -137,16 +135,11 @@ p {
                         text-transform: uppercase;
                         color: $dark-gray;
                         text-decoration: none;
-
-                        &:focus,
-                        &:active {
-                            color: $white;
-                        }
                     }
-                }
 
-                div .hover {
-                    color: $white;
+                    .hover {
+                        color: $white;
+                    }
                 }
 
                 &:hover {
@@ -155,7 +148,7 @@ p {
                     }
 
                     div a:not(:hover) {
-                        color: $dark-gray;
+                        color: inherit;
                     }
                 }
             }
@@ -180,7 +173,6 @@ p {
         position: relative;
         @include flex-column-flex-start-center;
         z-index: 100;
-        color: $white;
 
         h1,
         h2,
@@ -217,6 +209,8 @@ p {
 }
 
 .subscription-part {
+    color: white;
+
     &-body {
         @include flex-row-space-between-flex-start;
         width: 100%;
@@ -277,10 +271,6 @@ p {
             }
 
             &-content {
-                &-top p {
-                    color: $dark-gray;
-                }
-
                 &-footer {
                     &-author {
                         @include grid-columns-repeat-gap(3, min-content, px-rem(16px));
@@ -294,7 +284,6 @@ p {
 
                         * {
                             margin: 0;
-                            
                         }
                     }
 
@@ -320,10 +309,6 @@ p {
                 text-align: left;
             }
 
-            p {
-                color: $dark-gray;
-            }
-
             a {
                 padding: px-rem(16px 40px);
                 background-color: $red;
@@ -336,6 +321,67 @@ p {
 
         img {
             margin: 0 auto;
+        }
+    }
+}
+
+.footer {
+    h2 {
+        font-size: px-rem(18px);
+        line-height: px-rem(27px);
+        text-transform: uppercase;
+        margin-bottom: px-rem(16px);
+    }
+
+    a,
+    p {
+        color: $gray;
+        margin: 0;
+        text-decoration: none;
+    }
+
+    &-top,
+    &-bottom {
+        width: inherit;
+        @include flex-column-center-center;
+    }
+
+    &-top {
+        border-bottom: 1px solid $dark-gray;
+
+        &-content {
+            @include grid-rows-columns-repeat-gap(1, auto, 4, auto, 40px);
+            width: 100%;
+            box-sizing: border-box;
+
+            &-author,
+            &-support {
+                @include grid-rows-columns-repeat-gap(5, min-content, 1, auto);
+            }
+
+            &-link {
+                @include grid-rows-columns-repeat-gap(4, min-content, 1, auto);
+            }
+
+            &-subscrabe {
+                @include grid-rows-columns-repeat-gap(2, min-content, 1, auto);
+
+                &-icon {
+                    @include grid-rows-columns-repeat-gap(1, auto, 4, min-content, px-rem(24px));
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    &-bottom {
+        @include flex-column-flex-start-center;
+
+        &-content {
+            width: 100%;
+            @include grid-rows-columns-repeat-gap(1, auto, 5, min-content, px-rem(16px));
+            justify-content: flex-start;
+            box-sizing: border-box;
         }
     }
 }

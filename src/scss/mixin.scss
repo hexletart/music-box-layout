@@ -20,9 +20,10 @@
 }
 
 // FONT
-@mixin heading-set($heading-type, $font-size, $line-height, $font-family, $text-transfom: null) {
+@mixin heading-set($heading-type, $font-size, $line-height, $font-family, $color, $text-transfom: null) {
     @if $text-transfom== "null" {
         #{$heading-type} {
+            color: $color;
             font-size: #{$font-size};
             line-height: #{$line-height};
             font-family: "#{$font-family}", sans-serif;
@@ -30,6 +31,7 @@
         }
     } @else {
         #{$heading-type} {
+            color: $color;
             font-size: #{$font-size};
             line-height: #{$line-height};
             font-family: "#{$font-family}", sans-serif;
