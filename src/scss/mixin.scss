@@ -607,3 +607,37 @@
         grid-gap: #{$grid-gap};
     }
 }
+
+@mixin grid-rows-columns-repeat-gap-position($rows-amount, $rows-value, $columns-amount, $columns-value, $justify-content, $align-items, $grid-gap: null) {
+    @if $grid-gap == null {
+        display: grid;
+        grid-template-rows: repeat($rows-amount, #{$rows-value});
+        grid-template-columns: repeat($columns-amount, #{$columns-value});
+        justify-content: $justify-content;
+        align-items: $align-items;
+    } @else {
+        display: grid;
+        grid-template-rows: repeat($rows-amount, #{$rows-value});
+        grid-template-columns: repeat($columns-amount, #{$columns-value});
+        grid-gap: #{$grid-gap};
+        justify-content: $justify-content;
+        align-items: $align-items;
+    }
+}
+
+@mixin grid-rows-columns-certain-gap-position($rows, $columns, $justify-content, $align-items, $grid-gap: null) {
+    @if $grid-gap == null {
+        display: grid;
+        grid-template-rows: #{$rows};
+        grid-template-columns: #{$columns};
+        justify-content: $justify-content;
+        align-items: $align-items;
+    } @else {
+        display: grid;
+        grid-template-rows: #{$rows};
+        grid-template-columns: #{$columns};
+        grid-gap: #{$grid-gap};
+        justify-content: $justify-content;
+        align-items: $align-items;
+    }
+}

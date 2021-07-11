@@ -113,41 +113,41 @@ p {
         z-index: 200;
 
         &-left {
-            @include flex-row-flex-start-center;
+            @include grid-rows-columns-repeat-gap-position(1, min-content, 2, auto,  flex-start, center, px-rem(90px));
+
+            p, a {
+                font-size: px-rem(11px);
+            }
 
             &-logo {
-                @include flex-row-flex-start-center;
+                @include grid-rows-columns-repeat-gap-position(1, auto, 2, min-content, flex-start, center, px-rem(16px));
 
-                p {
-                    display: block;
+                p {                    
                     text-transform: uppercase;
-                    line-height: inherit;
+                    white-space: nowrap;
+                    margin: 0;
                 }
             }
 
             &-menu {
-                @include flex-row-flex-start-center;
+                @include grid-rows-columns-repeat-gap-position(1, auto, 4, min-content, flex-start, center, px-rem(24px));
 
-                div {
-                    @include flex-row-flex-start-center;
+                a {
+                    text-transform: uppercase;
+                    color: $dark-gray;
+                    text-decoration: none;
+                }
 
-                    a {
-                        text-transform: uppercase;
-                        color: $dark-gray;
-                        text-decoration: none;
-                    }
-
-                    .hover {
-                        color: $white;
-                    }
+                .hover {
+                    color: $white;
                 }
 
                 &:hover {
-                    div a:hover {
+                    a:hover {
                         color: $white;
                     }
 
-                    div a:not(:hover) {
+                    a:not(:hover) {
                         color: inherit;
                     }
                 }
@@ -155,8 +155,6 @@ p {
         }
 
         &-right {
-            @include flex-row-flex-start-center;
-
             input {
                 @include greet-part-input-search;
 
@@ -201,8 +199,9 @@ p {
 
             a {
                 background-color: $green;
-                @include btn-decoration-green;
+                border: 1px solid $green;
                 padding: px-rem(20px 30px);
+                @include btn-decoration-green;
             }
         }
     }
@@ -240,8 +239,8 @@ p {
 
                 a {
                     border: 1px solid $white;
-                    @include btn-decoration-transparent-orange;
                     padding: px-rem(20px 30px);
+                    @include btn-decoration-transparent-orange;
                 }
             }
 
@@ -288,11 +287,11 @@ p {
                     }
 
                     a {
-                        @include btn-decoration-transparent;
                         padding: px-rem(16px 30px);
                         border: 1px solid $dark-gray;
                         width: fit-content;
                         color: $dark-gray;
+                        @include btn-decoration-transparent;
                     }
                 }
             }
@@ -316,6 +315,7 @@ p {
                 border-radius: px-rem(32px);
                 text-transform: inherit;
                 border: 1px solid $red;
+                @include btn-decoration-red;
             }
         }
 
@@ -367,8 +367,7 @@ p {
                 @include grid-rows-columns-repeat-gap(2, min-content, 1, auto);
 
                 &-icon {
-                    @include grid-rows-columns-repeat-gap(1, auto, 4, min-content, px-rem(24px));
-                    align-items: center;
+                    @include grid-rows-columns-repeat-gap-position(1, auto, 4, min-content, flex-start, center, px-rem(24px));
                 }
             }
         }
@@ -379,8 +378,7 @@ p {
 
         &-content {
             width: 100%;
-            @include grid-rows-columns-repeat-gap(1, auto, 5, min-content, px-rem(16px));
-            justify-content: flex-start;
+            @include grid-rows-columns-repeat-gap-position(1, auto, 5, min-content, flex-start, center, px-rem(16px));
             box-sizing: border-box;
         }
     }

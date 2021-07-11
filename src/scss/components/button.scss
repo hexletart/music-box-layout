@@ -19,9 +19,18 @@
     }
 
     &:active {
-        background-color: $green-hover;
-        font-family: "Roboto-Bold", sans-serif;
-        box-shadow: inset px-rem(0 0 8px 2px) $green;
+        box-shadow: inset px-rem(0 0 8px 4px) $green-hover;
+    }
+}
+
+@mixin btn-decoration-red {
+    &:hover {
+        transition: box-shadow 0.15s;
+        box-shadow: inset px-rem(0 0 8px 2px) $red-hover;
+    }
+
+    &:active {
+        box-shadow: inset px-rem(0 0 8px 4px) $red-hover;
     }
 }
 
@@ -32,7 +41,7 @@
     }
 
     &:active {
-        font-family: "Roboto-Bold", sans-serif;
+        box-shadow: inset px-rem(0 0 8px 4px) $white;
     }
 }
 
