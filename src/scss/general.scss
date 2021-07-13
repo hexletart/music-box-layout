@@ -55,6 +55,7 @@ p {
 @include mar-ver(px-rem(24px), px-rem(200px));
 
 @include mar-side(top, px-rem(32px));
+@include mar-side(bottom, px-rem(48px));
 @include mar-side(right, px-rem(16px));
 @include mar-side(right, px-rem(24px));
 @include mar-side(right, px-rem(88px));
@@ -84,23 +85,46 @@ p {
 
 @include footer-bg-gradient;
 
+@include btn-green;
+@include btn-purple;
+@include btn-red-opt-1;
+
+
+.bg {
+    &-index,
+    &-artist {
+        &::before {
+            position: absolute;
+            @include greet-part-bg-positioning;
+            content: "";
+        }
+    }
+
+    &-index {
+        &::before {
+            @include img-main-greet-part-index;
+            z-index: 0;
+        }
+    }
+
+    &-artist {
+        &::before {
+            @include img-main-greet-part-artist;
+            z-index: 100;
+        }
+    }
+}
+
 .greet-part {
     position: relative;
     @include flex-column-flex-start-center;
     width: 100%;
 
     &-top,
-    &-body {
+    &-index,
+    &-artist {
         width: inherit;
         box-sizing: border-box;
-    }
-
-    &::before {
-        position: absolute;
-        @include bg-positioning;
-        @include img-main-greet-part;
-        z-index: 0;
-        content: "";
     }
 
     &-top {
@@ -110,19 +134,28 @@ p {
         right: 0;
         margin: 0 auto;
         @include flex-row-space-between-center;
-        z-index: 200;
+        z-index: 400;
 
         &-left {
-            @include grid-rows-columns-repeat-gap-position(1, min-content, 2, auto,  flex-start, center, px-rem(90px));
+            @include grid-rows-columns-repeat-gap-position(1, min-content, 2, auto, flex-start, center, px-rem(90px));
 
-            p, a {
+            p,
+            a {
                 font-size: px-rem(11px);
             }
 
             &-logo {
-                @include grid-rows-columns-repeat-gap-position(1, auto, 2, min-content, flex-start, center, px-rem(16px));
+                @include grid-rows-columns-repeat-gap-position(
+                    1,
+                    auto,
+                    2,
+                    min-content,
+                    flex-start,
+                    center,
+                    px-rem(16px)
+                );
 
-                p {                    
+                p {
                     text-transform: uppercase;
                     white-space: nowrap;
                     margin: 0;
@@ -130,7 +163,15 @@ p {
             }
 
             &-menu {
-                @include grid-rows-columns-repeat-gap-position(1, auto, 4, min-content, flex-start, center, px-rem(24px));
+                @include grid-rows-columns-repeat-gap-position(
+                    1,
+                    auto,
+                    4,
+                    min-content,
+                    flex-start,
+                    center,
+                    px-rem(24px)
+                );
 
                 a {
                     text-transform: uppercase;
@@ -167,10 +208,14 @@ p {
         }
     }
 
-    &-body {
+    &-index,
+    &-artist {
         position: relative;
+    }
+
+    &-index {
         @include flex-column-flex-start-center;
-        z-index: 100;
+        z-index: 200;
 
         h1,
         h2,
@@ -196,13 +241,15 @@ p {
                     }
                 }
             }
+        }
+    }
 
-            a {
-                background-color: $green;
-                border: 1px solid $green;
-                padding: px-rem(20px 30px);
-                @include btn-decoration-green;
-            }
+    &-artist {
+        @include flex-column-flex-end-flex-start;
+        z-index: 300;
+
+        &-buttons {
+            @include grid-rows-columns-repeat-gap-position(1, min-content, 2, min-content, flex-start, center, px-rem(24px));
         }
     }
 }
@@ -210,7 +257,7 @@ p {
 .subscription-part {
     color: white;
 
-    &-body {
+    &-index {
         @include flex-row-space-between-flex-start;
         width: 100%;
 
@@ -258,7 +305,7 @@ p {
 }
 
 .news-part {
-    &-body {
+    &-index {
         @include grid-rows-repeat-gap(2, auto, px-rem(65px));
 
         &-first,
@@ -276,7 +323,7 @@ p {
                         align-items: center;
                         white-space: nowrap;
 
-                        &:nth-child(2) {
+                        > p:nth-child(2) {
                             text-transform: uppercase;
                             color: $orange;
                         }
@@ -291,7 +338,7 @@ p {
                         border: 1px solid $dark-gray;
                         width: fit-content;
                         color: $dark-gray;
-                        @include btn-decoration-transparent;
+                        @include btn-decoration-shadow($white, 0.15s);
                     }
                 }
             }
@@ -300,7 +347,7 @@ p {
 }
 
 .mobile-app {
-    &-body {
+    &-index {
         @include grid-rows-columns-repeat-gap(1, auto, 2, 50%);
 
         &-content {
@@ -315,7 +362,7 @@ p {
                 border-radius: px-rem(32px);
                 text-transform: inherit;
                 border: 1px solid $red;
-                @include btn-decoration-red;
+                @include btn-decoration-shadow($red-hover, 0.15s);
             }
         }
 
@@ -367,7 +414,15 @@ p {
                 @include grid-rows-columns-repeat-gap(2, min-content, 1, auto);
 
                 &-icon {
-                    @include grid-rows-columns-repeat-gap-position(1, auto, 4, min-content, flex-start, center, px-rem(24px));
+                    @include grid-rows-columns-repeat-gap-position(
+                        1,
+                        auto,
+                        4,
+                        min-content,
+                        flex-start,
+                        center,
+                        px-rem(24px)
+                    );
                 }
             }
         }

@@ -12,14 +12,14 @@
     }
 }
 
-@mixin btn-decoration-green {
+@mixin btn-decoration-shadow($color, $transition-time) {
     &:hover {
-        transition: box-shadow 0.15s;
-        box-shadow: inset px-rem(0 0 8px 2px) $green-hover;
+        transition: box-shadow #{$transition-time};
+        box-shadow: inset px-rem(0 0 8px 2px) $color;
     }
 
     &:active {
-        box-shadow: inset px-rem(0 0 8px 4px) $green-hover;
+        box-shadow: inset px-rem(0 0 8px 4px) $color;
     }
 }
 
@@ -34,21 +34,65 @@
     }
 }
 
-@mixin btn-decoration-transparent {
-    &:hover {
-        transition: box-shadow 0.15s;
-        box-shadow: inset px-rem(0 0 8px 1px) $white;
-    }
-
-    &:active {
-        box-shadow: inset px-rem(0 0 8px 4px) $white;
+@mixin btn-decoration-transparent-orange {
+    @include btn-decoration-shadow($white, 0.15s);
+    &:hover + p {
+        transition: color 0.15s;
+        color: $orange;
     }
 }
 
-@mixin btn-decoration-transparent-orange {
-    @include btn-decoration-transparent;
-    &:hover + p {
-        transition: color 0.15s;
-        color: red;
+@mixin btn-purple {
+    .btn-purple {
+        @include grid-rows-columns-repeat-gap-position(
+            1,
+            min-content,
+            2,
+            min-content,
+            flex-start,
+            center,
+            px-rem(16px)
+        );
+        background-color: $purple;
+        border: 1px solid $purple;
+        padding: px-rem(20px 30px);
+        width: px-rem(200px);
+
+        img {
+            width: 20px;
+            filter: invert(100%);
+        }
+    }
+}
+
+@mixin btn-red-opt-1 {
+    .btn-red-opt-1 {
+        @include grid-rows-columns-repeat-gap-position(
+            1,
+            min-content,
+            2,
+            min-content,
+            flex-start,
+            center,
+            px-rem(16px)
+        );
+        background-color: $red;
+        border: 1px solid $red;
+        padding: px-rem(20px 30px);
+        width: px-rem(200px);
+
+        img {
+            width: 20px;
+            filter: invert(100%);
+        }
+    }
+}
+
+@mixin btn-green {
+    .btn-green {
+        background-color: $green;
+        border: 1px solid $green;
+        padding: px-rem(20px 30px);
+        @include btn-decoration-shadow($green-hover, 0.15s);
     }
 }

@@ -1,4 +1,4 @@
-@mixin img-main-greet-part {
+@mixin img-main-greet-part-index {
     background-image: url("../assets/images/banner.png");
     background-position: center;
     background-size: cover;
@@ -10,3 +10,8 @@
     background-size: 100%;
 }
 
+@mixin img-main-greet-part-artist {
+    background-image: url("../assets/images/Morten Harket.png");
+    background-position: center;
+    background-size: cover;
+}

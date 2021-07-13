@@ -16,7 +16,8 @@
 
     .greet-part {
         &-top,
-        &-body {
+        &-index,
+        &-artist {
             max-width: px-rem(850px);
         }
 
@@ -24,7 +25,15 @@
             @include flex-column-flex-start-flex-start;
 
             &-left {
-                @include grid-rows-columns-repeat-gap-position(2, min-content, 1, auto,  flex-start, flex-start, px-rem(16px));
+                @include grid-rows-columns-repeat-gap-position(
+                    2,
+                    min-content,
+                    1,
+                    auto,
+                    flex-start,
+                    flex-start,
+                    px-rem(16px)
+                );
                 margin-bottom: px-rem(16px);
 
                 p {
@@ -32,7 +41,7 @@
                 }
 
                 &-menu {
-                    @include grid-rows-columns-repeat-gap-position(4, min-content, 1, auto,  flex-start, flex-start, 0);
+                    @include grid-rows-columns-repeat-gap-position(4, min-content, 1, auto, flex-start, flex-start, 0);
                 }
             }
 
@@ -45,7 +54,7 @@
             }
         }
 
-        &-body {
+        &-index {
             padding-top: px-rem(250px);
 
             p {
@@ -66,10 +75,19 @@
                 }
             }
         }
+
+        &-artist {
+            padding: px-rem(225px 20px);
+
+            &-buttons {
+                @include grid-rows-columns-repeat-gap-position(2, min-content, 1, min-content, flex-start, center, px-rem(24px));
+
+            }
+        }
     }
 
     .subscription-part {
-        &-body {
+        &-index {
             @include flex-column-flex-start-center;
             width: inherit;
 
@@ -102,39 +120,41 @@
         }
     }
 
-    .news-part-body {
-        &-first,
-        &-second {
-            @include grid-rows-columns-repeat-gap(2, auto, 1, auto, px-rem(50px));
-            align-items: center;
+    .news-part {
+        &-index {
+            &-first,
+            &-second {
+                @include grid-rows-columns-repeat-gap(2, auto, 1, auto, px-rem(50px));
+                align-items: center;
 
-            > img {
-                width: 100%;
-            }
+                > img {
+                    width: 100%;
+                }
 
-            &-content {
-                &-top {
-                    p {
-                        margin-top: px-rem(16px);
-                        margin-bottom: px-rem(24px);
+                &-content {
+                    &-top {
+                        p {
+                            margin-top: px-rem(16px);
+                            margin-bottom: px-rem(24px);
+                        }
                     }
                 }
             }
-        }
 
-        &-second {
-            > img {
-                order: 1;
-            }
+            &-second {
+                > img {
+                    order: 1;
+                }
 
-            &-content {
-                order: 2;
+                &-content {
+                    order: 2;
+                }
             }
         }
     }
 
     .mobile-app {
-        &-body {
+        &-index {
             @include grid-rows-columns-repeat-gap(2, auto, 1, auto);
 
             img {
