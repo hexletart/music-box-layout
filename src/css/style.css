@@ -228,14 +228,9 @@ h4 {
   padding-left: 1.5rem;
 }
 
-.pad-ver-12-5rem {
-  padding-top: 12.5rem;
-  padding-bottom: 12.5rem;
-}
-
-.pad-ver-6-25rem {
-  padding-top: 6.25rem;
-  padding-bottom: 6.25rem;
+.pad-ver-2rem {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pad-ver-3rem {
@@ -243,9 +238,14 @@ h4 {
   padding-bottom: 3rem;
 }
 
-.pad-ver-2rem {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.pad-ver-6-25rem {
+  padding-top: 6.25rem;
+  padding-bottom: 6.25rem;
+}
+
+.pad-ver-12-5rem {
+  padding-top: 12.5rem;
+  padding-bottom: 12.5rem;
 }
 
 .pad-top-6-25rem {
@@ -568,6 +568,53 @@ h4 {
   width: inherit;
 }
 
+.track-list h2 {
+  width: inherit;
+}
+.track-list h3 {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  font-family: "Roboto-Bold", sans-serif;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.track-list p {
+  margin: 0;
+  white-space: nowrap;
+  color: #e0e0e0;
+  font-size: 0.8rem;
+}
+.track-list-body {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(2, auto);
+  grid-column-gap: 3.125rem;
+  grid-row-gap: 1.5625rem;
+  width: inherit;
+}
+.track-list-body-position {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.track-list-body-position-left {
+  display: grid;
+  grid-template-rows: repeat(1, auto);
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 0.9375rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+.track-list-body-position-left img {
+  height: 3.4375rem;
+}
+.track-list-body-position-left-name {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  grid-template-columns: repeat(1, min-content);
+}
+
 .news-part-index {
   display: grid;
   grid-template-rows: repeat(2, auto);
@@ -845,6 +892,12 @@ section {
   .subscription-part > p {
     text-align: center;
     margin: 2.5rem 0rem 0rem;
+  }
+
+  .track-list-body {
+    display: grid;
+    grid-template-rows: repeat(6, auto);
+    grid-template-columns: repeat(1, auto);
   }
 
   .news-part-index-first, .news-part-index-second {

@@ -67,10 +67,10 @@ p {
 @include pad-gor(px-rem(20px));
 @include pad-gor(px-rem(24px));
 
-@include pad-ver(px-rem(200px));
-@include pad-ver(px-rem(100px));
-@include pad-ver(3rem);
 @include pad-ver(2rem);
+@include pad-ver(3rem);
+@include pad-ver(px-rem(100px));
+@include pad-ver(px-rem(200px));
 
 @include pad-side(top, px-rem(100px));
 
@@ -88,7 +88,6 @@ p {
 @include btn-green;
 @include btn-purple;
 @include btn-red-opt-1;
-
 
 .bg {
     &-index,
@@ -249,7 +248,15 @@ p {
         z-index: 300;
 
         &-buttons {
-            @include grid-rows-columns-repeat-gap-position(1, min-content, 2, min-content, flex-start, center, px-rem(24px));
+            @include grid-rows-columns-repeat-gap-position(
+                1,
+                min-content,
+                2,
+                min-content,
+                flex-start,
+                center,
+                px-rem(24px)
+            );
         }
     }
 }
@@ -301,6 +308,63 @@ p {
         text-align: center;
         margin: px-rem(40px 0px 0px);
         width: inherit;
+    }
+}
+
+.track-list {
+    h2 {
+        width: inherit;
+    }
+
+    h3 {
+        font-size: px-rem(12.8px);
+        line-height: px-rem(19.2px);
+        font-family: "Roboto-Bold", sans-serif;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+
+    p {
+        margin: 0;
+        white-space: nowrap;
+        color: $gray;
+        font-size: px-rem(12.8px);
+    }
+
+    &-body {
+        @include grid-rows-columns-repeat-gap(3, auto, 2, auto);
+        grid-column-gap: px-rem(50px);
+        grid-row-gap: px-rem(25px);
+        width: inherit;
+
+        &-position {
+            @include flex-row-space-between-center;
+
+            &-left {
+                @include grid-rows-columns-repeat-gap-position(
+                    1,
+                    auto,
+                    2,
+                    auto,
+                    flex-start,
+                    center,
+                    px-rem(15px)
+                );
+
+                img {
+                    height: px-rem(55px);
+                }
+
+                &-name {
+                    @include grid-rows-columns-repeat-gap(
+                        2,
+                        min-content,
+                        1,
+                        min-content
+                    );
+                }
+            }
+        }
     }
 }
 

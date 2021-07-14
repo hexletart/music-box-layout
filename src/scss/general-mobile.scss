@@ -120,6 +120,12 @@
         }
     }
 
+    .track-list {
+        &-body {
+            @include grid-rows-columns-repeat-gap(6, auto, 1, auto);
+        }
+    }
+
     .news-part {
         &-index {
             &-first,
