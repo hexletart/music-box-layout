@@ -25,7 +25,7 @@
             @include flex-column-flex-start-flex-start;
 
             &-left {
-                @include grid-rows-columns-repeat-gap-position(
+                @include grid-repeat-rows-columns-position-gap(
                     2,
                     min-content,
                     1,
@@ -41,7 +41,7 @@
                 }
 
                 &-menu {
-                    @include grid-rows-columns-repeat-gap-position(4, min-content, 1, auto, flex-start, flex-start, 0);
+                    @include grid-repeat-rows-columns-position-gap(4, min-content, 1, auto, flex-start, flex-start, 0);
                 }
             }
 
@@ -80,7 +80,7 @@
             padding: px-rem(225px 20px);
 
             &-buttons {
-                @include grid-rows-columns-repeat-gap-position(2, min-content, 1, min-content, flex-start, center, px-rem(24px));
+                @include grid-repeat-rows-columns-position-gap(2, min-content, 1, min-content, flex-start, center, px-rem(24px));
 
             }
         }
@@ -120,17 +120,11 @@
         }
     }
 
-    .track-list {
-        &-body {
-            @include grid-rows-columns-repeat-gap(6, auto, 1, auto);
-        }
-    }
-
     .news-part {
         &-index {
             &-first,
             &-second {
-                @include grid-rows-columns-repeat-gap(2, auto, 1, auto, px-rem(50px));
+                @include grid-repeat-rows-columns-gap(2, auto, 1, auto, px-rem(50px));
                 align-items: center;
 
                 > img {
@@ -161,7 +155,7 @@
 
     .mobile-app {
         &-index {
-            @include grid-rows-columns-repeat-gap(2, auto, 1, auto);
+            @include grid-repeat-rows-columns-gap(2, auto, 1, auto);
 
             img {
                 order: 1;
@@ -185,7 +179,7 @@
             padding: px-rem(62px) 0;
 
             &-content {
-                @include grid-rows-columns-repeat-gap(4, auto, 1, auto, px-rem(30px));
+                @include grid-repeat-rows-columns-gap(4, auto, 1, auto, px-rem(30px));
             }
         }
 
@@ -193,8 +187,28 @@
             padding: px-rem(48px) 0;
 
             &-content {
-                @include grid-rows-columns-repeat-gap(5, auto, 1, auto, px-rem(16px));
+                @include grid-repeat-rows-columns-gap(5, auto, 1, auto, px-rem(16px));
             }
+        }
+    }
+
+    .track-list {
+        &-body {
+            @include grid-repeat-rows-columns-gap(6, auto, 1, auto);
+            
+            &-position {
+                max-width: none;
+            }
+        }
+    }
+
+    .discography-list {
+        img {
+            width: px-rem(137px);
+        }
+
+        &-body {
+            @include grid-repeat-rows-columns-gap(3, auto, 2, min-content);
         }
     }
 }

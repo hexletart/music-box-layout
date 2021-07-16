@@ -74,7 +74,10 @@ p {
 
 @include pad-side(top, px-rem(100px));
 
-@include main-sector-structure;
+@include main-sector-structure-center;
+@include main-sector-structure-left;
+
+@include no-wrap;
 
 @include price-value;
 @include price-unit;
@@ -136,7 +139,7 @@ p {
         z-index: 400;
 
         &-left {
-            @include grid-rows-columns-repeat-gap-position(1, min-content, 2, auto, flex-start, center, px-rem(90px));
+            @include grid-repeat-rows-columns-position-gap(1, min-content, 2, auto, flex-start, center, px-rem(90px));
 
             p,
             a {
@@ -144,15 +147,7 @@ p {
             }
 
             &-logo {
-                @include grid-rows-columns-repeat-gap-position(
-                    1,
-                    auto,
-                    2,
-                    min-content,
-                    flex-start,
-                    center,
-                    px-rem(16px)
-                );
+                @include grid-repeat-rows-columns-position-gap(1, auto, 2, min-content, flex-start, center, px-rem(16px));
 
                 p {
                     text-transform: uppercase;
@@ -162,15 +157,7 @@ p {
             }
 
             &-menu {
-                @include grid-rows-columns-repeat-gap-position(
-                    1,
-                    auto,
-                    4,
-                    min-content,
-                    flex-start,
-                    center,
-                    px-rem(24px)
-                );
+                @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
 
                 a {
                     text-transform: uppercase;
@@ -248,15 +235,7 @@ p {
         z-index: 300;
 
         &-buttons {
-            @include grid-rows-columns-repeat-gap-position(
-                1,
-                min-content,
-                2,
-                min-content,
-                flex-start,
-                center,
-                px-rem(24px)
-            );
+            @include grid-repeat-rows-columns-position-gap(1, min-content, 2, min-content, flex-start, center, px-rem(24px));
         }
     }
 }
@@ -311,70 +290,13 @@ p {
     }
 }
 
-.track-list {
-    h2 {
-        width: inherit;
-    }
-
-    h3 {
-        font-size: px-rem(12.8px);
-        line-height: px-rem(19.2px);
-        font-family: "Roboto-Bold", sans-serif;
-        text-transform: uppercase;
-        white-space: nowrap;
-    }
-
-    p {
-        margin: 0;
-        white-space: nowrap;
-        color: $gray;
-        font-size: px-rem(12.8px);
-    }
-
-    &-body {
-        @include grid-rows-columns-repeat-gap(3, auto, 2, auto);
-        grid-column-gap: px-rem(50px);
-        grid-row-gap: px-rem(25px);
-        width: inherit;
-
-        &-position {
-            @include flex-row-space-between-center;
-
-            &-left {
-                @include grid-rows-columns-repeat-gap-position(
-                    1,
-                    auto,
-                    2,
-                    auto,
-                    flex-start,
-                    center,
-                    px-rem(15px)
-                );
-
-                img {
-                    height: px-rem(55px);
-                }
-
-                &-name {
-                    @include grid-rows-columns-repeat-gap(
-                        2,
-                        min-content,
-                        1,
-                        min-content
-                    );
-                }
-            }
-        }
-    }
-}
-
 .news-part {
     &-index {
-        @include grid-rows-repeat-gap(2, auto, px-rem(65px));
+        @include grid-repeat-rows-gap(2, auto, px-rem(65px));
 
         &-first,
         &-second {
-            @include grid-rows-columns-repeat-gap(1, auto, 2, auto, px-rem(50px));
+            @include grid-repeat-rows-columns-gap(1, auto, 2, auto, px-rem(50px));
 
             img {
                 width: inherit;
@@ -383,8 +305,7 @@ p {
             &-content {
                 &-footer {
                     &-author {
-                        @include grid-columns-repeat-gap(3, min-content, px-rem(16px));
-                        align-items: center;
+                        @include grid-repeat-columns-position-gap(3, min-content, flex-start, center, px-rem(16px));
                         white-space: nowrap;
 
                         > p:nth-child(2) {
@@ -412,7 +333,7 @@ p {
 
 .mobile-app {
     &-index {
-        @include grid-rows-columns-repeat-gap(1, auto, 2, 50%);
+        @include grid-repeat-rows-columns-gap(1, auto, 2, 50%);
 
         &-content {
             * {
@@ -461,32 +382,24 @@ p {
         border-bottom: 1px solid $dark-gray;
 
         &-content {
-            @include grid-rows-columns-repeat-gap(1, auto, 4, auto, 40px);
+            @include grid-repeat-rows-columns-gap(1, auto, 4, auto, 40px);
             width: 100%;
             box-sizing: border-box;
 
             &-author,
             &-support {
-                @include grid-rows-columns-repeat-gap(5, min-content, 1, auto);
+                @include grid-repeat-rows-columns-gap(5, min-content, 1, auto);
             }
 
             &-link {
-                @include grid-rows-columns-repeat-gap(4, min-content, 1, auto);
+                @include grid-repeat-rows-columns-gap(4, min-content, 1, auto);
             }
 
             &-subscrabe {
-                @include grid-rows-columns-repeat-gap(2, min-content, 1, auto);
+                @include grid-repeat-rows-columns-gap(2, min-content, 1, auto);
 
                 &-icon {
-                    @include grid-rows-columns-repeat-gap-position(
-                        1,
-                        auto,
-                        4,
-                        min-content,
-                        flex-start,
-                        center,
-                        px-rem(24px)
-                    );
+                    @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
                 }
             }
         }
@@ -497,8 +410,76 @@ p {
 
         &-content {
             width: 100%;
-            @include grid-rows-columns-repeat-gap-position(1, auto, 5, min-content, flex-start, center, px-rem(16px));
+            @include grid-repeat-rows-columns-position-gap(1, auto, 5, min-content, flex-start, center, px-rem(16px));
             box-sizing: border-box;
+        }
+    }
+}
+
+.track-list,
+.discography-list {
+    h3 {
+        font-family: "Roboto-Bold", sans-serif;
+    }
+
+    p {
+        margin: 0;
+        white-space: nowrap;
+        color: $gray;
+    }
+}
+
+.track-list {
+    h3,
+    p {
+        font-size: px-rem(12.8px);
+        line-height: px-rem(19.2px);
+        white-space: nowrap;
+    }
+
+    h3 {
+        text-transform: uppercase;
+    }
+
+    img {
+        height: px-rem(55px);
+    }
+
+    &-body {
+        @include grid-repeat-rows-gap-columns-gap(3, auto, 25px, 2, auto, 50px);
+        width: inherit;
+
+        &-position {
+            @include flex-row-space-between-center;
+            max-width: px-rem(545px);
+
+            &-left {
+                @include grid-repeat-rows-columns-position-gap(1, auto, 2, auto, flex-start, center, px-rem(15px));
+
+                &-name {
+                    @include grid-repeat-rows-columns-gap(2, min-content, 1, min-content);
+                }
+            }
+        }
+    }
+}
+
+.discography-list {
+    h3 {
+        font-size: px-rem(18px);
+        line-height: px-rem(27px);
+    }
+
+    img {
+        width: px-rem(250px);
+    }
+
+    &-body {
+        @include grid-repeat-rows-gap-columns-gap-position(2, auto, px-rem(25px), 4, auto, px-rem(50px), flex-start, flex-start);
+        width: inherit;
+
+        &-position {
+            @include grid-repeat-rows-columns-gap(2, auto, 1, auto, px-rem(18px));
         }
     }
 }

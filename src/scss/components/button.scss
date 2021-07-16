@@ -44,7 +44,7 @@
 
 @mixin btn-purple {
     .btn-purple {
-        @include grid-rows-columns-repeat-gap-position(
+        @include grid-repeat-rows-columns-position-gap(
             1,
             min-content,
             2,
@@ -67,7 +67,7 @@
 
 @mixin btn-red-opt-1 {
     .btn-red-opt-1 {
-        @include grid-rows-columns-repeat-gap-position(
+        @include grid-repeat-rows-columns-position-gap(
             1,
             min-content,
             2,
