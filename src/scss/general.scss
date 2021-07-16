@@ -62,6 +62,7 @@ p {
 @include mar-side(bottom, px-rem(24px));
 @include mar-side(bottom, px-rem(48px));
 @include mar-side(bottom, px-rem(50px));
+@include mar-side(bottom, px-rem(100px));
 
 @include pad-gor(px-rem(10px));
 @include pad-gor(px-rem(20px));
@@ -243,6 +244,25 @@ p {
 .subscription-part {
     color: white;
 
+    img {
+        height: px-rem(615px);
+    }
+
+    h3 {
+        text-transform: uppercase;
+        line-height: 1.5;
+    }
+
+    a {
+        border: 1px solid $white;
+        padding: px-rem(20px 30px);
+        @include btn-decoration-transparent-orange;
+    }
+
+    p {
+        text-align: center;
+    }
+
     &-index {
         @include flex-row-space-between-flex-start;
         width: 100%;
@@ -254,27 +274,12 @@ p {
             position: relative;
             border-radius: px-rem(18px);
 
-            img {
-                height: px-rem(615px);
-            }
-
             div {
                 position: absolute;
                 top: 0;
                 width: 100%;
                 @include flex-column-center-center;
                 box-sizing: border-box;
-
-                h3 {
-                    text-transform: uppercase;
-                    line-height: 1.5;
-                }
-
-                a {
-                    border: 1px solid $white;
-                    padding: px-rem(20px 30px);
-                    @include btn-decoration-transparent-orange;
-                }
             }
 
             &-note {
@@ -284,23 +289,29 @@ p {
     }
 
     > p {
-        text-align: center;
         margin: px-rem(40px 0px 0px);
-        width: inherit;
     }
 }
 
 .news-part {
+    img {
+        width: inherit;
+    }
+
+    a {
+        padding: px-rem(16px 30px);
+        border: 1px solid $dark-gray;
+        width: fit-content;
+        color: $dark-gray;
+        @include btn-decoration-shadow($white, 0.15s);
+    }
+
     &-index {
         @include grid-repeat-rows-gap(2, auto, px-rem(65px));
 
         &-first,
         &-second {
             @include grid-repeat-rows-columns-gap(1, auto, 2, auto, px-rem(50px));
-
-            img {
-                width: inherit;
-            }
 
             &-content {
                 &-footer {
@@ -317,14 +328,6 @@ p {
                             margin: 0;
                         }
                     }
-
-                    a {
-                        padding: px-rem(16px 30px);
-                        border: 1px solid $dark-gray;
-                        width: fit-content;
-                        color: $dark-gray;
-                        @include btn-decoration-shadow($white, 0.15s);
-                    }
                 }
             }
         }
@@ -332,6 +335,20 @@ p {
 }
 
 .mobile-app {
+    img {
+        margin: 0 auto;
+    }
+
+    a {
+        padding: px-rem(16px 40px);
+        background-color: $red;
+        width: fit-content;
+        border-radius: px-rem(32px);
+        text-transform: inherit;
+        border: 1px solid $red;
+        @include btn-decoration-shadow($red-hover, 0.15s);
+    }
+
     &-index {
         @include grid-repeat-rows-columns-gap(1, auto, 2, 50%);
 
@@ -339,20 +356,6 @@ p {
             * {
                 text-align: left;
             }
-
-            a {
-                padding: px-rem(16px 40px);
-                background-color: $red;
-                width: fit-content;
-                border-radius: px-rem(32px);
-                text-transform: inherit;
-                border: 1px solid $red;
-                @include btn-decoration-shadow($red-hover, 0.15s);
-            }
-        }
-
-        img {
-            margin: 0 auto;
         }
     }
 }
@@ -417,14 +420,14 @@ p {
 }
 
 .track-list,
-.discography-list {
+.discography-list,
+.artist-list {
     h3 {
         font-family: "Roboto-Bold", sans-serif;
     }
 
     p {
         margin: 0;
-        white-space: nowrap;
         color: $gray;
     }
 }
@@ -464,7 +467,8 @@ p {
     }
 }
 
-.discography-list {
+.discography-list,
+.artist-list {
     h3 {
         font-size: px-rem(18px);
         line-height: px-rem(27px);
@@ -479,7 +483,14 @@ p {
         width: inherit;
 
         &-position {
-            @include grid-repeat-rows-columns-gap(2, auto, 1, auto, px-rem(18px));
+            @include grid-repeat-rows-columns-gap(2, auto, 1, min-content, px-rem(18px));
         }
+    }
+}
+
+.artist-list {
+    h3,
+    p {
+        text-align: center;
     }
 }

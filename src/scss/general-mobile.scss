@@ -25,15 +25,7 @@
             @include flex-column-flex-start-flex-start;
 
             &-left {
-                @include grid-repeat-rows-columns-position-gap(
-                    2,
-                    min-content,
-                    1,
-                    auto,
-                    flex-start,
-                    flex-start,
-                    px-rem(16px)
-                );
+                @include grid-repeat-rows-columns-position-gap(2, min-content, 1, auto, flex-start, flex-start, px-rem(16px));
                 margin-bottom: px-rem(16px);
 
                 p {
@@ -87,6 +79,12 @@
     }
 
     .subscription-part {
+        img {
+            box-sizing: border-box;
+            object-fit: cover;
+            object-position: 0 0;
+        }
+
         &-index {
             @include flex-column-flex-start-center;
             width: inherit;
@@ -98,12 +96,6 @@
                 height: px-rem(595px);
                 overflow-y: hidden;
 
-                img {
-                    box-sizing: border-box;
-                    object-fit: cover;
-                    object-position: 0 0;
-                }
-
                 &:nth-child(-n + 2) {
                     margin-bottom: px-rem(50px);
                 }
@@ -112,11 +104,6 @@
                     margin-top: px-rem(16px);
                 }
             }
-        }
-
-        > p {
-            text-align: center;
-            margin: px-rem(40px 0px 0px);
         }
     }
 
@@ -202,13 +189,15 @@
         }
     }
 
-    .discography-list {
+    .discography-list,
+    .artist-list {
         img {
             width: px-rem(137px);
         }
 
         &-body {
-            @include grid-repeat-rows-columns-gap(3, auto, 2, min-content);
+            @include grid-repeat-rows-columns-gap(3, auto, 2, auto);
+
         }
     }
 }
