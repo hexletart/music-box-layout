@@ -137,9 +137,6 @@ p {
     &-top {
         position: absolute;
         padding-top: px-rem(25px);
-        left: 0;
-        right: 0;
-        margin: 0 auto;
         @include flex-row-space-between-center;
         z-index: 400;
 
