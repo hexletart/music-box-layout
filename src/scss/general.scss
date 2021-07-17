@@ -92,6 +92,10 @@ p {
 @include btn-green;
 @include btn-purple;
 @include btn-red-opt-1;
+@include btn-red-opt-2;
+@include btn-transparent-opt-1;
+@include btn-transparent-opt-2;
+
 
 .bg {
     &-index,
@@ -253,12 +257,6 @@ p {
         line-height: 1.5;
     }
 
-    a {
-        border: 1px solid $white;
-        padding: px-rem(20px 30px);
-        @include btn-decoration-transparent-orange;
-    }
-
     p {
         text-align: center;
     }
@@ -298,14 +296,6 @@ p {
         width: inherit;
     }
 
-    a {
-        padding: px-rem(16px 30px);
-        border: 1px solid $dark-gray;
-        width: fit-content;
-        color: $dark-gray;
-        @include btn-decoration-shadow($white, 0.15s);
-    }
-
     &-index {
         @include grid-repeat-rows-gap(2, auto, px-rem(65px));
 
@@ -337,16 +327,6 @@ p {
 .mobile-app {
     img {
         margin: 0 auto;
-    }
-
-    a {
-        padding: px-rem(16px 40px);
-        background-color: $red;
-        width: fit-content;
-        border-radius: px-rem(32px);
-        text-transform: inherit;
-        border: 1px solid $red;
-        @include btn-decoration-shadow($red-hover, 0.15s);
     }
 
     &-index {

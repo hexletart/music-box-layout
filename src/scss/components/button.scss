@@ -1,9 +1,9 @@
+// BUTTON
 @mixin btn {
     .btn {
         display: block;
         box-sizing: border-box;
         height: auto;
-        width: inherit;
         text-decoration: none;
         color: white;
         text-align: center;
@@ -12,6 +12,80 @@
     }
 }
 
+@mixin btn-green {
+    .btn-green {
+        background-color: $green;
+        border: 1px solid $green;
+        padding: px-rem(20px 30px);
+        width: inherit;
+        @include btn-decoration-shadow($green-hover, 0.15s);
+    }
+}
+
+@mixin btn-purple {
+    .btn-purple {
+        img {
+            width: 20px;
+            filter: invert(100%);
+        }
+
+        @include grid-repeat-rows-columns-position-gap(1, min-content, 2, min-content, flex-start, center, px-rem(16px));
+        background-color: $purple;
+        border: 1px solid $purple;
+        padding: px-rem(20px 30px);
+        width: px-rem(200px);
+        @include btn-decoration-shadow($purple-hover, 0.15s);
+    }
+}
+
+@mixin btn-red-opt-1 {
+    .btn-red-opt-1 {
+        padding: px-rem(16px 40px);
+        background-color: $red;
+        width: fit-content;
+        border-radius: px-rem(32px);
+        text-transform: inherit;
+        border: 1px solid $red;
+        @include btn-decoration-shadow($red-hover, 0.15s);
+    }
+}
+
+@mixin btn-red-opt-2 {
+    .btn-red-opt-2 {
+        img {
+            width: 20px;
+            filter: invert(100%);
+        }
+
+        @include grid-repeat-rows-columns-position-gap(1, min-content, 2, min-content, flex-start, center, px-rem(16px));
+        background-color: $red;
+        border: 1px solid $red;
+        padding: px-rem(20px 30px);
+        width: px-rem(200px);
+        @include btn-decoration-shadow($red-hover, 0.15s);
+    }
+}
+
+@mixin btn-transparent-opt-1 {
+    .btn-transparent-opt-1 {
+        border: 1px solid $white;
+        padding: px-rem(20px 30px);
+        width: inherit;
+        @include btn-decoration-transparent-orange;
+    }
+}
+
+@mixin btn-transparent-opt-2 {
+    .btn-transparent-opt-2 {
+        padding: px-rem(16px 30px);
+        border: 1px solid $dark-gray;
+        width: fit-content;
+        color: $dark-gray;
+        @include btn-decoration-shadow($white, 0.15s);
+    }
+}
+
+//SHADOW, PSEUDO-CLASS
 @mixin btn-decoration-shadow($color, $transition-time) {
     &:hover {
         transition: box-shadow #{$transition-time};
@@ -23,76 +97,10 @@
     }
 }
 
-@mixin btn-decoration-red {
-    &:hover {
-        transition: box-shadow 0.15s;
-        box-shadow: inset px-rem(0 0 8px 2px) $red-hover;
-    }
-
-    &:active {
-        box-shadow: inset px-rem(0 0 8px 4px) $red-hover;
-    }
-}
-
 @mixin btn-decoration-transparent-orange {
     @include btn-decoration-shadow($white, 0.15s);
     &:hover + p {
         transition: color 0.15s;
         color: $orange;
-    }
-}
-
-@mixin btn-purple {
-    .btn-purple {
-        @include grid-repeat-rows-columns-position-gap(
-            1,
-            min-content,
-            2,
-            min-content,
-            flex-start,
-            center,
-            px-rem(16px)
-        );
-        background-color: $purple;
-        border: 1px solid $purple;
-        padding: px-rem(20px 30px);
-        width: px-rem(200px);
-
-        img {
-            width: 20px;
-            filter: invert(100%);
-        }
-    }
-}
-
-@mixin btn-red-opt-1 {
-    .btn-red-opt-1 {
-        @include grid-repeat-rows-columns-position-gap(
-            1,
-            min-content,
-            2,
-            min-content,
-            flex-start,
-            center,
-            px-rem(16px)
-        );
-        background-color: $red;
-        border: 1px solid $red;
-        padding: px-rem(20px 30px);
-        width: px-rem(200px);
-
-        img {
-            width: 20px;
-            filter: invert(100%);
-        }
-    }
-}
-
-@mixin btn-green {
-    .btn-green {
-        background-color: $green;
-        border: 1px solid $green;
-        padding: px-rem(20px 30px);
-        @include btn-decoration-shadow($green-hover, 0.15s);
     }
 }
