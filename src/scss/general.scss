@@ -162,6 +162,7 @@ p {
             }
 
             &-menu {
+                display: inline;
                 @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
 
                 a {

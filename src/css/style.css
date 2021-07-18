@@ -499,6 +499,7 @@ h4 {
   margin: 0;
 }
 .greet-part-top-left-menu {
+  display: inline;
   display: grid;
   grid-template-rows: repeat(1, auto);
   grid-template-columns: repeat(4, min-content);
