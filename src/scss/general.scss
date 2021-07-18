@@ -127,7 +127,12 @@ p {
     @include flex-column-flex-start-center;
     width: 100%;
 
-    
+    &-top,
+    &-index,
+    &-artist {
+        width: inherit;
+        box-sizing: border-box;
+    }
 
     &-top {
         position: absolute;
