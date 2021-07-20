@@ -16,6 +16,7 @@ html {
 
 body,
 main,
+section,
 footer {
   display: flex;
   flex-direction: column;
@@ -256,16 +257,6 @@ h4 {
   padding-top: 6.25rem;
 }
 
-.sector-for-main-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: inherit;
-  max-width: 75rem;
-  box-sizing: border-box;
-}
-
 .sector-for-main-left {
   display: flex;
   flex-direction: column;
@@ -499,7 +490,6 @@ h4 {
   margin: 0;
 }
 .greet-part-top-left-menu {
-  display: inline;
   display: grid;
   grid-template-rows: repeat(1, auto);
   grid-template-columns: repeat(4, min-content);
@@ -537,16 +527,16 @@ h4 {
   position: relative;
 }
 .greet-part-index {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  grid-template-columns: repeat(1, 100%);
+  justify-content: center;
+  align-items: flex-start;
   z-index: 200;
 }
 .greet-part-index h1,
 .greet-part-index h2,
 .greet-part-index p {
-  width: inherit;
   text-align: center;
 }
 .greet-part-index-form {
@@ -554,6 +544,7 @@ h4 {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin: 0 auto;
 }
 .greet-part-index-form-top {
   display: flex;
@@ -593,6 +584,10 @@ h4 {
 }
 
 .subscription-part {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  justify-content: center;
+  align-items: center;
   color: white;
 }
 .subscription-part img {
@@ -602,7 +597,8 @@ h4 {
   text-transform: uppercase;
   line-height: 1.5;
 }
-.subscription-part p {
+.subscription-part p,
+.subscription-part h2 {
   text-align: center;
 }
 .subscription-part-index {
@@ -610,24 +606,28 @@ h4 {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  margin: 0 auto;
   width: 100%;
 }
-.subscription-part-index-free, .subscription-part-index-standart, .subscription-part-index-premium {
+.subscription-part-index-card {
   display: block;
   position: relative;
   border-radius: 1.125rem;
 }
-.subscription-part-index-free div, .subscription-part-index-standart div, .subscription-part-index-premium div {
+.subscription-part-index-card h3 {
+  text-align: center;
+}
+.subscription-part-index-card-body {
   position: absolute;
   top: 0;
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: repeat(4, auto);
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   box-sizing: border-box;
 }
-.subscription-part-index-free-note, .subscription-part-index-standart-note, .subscription-part-index-premium-note {
+.subscription-part-index-card-note {
   text-align: center;
 }
 .subscription-part > p {
@@ -873,13 +873,6 @@ section {
     padding-right: 1.25rem;
   }
 
-  main {
-    max-width: 53.125rem;
-  }
-
-  .greet-part-top, .greet-part-index, .greet-part-artist {
-    max-width: 53.125rem;
-  }
   .greet-part-top {
     display: flex;
     flex-direction: column;
@@ -930,7 +923,7 @@ section {
   .greet-part-index-form-top input {
     width: 100%;
     min-width: 6.875rem;
-    max-width: 37.5rem;
+    max-width: 50rem;
   }
   .greet-part-artist {
     padding: 14.0625rem 1.25rem;
@@ -956,15 +949,15 @@ section {
     align-items: center;
     width: inherit;
   }
-  .subscription-part-index-free, .subscription-part-index-standart, .subscription-part-index-premium {
+  .subscription-part-index-card {
     box-sizing: border-box;
     height: 37.1875rem;
     overflow-y: hidden;
   }
-  .subscription-part-index-free:nth-child(-n+2), .subscription-part-index-standart:nth-child(-n+2), .subscription-part-index-premium:nth-child(-n+2) {
+  .subscription-part-index-card:nth-child(-n+2) {
     margin-bottom: 3.125rem;
   }
-  .subscription-part-index-free div h3, .subscription-part-index-standart div h3, .subscription-part-index-premium div h3 {
+  .subscription-part-index-card-body h3 {
     margin-top: 1rem;
   }
 

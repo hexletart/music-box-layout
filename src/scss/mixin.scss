@@ -10,15 +10,6 @@
 }
 
 // SECTION
-@mixin main-sector-structure-center {
-    .sector-for-main-center {
-        @include flex-column-flex-start-center;
-        width: inherit;
-        max-width: px-rem(1200px);
-        box-sizing: border-box;
-    }
-}
-
 @mixin main-sector-structure-left {
     .sector-for-main-left {
         @include flex-column-flex-start-flex-start;

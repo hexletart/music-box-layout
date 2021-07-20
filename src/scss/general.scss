@@ -12,6 +12,7 @@
 
 body,
 main,
+section,
 footer {
     @include flex-column-flex-start-center;
     width: 100%;
@@ -74,8 +75,6 @@ p {
 @include pad-ver(px-rem(200px));
 
 @include pad-side(top, px-rem(100px));
-
-@include main-sector-structure-center;
 @include main-sector-structure-left;
 
 @include no-wrap;
@@ -162,7 +161,6 @@ p {
             }
 
             &-menu {
-                display: inline;
                 @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
 
                 a {
@@ -206,18 +204,18 @@ p {
     }
 
     &-index {
-        @include flex-column-flex-start-center;
+        @include grid-repeat-rows-columns-position-gap(4, auto, 1, 100%, center, flex-start);
         z-index: 200;
 
         h1,
         h2,
         p {
-            width: inherit;
             text-align: center;
         }
 
         &-form {
             @include flex-column-flex-start-center;
+            margin: 0 auto;
 
             &-top {
                 @include flex-row-space-between-center;
@@ -247,8 +245,9 @@ p {
 }
 
 .subscription-part {
+    @include grid-repeat-rows-position-gap(3, auto, center, center);
     color: white;
-
+    
     img {
         height: px-rem(615px);
     }
@@ -258,26 +257,30 @@ p {
         line-height: 1.5;
     }
 
-    p {
+    p,
+    h2 {
         text-align: center;
     }
 
     &-index {
         @include flex-row-space-between-flex-start;
+        margin: 0 auto;
         width: 100%;
 
-        &-free,
-        &-standart,
-        &-premium {
+        &-card {
             display: block;
             position: relative;
             border-radius: px-rem(18px);
 
-            div {
+            h3 {
+                text-align: center;
+            }
+
+            &-body {
                 position: absolute;
                 top: 0;
                 width: 100%;
-                @include flex-column-center-center;
+                @include grid-repeat-rows-position-gap(4, auto, center, flex-start);
                 box-sizing: border-box;
             }
 

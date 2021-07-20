@@ -10,17 +10,7 @@
         padding-right: px-rem(20px);
     }
 
-    main {
-        max-width: px-rem(850px);
-    }
-
     .greet-part {
-        &-top,
-        &-index,
-        &-artist {
-            max-width: px-rem(850px);
-        }
-
         &-top {
             @include flex-column-flex-start-flex-start;
 
@@ -62,7 +52,7 @@
                     input {
                         width: 100%;
                         min-width: px-rem(110px);
-                        max-width: px-rem(600px);
+                        max-width: px-rem(800px);
                     }
                 }
             }
@@ -89,9 +79,7 @@
             @include flex-column-flex-start-center;
             width: inherit;
 
-            &-free,
-            &-standart,
-            &-premium {
+            &-card {
                 box-sizing: border-box;
                 height: px-rem(595px);
                 overflow-y: hidden;
@@ -100,7 +88,7 @@
                     margin-bottom: px-rem(50px);
                 }
 
-                div h3 {
+                &-body h3 {
                     margin-top: px-rem(16px);
                 }
             }
