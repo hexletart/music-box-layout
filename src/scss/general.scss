@@ -27,6 +27,10 @@ h4 {
     margin: 0;
 }
 
+section {
+    box-sizing: border-box;
+}
+
 img {
     vertical-align: middle;
 }
@@ -95,43 +99,13 @@ p {
 @include btn-transparent-opt-1;
 @include btn-transparent-opt-2;
 
-
-.bg {
-    &-index,
-    &-artist {
-        &::before {
-            position: absolute;
-            @include greet-part-bg-positioning;
-            content: "";
-        }
-    }
-
-    &-index {
-        &::before {
-            @include img-main-greet-part-index;
-            z-index: 0;
-        }
-    }
-
-    &-artist {
-        &::before {
-            @include img-main-greet-part-artist;
-            z-index: 100;
-        }
-    }
-}
+@include img-main-greet-part-index;
+@include img-main-greet-part-artist;
 
 .greet-part {
     position: relative;
     @include flex-column-flex-start-center;
     width: 100%;
-
-    &-top,
-    &-index,
-    &-artist {
-        width: inherit;
-        box-sizing: border-box;
-    }
 
     &-top {
         position: absolute;
@@ -140,7 +114,6 @@ p {
         right: 0;
         margin: 0 auto;
         @include flex-row-space-between-center;
-        z-index: 400;
 
         &-left {
             @include grid-repeat-rows-columns-position-gap(1, min-content, 2, auto, flex-start, center, px-rem(90px));
@@ -198,45 +171,40 @@ p {
         }
     }
 
-    &-index,
-    &-artist {
-        position: relative;
+    h1,
+    h2,
+    > p {
+        width: inherit;
+        text-align: center;
     }
 
-    &-index {
-        @include grid-repeat-rows-columns-position-gap(4, auto, 1, 100%, center, flex-start);
-        z-index: 200;
+    &-form {
+        @include flex-column-flex-start-center;
 
-        h1,
-        h2,
-        p {
-            text-align: center;
-        }
+        &-top {
+            @include flex-row-space-between-center;
+            width: inherit;
 
-        &-form {
-            @include flex-column-flex-start-center;
-            margin: 0 auto;
+            input {
+                @include greet-part-input-main;
 
-            &-top {
-                @include flex-row-space-between-center;
-                width: inherit;
-
-                input {
-                    @include greet-part-input-main;
-
-                    &::placeholder {
-                        color: $white;
-                        font-size: px-rem(14px);
-                        font-weight: bold;
-                    }
+                &::placeholder {
+                    color: $white;
+                    font-size: px-rem(14px);
+                    font-weight: bold;
                 }
             }
         }
     }
 
     &-artist {
-        @include flex-column-flex-end-flex-start;
         z-index: 300;
+
+        h1,
+        h2,
+        > p {
+            text-align: left;
+        }
 
         &-buttons {
             @include grid-repeat-rows-columns-position-gap(1, min-content, 2, min-content, flex-start, center, px-rem(24px));
@@ -247,7 +215,7 @@ p {
 .subscription-part {
     @include grid-repeat-rows-position-gap(3, auto, center, center);
     color: white;
-    
+
     img {
         height: px-rem(615px);
     }

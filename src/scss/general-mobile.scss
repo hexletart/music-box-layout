@@ -11,6 +11,8 @@
     }
 
     .greet-part {
+        padding-top: px-rem(50px);
+
         &-top {
             @include flex-column-flex-start-flex-start;
 
@@ -36,24 +38,20 @@
             }
         }
 
-        &-index {
-            padding-top: px-rem(250px);
+        p {
+            margin-top: px-rem(16px);
+        }
 
-            p {
-                margin-top: px-rem(16px);
-            }
+        &-form {
+            width: 100%;
 
-            &-form {
-                width: 100%;
+            &-top {
+                @include flex-column-flex-start-center;
 
-                &-top {
-                    @include flex-column-flex-start-center;
-
-                    input {
-                        width: 100%;
-                        min-width: px-rem(110px);
-                        max-width: px-rem(800px);
-                    }
+                input {
+                    width: 100%;
+                    min-width: px-rem(110px);
+                    max-width: px-rem(800px);
                 }
             }
         }
@@ -63,7 +61,6 @@
 
             &-buttons {
                 @include grid-repeat-rows-columns-position-gap(2, min-content, 1, min-content, flex-start, center, px-rem(24px));
-
             }
         }
     }
@@ -170,7 +167,7 @@
     .track-list {
         &-body {
             @include grid-repeat-rows-columns-gap(6, auto, 1, auto);
-            
+
             &-position {
                 max-width: none;
             }
@@ -185,7 +182,6 @@
 
         &-body {
             @include grid-repeat-rows-columns-gap(3, auto, 2, auto);
-
         }
     }
 }

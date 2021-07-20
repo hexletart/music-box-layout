@@ -1,7 +1,17 @@
 @mixin img-main-greet-part-index {
-    background-image: url("../assets/images/banner.png");
+    .bg-index {
+        background-image: url("../assets/images/banner.png");
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+@mixin img-main-greet-part-artist {
+    .bg-artist {
+    background-image: url("../assets/images/Morten Harket.png");
     background-position: center;
     background-size: cover;
+    }
 }
 
 @mixin img-subscription-part-free {
@@ -10,8 +20,4 @@
     background-size: 100%;
 }
 
-@mixin img-main-greet-part-artist {
-    background-image: url("../assets/images/Morten Harket.png");
-    background-position: center;
-    background-size: cover;
-}
+
