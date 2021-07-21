@@ -8,16 +8,16 @@
 
 @mixin img-main-greet-part-artist {
     .bg-artist {
-    background-image: url("../assets/images/Morten Harket.png");
-    background-position: center;
-    background-size: cover;
+        background-image: url("../assets/images/Morten Harket.png");
+        background-position: center;
+        background-size: cover;
     }
 }
 
-@mixin img-subscription-part-free {
-    background-image: url("../assets/images/subscribe_1.png");
-    background-position: center;
-    background-size: 100%;
+@mixin image-subscription-part($class-name, $img-name) {
+    .img-#{$class-name} {
+        background-image: url("../assets/images/#{$img-name}");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 }
-
-

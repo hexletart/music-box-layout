@@ -66,26 +66,20 @@
     }
 
     .subscription-part {
-        img {
-            box-sizing: border-box;
-            object-fit: cover;
-            object-position: 0 0;
-        }
-
-        &-index {
+        &-option {
             @include flex-column-flex-start-center;
             width: inherit;
 
             &-card {
-                box-sizing: border-box;
                 height: px-rem(595px);
                 overflow-y: hidden;
+                width: px-rem(374px);
 
                 &:nth-child(-n + 2) {
                     margin-bottom: px-rem(50px);
                 }
 
-                &-body h3 {
+                h3 {
                     margin-top: px-rem(16px);
                 }
             }

@@ -56,6 +56,7 @@ p {
 @include mar-ver(0);
 @include mar-ver(px-rem(64px));
 @include mar-ver(px-rem(30px), px-rem(24px));
+@include mar-ver(px-rem(40px), 0);
 @include mar-ver(0, px-rem(40px));
 @include mar-ver(px-rem(24px), px-rem(200px));
 
@@ -101,6 +102,9 @@ p {
 
 @include img-main-greet-part-index;
 @include img-main-greet-part-artist;
+@include image-subscription-part(subscribe-first, 'subscribe_1.png');
+@include image-subscription-part(subscribe-second, 'subscribe_2.png');
+@include image-subscription-part(subscribe-third, 'subscribe_3.png');
 
 .greet-part {
     position: relative;
@@ -213,59 +217,41 @@ p {
 }
 
 .subscription-part {
-    @include grid-repeat-rows-position-gap(3, auto, center, center);
     color: white;
-
-    img {
-        height: px-rem(615px);
-    }
-
-    h3 {
-        text-transform: uppercase;
-        line-height: 1.5;
-    }
 
     p,
     h2 {
         text-align: center;
     }
 
-    &-index {
+    h3 {
+        text-transform: uppercase;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    &-option {
         @include flex-row-space-between-flex-start;
         margin: 0 auto;
         width: 100%;
 
         &-card {
-            display: block;
-            position: relative;
+            @include grid-repeat-rows-position-gap(4, auto, center, flex-start);
             border-radius: px-rem(18px);
-
-            h3 {
-                text-align: center;
-            }
-
-            &-body {
-                position: absolute;
-                top: 0;
-                width: 100%;
-                @include grid-repeat-rows-position-gap(4, auto, center, flex-start);
-                box-sizing: border-box;
-            }
-
-            &-note {
-                text-align: center;
-            }
+            width: px-rem(369px);
+            box-sizing: border-box;
         }
-    }
-
-    > p {
-        margin: px-rem(40px 0px 0px);
     }
 }
 
 .news-part {
+
     img {
         width: inherit;
+    }
+
+    h2 {
+        text-align: center;
     }
 
     &-index {
@@ -299,6 +285,10 @@ p {
 .mobile-app {
     img {
         margin: 0 auto;
+    }
+
+    h2 {
+        text-align: center;
     }
 
     &-index {
