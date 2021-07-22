@@ -22,7 +22,6 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
 }
 
 body,
@@ -441,12 +440,11 @@ h4 {
   background-repeat: no-repeat;
 }
 
+header,
+footer,
 section,
-section > h1,
-section > h2,
-section > h3,
-p {
-  width: inherit;
+section > div {
+  width: 100%;
 }
 
 .greet-part {
@@ -560,9 +558,6 @@ p {
   font-weight: bold;
 }
 
-.greet-artist {
-  width: inherit;
-}
 .greet-artist h1,
 .greet-artist h2,
 .greet-artist > p {

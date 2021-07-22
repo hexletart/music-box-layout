@@ -15,7 +15,6 @@ main,
 section,
 footer {
     @include flex-column-flex-start-center;
-    width: 100%;
 }
 
 body,
@@ -102,12 +101,11 @@ img {
 @include image-subscription-part(subscribe-second, 'subscribe_2.png');
 @include image-subscription-part(subscribe-third, 'subscribe_3.png');
 
+header,
+footer,
 section,
-section > h1,
-section > h2,
-section > h3,
-p {
-    width: inherit;
+section > div {
+    width: 100%;
 }
 
 .greet-part {
@@ -206,8 +204,6 @@ p {
 }
 
 .greet-artist {
-    width: inherit;
-    
     h1,
     h2,
     > p {
