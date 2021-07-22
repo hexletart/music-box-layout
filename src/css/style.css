@@ -43,36 +43,40 @@ img {
 }
 
 h1 {
-  color: #ffffff;
+  color: 700;
   font-size: 3.75rem;
   line-height: 5.625rem;
   font-family: "Roboto-Bold", sans-serif;
+  font-weight: #ffffff;
   text-transform: uppercase;
   font-weight: inherit;
 }
 
 h2 {
-  color: #ffffff;
+  color: 700;
   font-size: 2.375rem;
   line-height: 3.5625rem;
   font-family: "Roboto-Bold", sans-serif;
+  font-weight: #ffffff;
   text-transform: uppercase;
   font-weight: inherit;
 }
 
 h3 {
-  color: #ffffff;
+  color: 400;
   font-size: 1.5rem;
   line-height: 2.8125rem;
   font-family: "Roboto", sans-serif;
+  font-weight: #ffffff;
   font-weight: inherit;
 }
 
 h4 {
-  color: #ffffff;
+  color: 700;
   font-size: 1.125rem;
   line-height: 1.6875rem;
   font-family: "Roboto-Bold", sans-serif;
+  font-weight: #ffffff;
   font-weight: inherit;
 }
 
@@ -605,6 +609,9 @@ section > div {
 .news-part h2 {
   text-align: center;
 }
+.news-part h3 {
+  text-transform: capitalize;
+}
 .news-part-index {
   display: grid;
   grid-template-rows: repeat(2, auto);
@@ -721,6 +728,7 @@ section > div {
 .discography-list h3,
 .artist-list h3 {
   font-family: "Roboto-Bold", sans-serif;
+  font-weight: 700;
 }
 .track-list p,
 .discography-list p,
@@ -805,36 +813,40 @@ section > div {
 
 @media screen and (max-width: 1240px) {
   h1 {
-    color: #ffffff;
+    color: 700;
     font-size: 1.875rem;
     line-height: 2.8125rem;
     font-family: "Roboto-Bold", sans-serif;
+    font-weight: #ffffff;
     text-transform: uppercase;
     font-weight: inherit;
   }
 
   h2 {
-    color: #ffffff;
+    color: 400;
     font-size: 1.125rem;
     line-height: 1.6875rem;
     font-family: "Roboto", sans-serif;
+    font-weight: #ffffff;
     text-transform: uppercase;
     font-weight: inherit;
   }
 
   h3 {
-    color: #ffffff;
+    color: 400;
     font-size: 1rem;
     line-height: 1.5rem;
     font-family: "Roboto", sans-serif;
+    font-weight: #ffffff;
     font-weight: inherit;
   }
 
   h4 {
-    color: #ffffff;
+    color: 400;
     font-size: 1.125rem;
     line-height: 1.5rem;
     font-family: "Roboto", sans-serif;
+    font-weight: #ffffff;
     font-weight: inherit;
   }
 

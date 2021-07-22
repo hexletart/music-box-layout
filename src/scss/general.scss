@@ -36,10 +36,10 @@ img {
 }
 
 
-@include heading-set(h1, px-rem(60px), px-rem(90px), Roboto-Bold, $white, uppercase);
-@include heading-set(h2, px-rem(38px), px-rem(57px), Roboto-Bold, $white, uppercase);
-@include heading-set(h3, px-rem(24px), px-rem(45px), Roboto, $white);
-@include heading-set(h4, px-rem(18px), px-rem(27px), Roboto-Bold, $white);
+@include heading-set(h1, px-rem(60px), px-rem(90px), Roboto-Bold, $white, 700, uppercase);
+@include heading-set(h2, px-rem(38px), px-rem(57px), Roboto-Bold, $white, 700, uppercase);
+@include heading-set(h3, px-rem(24px), px-rem(45px), Roboto, $white, 400);
+@include heading-set(h4, px-rem(18px), px-rem(27px), Roboto-Bold, $white, 700);
 
 @include paragraphs-fixed;
 
@@ -249,6 +249,10 @@ section > div {
         text-align: center;
     }
 
+    h3 {
+        text-transform: capitalize;
+    }
+
     &-index {
         @include grid-repeat-rows-gap(2, auto, px-rem(65px));
 
@@ -361,6 +365,7 @@ section > div {
 .artist-list {
     h3 {
         font-family: "Roboto-Bold", sans-serif;
+        font-weight: 700;
     }
 
     p {
