@@ -102,12 +102,17 @@ img {
 @include image-subscription-part(subscribe-second, 'subscribe_2.png');
 @include image-subscription-part(subscribe-third, 'subscribe_3.png');
 
-section > div {
+section,
+section > h1,
+section > h2,
+section > h3,
+p {
     width: inherit;
 }
 
 .greet-part {
     @include flex-column-flex-start-center;
+    width: inherit;
 
     &-top {
         position: absolute;
@@ -201,6 +206,8 @@ section > div {
 }
 
 .greet-artist {
+    width: inherit;
+    
     h1,
     h2,
     > p {

@@ -445,7 +445,11 @@ h4 {
   background-repeat: no-repeat;
 }
 
-section > div {
+section,
+section > h1,
+section > h2,
+section > h3,
+p {
   width: inherit;
 }
 
@@ -454,6 +458,7 @@ section > div {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: inherit;
 }
 .greet-part-top {
   position: absolute;
@@ -559,6 +564,9 @@ section > div {
   font-weight: bold;
 }
 
+.greet-artist {
+  width: inherit;
+}
 .greet-artist h1,
 .greet-artist h2,
 .greet-artist > p {
