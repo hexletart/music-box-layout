@@ -723,3 +723,11 @@
     justify-content: $justify-content;
     align-items: $align-items;
 }
+
+//POSITION
+
+@mixin relative {
+    .relative {
+        position: relative;
+    }
+}

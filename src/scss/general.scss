@@ -11,10 +11,18 @@
 @include html("Roboto", sans-serif, px-rem(16px), 1.5, $dark-gray, $black);
 
 body,
+header,
 main,
 section,
-footer {
-    @include flex-column-flex-start-center;
+footer,
+section > div {
+    width: 100%;
+}
+
+body,
+main,
+section {
+    @include flex-column-center-center;
 }
 
 body,
@@ -101,20 +109,15 @@ img {
 @include image-subscription-part(subscribe-second, 'subscribe_2.png');
 @include image-subscription-part(subscribe-third, 'subscribe_3.png');
 
-header,
-footer,
-section,
-section > div {
-    width: 100%;
-}
+@include relative;
 
 .greet-part {
-    @include flex-column-flex-start-center;
-    width: inherit;
-
+    @include flex-column-center-center;
+    
     &-top {
         position: absolute;
         padding-top: px-rem(25px);
+        top: 0;
         left: 0;
         right: 0;
         margin: 0 auto;
@@ -207,6 +210,7 @@ section > div {
     h1,
     h2,
     > p {
+        width: inherit;
         text-align: left;
     }
 
