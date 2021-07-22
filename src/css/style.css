@@ -42,10 +42,6 @@ img {
   vertical-align: middle;
 }
 
-p {
-  font-size: 1rem;
-}
-
 h1 {
   color: #ffffff;
   font-size: 3.75rem;
@@ -266,16 +262,6 @@ h4 {
   padding-top: 6.25rem;
 }
 
-.sector-for-main-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: inherit;
-  max-width: 75rem;
-  box-sizing: border-box;
-}
-
 .no-wrap {
   white-space: nowrap;
 }
@@ -455,13 +441,15 @@ h4 {
   background-repeat: no-repeat;
 }
 
+section > div {
+  width: inherit;
+}
+
 .greet-part {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
 }
 .greet-part-top {
   position: absolute;
@@ -566,15 +554,13 @@ h4 {
   font-size: 0.875rem;
   font-weight: bold;
 }
-.greet-part-artist {
-  z-index: 300;
-}
-.greet-part-artist h1,
-.greet-part-artist h2,
-.greet-part-artist > p {
+
+.greet-artist h1,
+.greet-artist h2,
+.greet-artist > p {
   text-align: left;
 }
-.greet-part-artist-buttons {
+.greet-artist-buttons {
   display: grid;
   grid-template-rows: repeat(1, min-content);
   grid-template-columns: repeat(2, min-content);
@@ -910,10 +896,8 @@ section {
     min-width: 6.875rem;
     max-width: 50rem;
   }
-  .greet-part-artist {
-    padding: 14.0625rem 1.25rem;
-  }
-  .greet-part-artist-buttons {
+
+  .greet-artist-buttons {
     display: grid;
     grid-template-rows: repeat(2, min-content);
     grid-template-columns: repeat(1, min-content);

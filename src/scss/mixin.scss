@@ -9,16 +9,6 @@
     }
 }
 
-// SECTION
-@mixin main-sector-structure-left {
-    .sector-for-main-left {
-        @include flex-column-flex-start-flex-start;
-        width: inherit;
-        max-width: px-rem(1200px);
-        box-sizing: border-box;
-    }
-}
-
 // FONT
 @mixin heading-set($heading-type, $font-size, $line-height, $font-family, $color, $text-transfom: null) {
     @if $text-transfom== "null" {

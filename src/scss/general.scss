@@ -35,9 +35,6 @@ img {
     vertical-align: middle;
 }
 
-p {
-    font-size: px-rem(16px);
-}
 
 @include heading-set(h1, px-rem(60px), px-rem(90px), Roboto-Bold, $white, uppercase);
 @include heading-set(h2, px-rem(38px), px-rem(57px), Roboto-Bold, $white, uppercase);
@@ -80,7 +77,6 @@ p {
 @include pad-ver(px-rem(200px));
 
 @include pad-side(top, px-rem(100px));
-@include main-sector-structure-left;
 
 @include no-wrap;
 
@@ -106,10 +102,12 @@ p {
 @include image-subscription-part(subscribe-second, 'subscribe_2.png');
 @include image-subscription-part(subscribe-third, 'subscribe_3.png');
 
+section > div {
+    width: inherit;
+}
+
 .greet-part {
-    position: relative;
     @include flex-column-flex-start-center;
-    width: 100%;
 
     &-top {
         position: absolute;
@@ -200,19 +198,17 @@ p {
             }
         }
     }
+}
 
-    &-artist {
-        z-index: 300;
+.greet-artist {
+    h1,
+    h2,
+    > p {
+        text-align: left;
+    }
 
-        h1,
-        h2,
-        > p {
-            text-align: left;
-        }
-
-        &-buttons {
-            @include grid-repeat-rows-columns-position-gap(1, min-content, 2, min-content, flex-start, center, px-rem(24px));
-        }
+    &-buttons {
+        @include grid-repeat-rows-columns-position-gap(1, min-content, 2, min-content, flex-start, center, px-rem(24px));
     }
 }
 
@@ -245,7 +241,6 @@ p {
 }
 
 .news-part {
-
     img {
         width: inherit;
     }

@@ -55,13 +55,11 @@
                 }
             }
         }
+    }
 
-        &-artist {
-            padding: px-rem(225px 20px);
-
-            &-buttons {
-                @include grid-repeat-rows-columns-position-gap(2, min-content, 1, min-content, flex-start, center, px-rem(24px));
-            }
+    .greet-artist {
+        &-buttons {
+            @include grid-repeat-rows-columns-position-gap(2, min-content, 1, min-content, flex-start, center, px-rem(24px));
         }
     }
 
