@@ -49,6 +49,11 @@ img {
   vertical-align: middle;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   color: #ffffff;
   font-size: 3.75rem;
@@ -465,6 +470,7 @@ h4 {
   left: 0;
   right: 0;
   margin: 0 auto;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -479,7 +485,8 @@ h4 {
   align-items: center;
 }
 .greet-part-top-left p,
-.greet-part-top-left a {
+.greet-part-top-left a,
+.greet-part-top-left ul {
   font-size: 0.6875rem;
 }
 .greet-part-top-left-logo {
@@ -495,7 +502,7 @@ h4 {
   white-space: nowrap;
   margin: 0;
 }
-.greet-part-top-left-menu {
+.greet-part-top-left ul {
   display: grid;
   grid-template-rows: repeat(1, auto);
   grid-template-columns: repeat(4, min-content);
@@ -503,18 +510,21 @@ h4 {
   justify-content: flex-start;
   align-items: center;
 }
-.greet-part-top-left-menu a {
+.greet-part-top-left ul li {
+  list-style-type: none;
+}
+.greet-part-top-left ul li a {
   text-transform: uppercase;
   color: #cacaca;
   text-decoration: none;
 }
-.greet-part-top-left-menu .hover {
+.greet-part-top-left ul li .hover {
   color: #ffffff;
 }
-.greet-part-top-left-menu:hover a:hover {
+.greet-part-top-left ul li:hover a:hover {
   color: #ffffff;
 }
-.greet-part-top-left-menu:hover a:not(:hover) {
+.greet-part-top-left ul li:hover a:not(:hover) {
   color: inherit;
 }
 .greet-part-top-right input {
@@ -878,7 +888,7 @@ section {
   .greet-part-top-left p {
     margin-right: 0;
   }
-  .greet-part-top-left-menu {
+  .greet-part-top-left ul {
     display: grid;
     grid-template-rows: repeat(4, min-content);
     grid-template-columns: repeat(1, auto);

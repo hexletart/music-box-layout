@@ -42,6 +42,10 @@ img {
     vertical-align: middle;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+}
 
 @include heading-set(h1, px-rem(60px), px-rem(90px), Roboto-Bold, $white, 700, uppercase);
 @include heading-set(h2, px-rem(38px), px-rem(57px), Roboto-Bold, $white, 700, uppercase);
@@ -105,15 +109,15 @@ img {
 
 @include img-main-greet-part-index;
 @include img-main-greet-part-artist;
-@include image-subscription-part(subscribe-first, 'subscribe_1.png');
-@include image-subscription-part(subscribe-second, 'subscribe_2.png');
-@include image-subscription-part(subscribe-third, 'subscribe_3.png');
+@include image-subscription-part(subscribe-first, "subscribe_1.png");
+@include image-subscription-part(subscribe-second, "subscribe_2.png");
+@include image-subscription-part(subscribe-third, "subscribe_3.png");
 
 @include relative;
 
 .greet-part {
     @include flex-column-center-center;
-    
+
     &-top {
         position: absolute;
         padding-top: px-rem(25px);
@@ -121,18 +125,28 @@ img {
         left: 0;
         right: 0;
         margin: 0 auto;
+        box-sizing: border-box;
         @include flex-row-space-between-center;
 
         &-left {
             @include grid-repeat-rows-columns-position-gap(1, min-content, 2, auto, flex-start, center, px-rem(90px));
 
             p,
-            a {
+            a,
+            ul {
                 font-size: px-rem(11px);
             }
 
             &-logo {
-                @include grid-repeat-rows-columns-position-gap(1, auto, 2, min-content, flex-start, center, px-rem(16px));
+                @include grid-repeat-rows-columns-position-gap(
+                    1,
+                    auto,
+                    2,
+                    min-content,
+                    flex-start,
+                    center,
+                    px-rem(16px)
+                );
 
                 p {
                     text-transform: uppercase;
@@ -141,26 +155,37 @@ img {
                 }
             }
 
-            &-menu {
-                @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
+            ul {
+                @include grid-repeat-rows-columns-position-gap(
+                    1,
+                    auto,
+                    4,
+                    min-content,
+                    flex-start,
+                    center,
+                    px-rem(24px)
+                );
+                li {
+                    list-style-type: none;
 
-                a {
-                    text-transform: uppercase;
-                    color: $dark-gray;
-                    text-decoration: none;
-                }
+                    a {
+                        text-transform: uppercase;
+                        color: $dark-gray;
+                        text-decoration: none;
+                    }
 
-                .hover {
-                    color: $white;
-                }
-
-                &:hover {
-                    a:hover {
+                    .hover {
                         color: $white;
                     }
 
-                    a:not(:hover) {
-                        color: inherit;
+                    &:hover {
+                        a:hover {
+                            color: $white;
+                        }
+
+                        a:not(:hover) {
+                            color: inherit;
+                        }
                     }
                 }
             }
@@ -215,7 +240,15 @@ img {
     }
 
     &-buttons {
-        @include grid-repeat-rows-columns-position-gap(1, min-content, 2, min-content, flex-start, center, px-rem(24px));
+        @include grid-repeat-rows-columns-position-gap(
+            1,
+            min-content,
+            2,
+            min-content,
+            flex-start,
+            center,
+            px-rem(24px)
+        );
     }
 }
 
@@ -350,7 +383,15 @@ img {
                 @include grid-repeat-rows-columns-gap(2, min-content, 1, auto);
 
                 &-icon {
-                    @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
+                    @include grid-repeat-rows-columns-position-gap(
+                        1,
+                        auto,
+                        4,
+                        min-content,
+                        flex-start,
+                        center,
+                        px-rem(24px)
+                    );
                 }
             }
         }
@@ -428,7 +469,16 @@ img {
     }
 
     &-body {
-        @include grid-repeat-rows-gap-columns-gap-position(2, auto, px-rem(25px), 4, auto, px-rem(50px), flex-start, flex-start);
+        @include grid-repeat-rows-gap-columns-gap-position(
+            2,
+            auto,
+            px-rem(25px),
+            4,
+            auto,
+            px-rem(50px),
+            flex-start,
+            flex-start
+        );
         width: inherit;
 
         &-position {
