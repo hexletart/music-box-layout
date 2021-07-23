@@ -470,7 +470,8 @@ h4 {
   text-align: center;
 }
 .greet-part form {
-  width: 35.625rem;
+  max-width: 35.625rem;
+  width: 100%;
 }
 .greet-part-top {
   position: absolute;
@@ -535,12 +536,6 @@ h4 {
 }
 .greet-part-top-left ul:hover li a:not(:hover) {
   color: inherit;
-}
-.greet-part-top-right {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
 }
 .greet-part-top-right input {
   box-sizing: border-box;

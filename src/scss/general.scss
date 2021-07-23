@@ -126,7 +126,8 @@ ul {
     }
 
     form {
-        width: px-rem(570px);
+        max-width: px-rem(570px);
+        width: 100%;
     }
 
     &-top {
@@ -138,10 +139,6 @@ ul {
         margin: 0 auto;
         box-sizing: border-box;
         @include flex-row-space-between-center;
-
-        form {
-            width: px-rem(570px);
-        }
 
         &-left {
             @include grid-repeat-rows-columns-position-gap(1, min-content, 2, auto, flex-start, center, px-rem(90px));
@@ -191,7 +188,7 @@ ul {
         }
 
         &-right {
-            @include flex-row-flex-end-center;
+            
             input {
                 @include greet-part-input-search;
 
