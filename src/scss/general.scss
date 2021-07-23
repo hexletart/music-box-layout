@@ -139,6 +139,10 @@ ul {
         box-sizing: border-box;
         @include flex-row-space-between-center;
 
+        form {
+            width: px-rem(570px);
+        }
+
         &-left {
             @include grid-repeat-rows-columns-position-gap(1, min-content, 2, auto, flex-start, center, px-rem(90px));
 
