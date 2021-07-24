@@ -299,6 +299,7 @@ h4 {
   text-align: center;
   text-transform: uppercase;
   border-radius: 0.3125rem;
+  cursor: pointer;
 }
 
 .sr-only {
