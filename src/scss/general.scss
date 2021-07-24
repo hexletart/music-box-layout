@@ -188,7 +188,6 @@ ul {
         }
 
         &-right {
-            
             input {
                 @include greet-part-input-search;
 
@@ -202,20 +201,16 @@ ul {
     }
 
     &-form {
-        @include flex-column-flex-start-center;
+        @include flex-row-space-between-center;
+        width: inherit;
 
-        &-top {
-            @include flex-row-space-between-center;
-            width: inherit;
+        input {
+            @include greet-part-input-main;
 
-            input {
-                @include greet-part-input-main;
-
-                &::placeholder {
-                    color: $white;
-                    font-size: px-rem(14px);
-                    font-weight: bold;
-                }
+            &::placeholder {
+                color: $white;
+                font-size: px-rem(14px);
+                font-weight: bold;
             }
         }
     }

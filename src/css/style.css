@@ -552,18 +552,12 @@ h4 {
 }
 .greet-part-form {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-.greet-part-form-top {
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: inherit;
 }
-.greet-part-form-top input {
+.greet-part-form input {
   box-sizing: border-box;
   font-weight: bold;
   text-align: left;
@@ -572,7 +566,7 @@ h4 {
   border: 0.125rem solid #cacaca;
   border-radius: 0.1875rem;
 }
-.greet-part-form-top input::placeholder {
+.greet-part-form input::placeholder {
   color: #ffffff;
   font-size: 0.875rem;
   font-weight: bold;
