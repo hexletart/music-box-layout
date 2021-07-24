@@ -802,6 +802,7 @@ h4 {
 .artist-list h3 {
   font-size: 1.125rem;
   line-height: 1.6875rem;
+  text-transform: capitalize;
 }
 .discography-list img,
 .artist-list img {
@@ -954,6 +955,7 @@ section {
   }
 
   .news-part h3 {
+    font-size: 1rem;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
   }
