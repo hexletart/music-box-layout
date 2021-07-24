@@ -907,18 +907,13 @@ section {
     margin-top: 1rem;
   }
   .greet-part-form {
-    width: 100%;
-  }
-  .greet-part-form-top {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
   }
-  .greet-part-form-top input {
+  .greet-part-form input {
     width: 100%;
-    min-width: 6.875rem;
-    max-width: 50rem;
   }
 
   .greet-artist-buttons {
