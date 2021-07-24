@@ -1,7 +1,7 @@
 @media screen and (max-width: 1240px) {
     @include heading-set(h1, px-rem(30px), px-rem(45px), Roboto-Bold, $white, 700, uppercase);
-    @include heading-set(h2, px-rem(18px), px-rem(27px), Roboto, $white, 400, uppercase);
-    @include heading-set(h3, px-rem(16px), px-rem(24px), Roboto, $white, 400);
+    @include heading-set(h2, px-rem(18px), px-rem(27px), Roboto-Bold, $white, 700, uppercase);
+    @include heading-set(h3, px-rem(16px), px-rem(24px), Roboto-Bold, $white, 700);
     @include heading-set(h4, px-rem(18px), px-rem(24px), Roboto, $white, 400);
 
     header,
@@ -64,6 +64,10 @@
     }
 
     .subscription-part {
+        h3 {
+            margin-top: px-rem(16px);
+        }
+
         &-option {
             @include flex-column-flex-start-center;
             width: inherit;
@@ -76,15 +80,15 @@
                 &:nth-child(-n + 2) {
                     margin-bottom: px-rem(50px);
                 }
-
-                h3 {
-                    margin-top: px-rem(16px);
-                }
             }
         }
     }
 
     .news-part {
+        h3 {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+        }
         &-index {
             &-first,
             &-second {
