@@ -237,6 +237,7 @@ ul {
         text-align: center;
     }
 
+
     h3 {
         text-transform: uppercase;
         line-height: 1.5;
@@ -253,6 +254,14 @@ ul {
             border-radius: px-rem(18px);
             width: px-rem(369px);
             box-sizing: border-box;
+
+            &-price {
+                @include grid-repeat-columns-position-gap(2, min-content, center, flex-start, px-rem(16px));
+
+                > p {
+                    margin: 0;
+                }
+            }
         }
     }
 }

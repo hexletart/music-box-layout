@@ -7,9 +7,7 @@
 
 @mixin price-unit {
     .price-unit {
-        padding-left: px-rem(16px);
         font-size: px-rem(32px);
-        vertical-align: top;
         text-transform: uppercase;
     }
 }
