@@ -257,10 +257,6 @@ ul {
 
             &-price {
                 @include grid-repeat-columns-position-gap(2, min-content, center, flex-start, px-rem(16px));
-
-                > p {
-                    margin: 0;
-                }
             }
         }
     }

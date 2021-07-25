@@ -621,9 +621,6 @@ h4 {
   justify-content: center;
   align-items: flex-start;
 }
-.subscription-part-option-card-price > p {
-  margin: 0;
-}
 
 .news-part img {
   width: inherit;
