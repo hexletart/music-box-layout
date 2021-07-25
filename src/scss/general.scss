@@ -47,6 +47,10 @@ ul {
     padding: 0;
 }
 
+li {
+    list-style-type: none;
+}
+
 @include heading-set(h1, px-rem(60px), px-rem(90px), Roboto-Bold, $white, 700, uppercase);
 @include heading-set(h2, px-rem(38px), px-rem(57px), Roboto-Bold, $white, 700, uppercase);
 @include heading-set(h3, px-rem(24px), px-rem(45px), Roboto, $white, 400);
@@ -161,18 +165,14 @@ ul {
 
             ul {
                 @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
-                li {
-                    list-style-type: none;
+                li a {
+                    text-transform: uppercase;
+                    color: $dark-gray;
+                    text-decoration: none;
+                }
 
-                    a {
-                        text-transform: uppercase;
-                        color: $dark-gray;
-                        text-decoration: none;
-                    }
-
-                    .hover {
-                        color: $white;
-                    }
+                .hover {
+                    color: $white;
                 }
 
                 &:hover {
@@ -236,7 +236,6 @@ ul {
     h2 {
         text-align: center;
     }
-
 
     h3 {
         text-transform: uppercase;

@@ -54,6 +54,10 @@ ul {
   padding: 0;
 }
 
+li {
+  list-style-type: none;
+}
+
 h1 {
   color: #ffffff;
   font-size: 3.75rem;
@@ -519,15 +523,12 @@ h4 {
   justify-content: flex-start;
   align-items: center;
 }
-.greet-part-top-left ul li {
-  list-style-type: none;
-}
 .greet-part-top-left ul li a {
   text-transform: uppercase;
   color: #cacaca;
   text-decoration: none;
 }
-.greet-part-top-left ul li .hover {
+.greet-part-top-left ul .hover {
   color: #ffffff;
 }
 .greet-part-top-left ul:hover li a:hover {
