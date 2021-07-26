@@ -25,6 +25,10 @@ section {
     @include flex-column-center-center;
 }
 
+main {
+    max-width: px-rem(1240px);
+}
+
 body,
 main,
 h1,

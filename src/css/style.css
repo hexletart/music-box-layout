@@ -32,6 +32,10 @@ section {
   align-items: center;
 }
 
+main {
+  max-width: 77.5rem;
+}
+
 body,
 main,
 h1,
