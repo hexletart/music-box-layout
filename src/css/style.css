@@ -282,6 +282,10 @@ h4 {
   padding-top: 6.25rem;
 }
 
+.pad-right-1rem {
+  padding-right: 1rem;
+}
+
 .no-wrap {
   white-space: nowrap;
 }
@@ -731,9 +735,6 @@ h4 {
   justify-content: flex-start;
   align-items: center;
   box-sizing: border-box;
-}
-.footer-bottom-content * {
-  padding-right: 1rem;
 }
 
 .track-list h3,

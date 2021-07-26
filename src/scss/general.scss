@@ -96,6 +96,7 @@ li {
 @include pad-ver(px-rem(200px));
 
 @include pad-side(top, px-rem(100px));
+@include pad-side(right, px-rem(16px));
 
 @include no-wrap;
 
@@ -369,10 +370,6 @@ li {
             width: 100%;
             @include grid-repeat-rows-columns-position-gap(1, auto, 5, min-content, flex-start, center);
             box-sizing: border-box;
-
-            * {
-                padding-right: px-rem(16px);
-            }
         }
     }
 }
