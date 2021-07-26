@@ -151,8 +151,8 @@
             padding: px-rem(48px) 0;
 
             &-content {
-                @include grid-repeat-rows-columns-gap(5, auto, 1, 100%);
-                
+                @include grid-repeat-rows-columns-gap(5, auto, 1, 100%, px-rem(16px));
+
                 * {
                     width: 100%;
                 }

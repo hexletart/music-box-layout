@@ -1005,6 +1005,7 @@ section {
     display: grid;
     grid-template-rows: repeat(5, auto);
     grid-template-columns: repeat(1, 100%);
+    grid-gap: 1rem;
   }
   .footer-bottom-content * {
     width: 100%;
