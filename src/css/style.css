@@ -961,10 +961,6 @@ section {
     order: 2;
   }
 
-  .mobile-app img {
-    max-width: 100%;
-    width: 100%;
-  }
   .mobile-app-index {
     display: grid;
     grid-template-rows: repeat(2, auto);
