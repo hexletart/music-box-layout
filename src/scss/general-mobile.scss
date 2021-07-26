@@ -153,8 +153,7 @@
             &-content {
                 @include grid-repeat-rows-columns-gap(5, auto, 1, 100%);
                 * {
-                    margin-left: 12px;
-                    padding-right: 34px;
+                    margin-right: 24px;
                 }
                 
             }

@@ -1004,8 +1004,7 @@ section {
     grid-template-columns: repeat(1, 100%);
   }
   .footer-bottom-content * {
-    margin-left: 12px;
-    padding-right: 34px;
+    margin-right: 24px;
   }
 
   .track-list-body {
