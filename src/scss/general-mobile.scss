@@ -118,6 +118,11 @@
     }
 
     .mobile-app {
+        img {
+            max-width: 100%;
+            width: 100%;
+        }
+
         &-index {
             @include grid-repeat-rows-columns-gap(2, auto, 1, auto);
 
@@ -151,7 +156,7 @@
             padding: px-rem(48px) 0;
 
             &-content {
-                @include grid-repeat-rows-columns-gap(5, auto, 1, auto, px-rem(16px));
+                @include grid-repeat-rows-columns-gap(5, auto, 1, 100%, px-rem(16px));
             }
         }
     }

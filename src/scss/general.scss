@@ -305,6 +305,7 @@ li {
 
 .mobile-app {
     img {
+        max-width: 100%;
         margin: 0 auto;
     }
 
@@ -352,21 +353,8 @@ li {
             width: 100%;
             box-sizing: border-box;
 
-            &-author,
-            &-support {
-                @include grid-repeat-rows-columns-gap(5, min-content, 1, auto);
-            }
-
-            &-link {
-                @include grid-repeat-rows-columns-gap(4, min-content, 1, auto);
-            }
-
-            &-subscrabe {
-                @include grid-repeat-rows-columns-gap(2, min-content, 1, auto);
-
-                &-icon {
-                    @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
-                }
+            &-subscrabe-icon {
+                @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
             }
         }
     }
