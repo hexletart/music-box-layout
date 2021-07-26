@@ -152,9 +152,9 @@
 
             &-content {
                 @include grid-repeat-rows-columns-gap(5, auto, 1, 100%);
+                
                 * {
-                    box-sizing: content-box;
-                    padding-right: 16px;
+                    width: 100%;
                 }
             }
         }

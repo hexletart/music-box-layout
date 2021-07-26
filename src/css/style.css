@@ -732,9 +732,12 @@ h4 {
   display: grid;
   grid-template-rows: repeat(1, auto);
   grid-template-columns: repeat(5, min-content);
-  grid-gap: 1rem;
   justify-content: flex-start;
   align-items: center;
+  box-sizing: border-box;
+}
+.footer-bottom-content * {
+  display: inline-block;
   box-sizing: border-box;
 }
 
@@ -1004,7 +1007,7 @@ section {
     grid-template-columns: repeat(1, 100%);
   }
   .footer-bottom-content * {
-    margin-right: 24px;
+    width: 100%;
   }
 
   .track-list-body {
