@@ -331,6 +331,7 @@ h4 {
   border: 1px solid #34c176;
   padding: 1.25rem 1.875rem;
   width: inherit;
+  line-height: 1rem;
 }
 .btn-green:hover {
   transition: box-shadow 0.15s;
@@ -536,7 +537,7 @@ h4 {
   color: #cacaca;
   text-decoration: none;
 }
-.greet-part-top-left ul .hover {
+.greet-part-top-left ul .hover-desktop {
   color: #ffffff;
 }
 .greet-part-top-left ul:hover li a:hover {
@@ -898,6 +899,18 @@ section {
     grid-gap: 0;
     justify-content: flex-start;
     align-items: flex-start;
+  }
+  .greet-part-top-left ul .hover-desktop {
+    color: inherit;
+  }
+  .greet-part-top-left ul .hover-mobile {
+    color: #ffffff;
+  }
+  .greet-part-top-left ul:hover li a:hover {
+    color: #ffffff;
+  }
+  .greet-part-top-left ul:hover li a:not(:hover) {
+    color: inherit;
   }
   .greet-part-top-right {
     width: 100%;

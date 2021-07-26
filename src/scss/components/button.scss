@@ -19,6 +19,7 @@
         border: 1px solid $green;
         padding: px-rem(20px 30px);
         width: inherit;
+        line-height: 1rem;
         @include btn-decoration-shadow($green-hover, 0.15s);
     }
 }

@@ -26,6 +26,24 @@
 
                 ul {
                     @include grid-repeat-rows-columns-position-gap(4, min-content, 1, auto, flex-start, flex-start, 0);
+
+                    .hover-desktop {
+                        color: inherit;
+                    }
+
+                    .hover-mobile {
+                        color: $white;
+                    }
+
+                    &:hover {
+                        li a:hover {
+                            color: $white;
+                        }
+
+                        li a:not(:hover) {
+                            color: inherit;
+                        }
+                    }
                 }
             }
 
