@@ -728,10 +728,12 @@ h4 {
   display: grid;
   grid-template-rows: repeat(1, auto);
   grid-template-columns: repeat(5, min-content);
-  grid-gap: 1rem;
   justify-content: flex-start;
   align-items: center;
   box-sizing: border-box;
+}
+.footer-bottom-content * {
+  padding-right: 1rem;
 }
 
 .track-list h3,
