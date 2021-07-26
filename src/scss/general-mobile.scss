@@ -118,11 +118,6 @@
     }
 
     .mobile-app {
-        img {
-            max-width: 100%;
-            width: 100%;
-        }
-
         &-index {
             @include grid-repeat-rows-columns-gap(2, auto, 1, auto);
 
