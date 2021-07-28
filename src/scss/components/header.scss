@@ -1,0 +1,74 @@
+@mixin index-header-desktop {
+    .index-header-desktop {
+        li {
+            &:first-child {
+                color: $white;
+            }
+        }
+
+        &:hover {
+            li:hover {
+                color: $white;
+            }
+
+            li:not(:hover) {
+                color: inherit;
+            }
+
+            li:first-child:not(:hover) {
+                color: $gray;
+            }
+        }
+    }
+}
+
+@mixin index-artist-desktop {
+    .index-artist-desktop {
+        li {
+            a {
+                font-family: "Roboto-Bold", sans-serif;
+                font-weight: 700;
+            }
+
+            &:first-child {
+                color: $gray;
+            }
+
+            &:nth-child(3) {
+                color: $white;
+            }
+        }
+
+        &:hover {
+            li:hover {
+                color: $white;
+            }
+
+            li:not(:hover) {
+                color: inherit;
+            }
+
+            li:first-child:not(:hover) {
+                color: $gray;
+            }
+        }
+    }
+}
+
+@mixin index-header-mobile {
+    .index-header-mobile {
+        li {
+            a {
+                font-family: "Roboto-Bold", sans-serif;
+                font-weight: 700;
+            }
+
+            &:nth-child(3) {
+                color: $white;
+            }
+            &:first-child {
+                color: $gray;
+            }
+        }
+    }
+}
