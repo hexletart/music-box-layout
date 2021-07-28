@@ -9,7 +9,7 @@
     @include pad-ver(px-rem(225px));
 
     .greet-part {
-        padding-top: px-rem(50px);
+        padding-top: px-rem(250px);
 
         &-top {
             @include flex-column-flex-start-flex-start;
