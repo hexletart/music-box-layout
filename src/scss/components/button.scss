@@ -2,7 +2,7 @@
 @mixin btn {
     .btn {
         display: block;
-        
+        box-sizing: border-box;
         height: auto;
         text-decoration: none;
         color: white;
@@ -72,7 +72,9 @@
     .btn-transparent-opt-1 {
         border: 1px solid $white;
         padding: px-rem(20px 30px);
-        @include btn-decoration-transparent-orange;
+        @include btn-decoration-shadow($white, 0.15s);
+        width: 100%;
+        background-color: transparent;
     }
 }
 
@@ -95,13 +97,5 @@
 
     &:active {
         box-shadow: inset px-rem(0 0 8px 4px) $color;
-    }
-}
-
-@mixin btn-decoration-transparent-orange {
-    @include btn-decoration-shadow($white, 0.15s);
-    &:hover + p {
-        transition: color 0.15s;
-        color: $orange;
     }
 }
