@@ -76,7 +76,7 @@ li {
 @include mar-ver(px-rem(30px), px-rem(24px));
 @include mar-ver(px-rem(40px), 0);
 @include mar-ver(0, px-rem(40px));
-@include mar-ver(px-rem(24px), px-rem(200px));
+@include mar-ver(px-rem(20px), px-rem(200px));
 
 @include mar-side(top, px-rem(32px));
 @include mar-side(bottom, px-rem(48px));
