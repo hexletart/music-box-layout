@@ -5,7 +5,7 @@
         box-sizing: border-box;
         height: auto;
         text-decoration: none;
-        color: white;
+        color: $white;
         text-align: center;
         text-transform: uppercase;
         border-radius: px-rem(5px);
@@ -72,9 +72,7 @@
     .btn-transparent-opt-1 {
         border: 1px solid $white;
         padding: px-rem(20px 30px);
-        @include btn-decoration-shadow($white, 0.15s);
-        width: 100%;
-        background-color: transparent;
+        @include btn-decoration-transparent-orange;
     }
 }
 
@@ -97,5 +95,13 @@
 
     &:active {
         box-shadow: inset px-rem(0 0 8px 4px) $color;
+    }
+}
+
+@mixin btn-decoration-transparent-orange {
+    @include btn-decoration-shadow($white, 0.15s);
+    &:hover + p {
+        transition: color 0.15s;
+        color: $orange;
     }
 }
