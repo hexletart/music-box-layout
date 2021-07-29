@@ -68,6 +68,7 @@ li {
 @include width(px-rem(1200px), max);
 @include width(px-rem(1240px), max);
 @include width(px-rem(570px));
+@include width(px-rem(270px));
 @include width-height(px-rem(25px));
 @include width-height(px-rem(250px), px-rem(25px));
 
@@ -324,54 +325,6 @@ li {
     }
 }
 
-.footer {
-    h2 {
-        font-size: px-rem(18px);
-        line-height: px-rem(27px);
-        text-transform: uppercase;
-        margin-bottom: px-rem(16px);
-    }
-
-    a,
-    p {
-        color: $gray;
-        margin: 0;
-        text-decoration: none;
-    }
-
-    &-top,
-    &-bottom {
-        width: inherit;
-        @include flex-column-center-center;
-    }
-
-    &-top {
-        border-bottom: 1px solid $dark-gray;
-
-        &-content {
-            @include grid-repeat-rows-columns-gap(1, auto, 4, auto, 40px);
-            width: 100%;
-
-            &-subscrabe-icon {
-                @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
-            }
-        }
-    }
-
-    &-bottom {
-        @include flex-column-flex-start-center;
-
-        &-content {
-            width: 100%;
-            @include grid-repeat-rows-columns-position-gap(1, auto, 5, min-content, flex-start, center);
-            
-            * {
-                display: inline-block;
-            }
-        }
-    }
-}
-
 .track-list,
 .discography-list,
 .artist-list {
@@ -447,5 +400,53 @@ li {
     h3,
     p {
         text-align: center;
+    }
+}
+
+.footer {
+    h2 {
+        font-size: px-rem(18px);
+        line-height: px-rem(27px);
+        text-transform: uppercase;
+        margin-bottom: px-rem(16px);
+    }
+
+    a,
+    p {
+        color: $gray;
+        margin: 0;
+        text-decoration: none;
+    }
+
+    &-top,
+    &-bottom {
+        width: inherit;
+        @include flex-column-center-center;
+    }
+
+    &-top {
+        border-bottom: 1px solid $dark-gray;
+
+        &-content {
+            @include flex-row-space-between-flex-start;
+            width: 100%;
+
+            &-subscrabe-icon {
+                @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
+            }
+        }
+    }
+
+    &-bottom {
+        @include flex-column-flex-start-center;
+
+        &-content {
+            width: 100%;
+            @include grid-repeat-rows-columns-position-gap(1, auto, 5, min-content, flex-start, center);
+            
+            * {
+                display: inline-block;
+            }
+        }
     }
 }
