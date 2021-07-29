@@ -12,13 +12,6 @@
     text-align: left;
     color: $white;
     background-color: transparent;
-    border-top-width: px-rem(2px);
-    border-right-width: px-rem(2px);
-    border-bottom-width: px-rem(2px);
-    border-left-width: px-rem(2px);
-    border-top-color: $dark-gray;
-    border-right-color: $dark-gray;
-    border-bottom-color: $dark-gray;
-    border-left-color: $dark-gray;
+    border: px-rem(2px) solid $dark-gray;
     border-radius: px-rem(3px);
 }

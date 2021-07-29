@@ -624,14 +624,7 @@ h4 {
   text-align: left;
   color: #ffffff;
   background-color: transparent;
-  border-top-width: 0.125rem;
-  border-right-width: 0.125rem;
-  border-bottom-width: 0.125rem;
-  border-left-width: 0.125rem;
-  border-top-color: #cacaca;
-  border-right-color: #cacaca;
-  border-bottom-color: #cacaca;
-  border-left-color: #cacaca;
+  border: 0.125rem solid #cacaca;
   border-radius: 0.1875rem;
 }
 .greet-part-form input::placeholder {
