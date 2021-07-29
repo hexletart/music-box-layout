@@ -6,13 +6,12 @@
 
     @include index-header-mobile;
 
-    @include pad-ver(px-rem(225px));
+    @include pad-ver(px-rem(25px));
 
     @include pad-side(bottom, px-rem(76px));
+    @include pad-side(top, px-rem(50px));
 
     .greet-part {
-        padding-top: px-rem(250px);
-
         &-top {
             @include flex-column-flex-start-flex-start;
 
@@ -60,6 +59,7 @@
     .subscription-part {
         h3 {
             margin-top: px-rem(16px);
+            font-weight: 400;
         }
 
         &-option {

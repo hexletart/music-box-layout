@@ -70,7 +70,7 @@ li {
 @include width(px-rem(570px));
 @include width(px-rem(270px));
 @include width-height(px-rem(25px));
-@include width-height(px-rem(250px), px-rem(25px));
+@include width-height(px-rem(570px), px-rem(25px));
 
 @include mar-ver(0);
 @include mar-ver(px-rem(64px));
@@ -99,7 +99,7 @@ li {
 @include pad-ver(px-rem(200px));
 @include pad-ver(px-rem(62px), px-rem(72px));
 @include pad-ver(px-rem(40px), px-rem(48px));
-@include pad-ver(px-rem(250px), px-rem(223px));
+@include pad-ver(px-rem(50px), px-rem(23px));
 
 @include pad-side(top, px-rem(100px));
 @include pad-side(right, px-rem(16px));

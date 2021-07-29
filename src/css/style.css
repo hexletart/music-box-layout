@@ -178,8 +178,8 @@ h4 {
   height: 1.5625rem;
 }
 
-.wh-15-625rem-1-5625rem {
-  width: 15.625rem;
+.wh-35-625rem-1-5625rem {
+  width: 35.625rem;
   height: 1.5625rem;
 }
 
@@ -294,9 +294,9 @@ h4 {
   padding-bottom: 3rem;
 }
 
-.pad-ver-15-625rem-13-9375rem {
-  padding-top: 15.625rem;
-  padding-bottom: 13.9375rem;
+.pad-ver-3-125rem-1-4375rem {
+  padding-top: 3.125rem;
+  padding-bottom: 1.4375rem;
 }
 
 .pad-top-6-25rem {
@@ -919,18 +919,19 @@ h4 {
     color: #e0e0e0;
   }
 
-  .pad-ver-14-0625rem {
-    padding-top: 14.0625rem;
-    padding-bottom: 14.0625rem;
+  .pad-ver-1-5625rem {
+    padding-top: 1.5625rem;
+    padding-bottom: 1.5625rem;
   }
 
   .pad-bottom-4-75rem {
     padding-bottom: 4.75rem;
   }
 
-  .greet-part {
-    padding-top: 15.625rem;
+  .pad-top-3-125rem {
+    padding-top: 3.125rem;
   }
+
   .greet-part-top {
     display: flex;
     flex-direction: column;
@@ -987,6 +988,7 @@ h4 {
 
   .subscription-part h3 {
     margin-top: 1rem;
+    font-weight: 400;
   }
   .subscription-part-option {
     display: flex;
