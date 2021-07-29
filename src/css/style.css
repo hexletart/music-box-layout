@@ -600,6 +600,7 @@ h4 {
   align-items: center;
 }
 .greet-part-top-right input {
+  height: inherit;
   box-sizing: border-box;
   background-color: #3c3b3d;
   color: #ffffff;
@@ -968,7 +969,7 @@ h4 {
     width: 100%;
   }
   .greet-part-top-right input {
-    width: 100%;
+    width: inherit;
   }
   .greet-part p {
     margin-top: 1rem;
