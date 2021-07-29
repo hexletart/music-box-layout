@@ -12,6 +12,11 @@
     text-align: left;
     color: $white;
     background-color: transparent;
-    border: px-rem(2px) solid $dark-gray;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-color: $dark-gray;
     border-radius: px-rem(3px);
+    border-style: solid;
 }
