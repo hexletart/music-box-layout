@@ -593,6 +593,12 @@ h4 {
   color: inherit;
   text-decoration: none;
 }
+.greet-part-top-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
 .greet-part-top-right input {
   box-sizing: border-box;
   background-color: #3c3b3d;
@@ -618,7 +624,14 @@ h4 {
   text-align: left;
   color: #ffffff;
   background-color: transparent;
-  border: 0.125rem solid #cacaca;
+  border-top-width: 0.125rem;
+  border-right-width: 0.125rem;
+  border-bottom-width: 0.125rem;
+  border-left-width: 0.125rem;
+  border-top-color: #cacaca;
+  border-right-color: #cacaca;
+  border-bottom-color: #cacaca;
+  border-left-color: #cacaca;
   border-radius: 0.1875rem;
 }
 .greet-part-form input::placeholder {
