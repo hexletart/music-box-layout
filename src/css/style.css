@@ -1042,27 +1042,6 @@ h4 {
     order: 2;
   }
 
-  .footer-top-content, .footer-bottom-content {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    max-width: 53.125rem;
-  }
-  .footer-top-content {
-    display: grid;
-    grid-template-rows: repeat(4, auto);
-    grid-template-columns: repeat(1, auto);
-    grid-gap: 1.875rem;
-  }
-  .footer-bottom-content {
-    display: grid;
-    grid-template-rows: repeat(5, auto);
-    grid-template-columns: repeat(1, 100%);
-    grid-gap: 1rem;
-  }
-  .footer-bottom-content * {
-    width: 100%;
-  }
-
   .track-list-body {
     display: grid;
     grid-template-rows: repeat(6, auto);
@@ -1081,6 +1060,30 @@ h4 {
     display: grid;
     grid-template-rows: repeat(3, auto);
     grid-template-columns: repeat(2, auto);
+  }
+
+  .footer-top-content, .footer-bottom-content {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    max-width: 53.125rem;
+  }
+  .footer-top-content {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(1, 100%);
+    grid-gap: 1.875rem;
+  }
+  .footer-top-content-part {
+    width: inherit;
+  }
+  .footer-bottom-content {
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    grid-template-columns: repeat(1, 100%);
+    grid-gap: 1rem;
+  }
+  .footer-bottom-content * {
+    width: 100%;
   }
 }
 
