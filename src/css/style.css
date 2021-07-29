@@ -280,6 +280,16 @@ h4 {
   padding-bottom: 12.5rem;
 }
 
+.pad-ver-3-875rem-4-5rem {
+  padding-top: 3.875rem;
+  padding-bottom: 4.5rem;
+}
+
+.pad-ver-2-5rem-3rem {
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
 .pad-ver-15-625rem-13-9375rem {
   padding-top: 15.625rem;
   padding-bottom: 13.9375rem;
@@ -910,6 +920,10 @@ h4 {
     padding-bottom: 14.0625rem;
   }
 
+  .pad-bottom-4-75rem {
+    padding-bottom: 4.75rem;
+  }
+
   .greet-part {
     padding-top: 15.625rem;
   }
@@ -1029,17 +1043,11 @@ h4 {
     padding-right: 1.25rem;
     max-width: 53.125rem;
   }
-  .footer-top {
-    padding: 3.875rem 0;
-  }
   .footer-top-content {
     display: grid;
     grid-template-rows: repeat(4, auto);
     grid-template-columns: repeat(1, auto);
     grid-gap: 1.875rem;
-  }
-  .footer-bottom {
-    padding: 3rem 0;
   }
   .footer-bottom-content {
     display: grid;

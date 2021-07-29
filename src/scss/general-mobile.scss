@@ -8,6 +8,8 @@
 
     @include pad-ver(px-rem(225px));
 
+    @include pad-side(bottom, px-rem(76px));
+
     .greet-part {
         padding-top: px-rem(250px);
 
@@ -137,23 +139,15 @@
             max-width: px-rem(850px);
         }
 
-        &-top {
-            padding: px-rem(62px) 0;
-
-            &-content {
-                @include grid-repeat-rows-columns-gap(4, auto, 1, auto, px-rem(30px));
-            }
+        &-top-content {
+            @include grid-repeat-rows-columns-gap(4, auto, 1, auto, px-rem(30px));
         }
 
-        &-bottom {
-            padding: px-rem(48px) 0;
+        &-bottom-content {
+            @include grid-repeat-rows-columns-gap(5, auto, 1, 100%, px-rem(16px));
 
-            &-content {
-                @include grid-repeat-rows-columns-gap(5, auto, 1, 100%, px-rem(16px));
-
-                * {
-                    width: 100%;
-                }
+            * {
+                width: 100%;
             }
         }
     }

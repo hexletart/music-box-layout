@@ -96,6 +96,8 @@ li {
 @include pad-ver(3rem);
 @include pad-ver(px-rem(100px));
 @include pad-ver(px-rem(200px));
+@include pad-ver(px-rem(62px), px-rem(72px));
+@include pad-ver(px-rem(40px), px-rem(48px));
 @include pad-ver(px-rem(250px), px-rem(223px));
 
 @include pad-side(top, px-rem(100px));
