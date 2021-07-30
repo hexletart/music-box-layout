@@ -1,23 +1,23 @@
 @mixin img-main-greet-part-index {
-    .bg-index {
-        background-image: url("../assets/images/banner.png");
-        background-position: center;
-        background-size: cover;
-    }
+  .bg-index {
+    background-image: url('../assets/images/banner.png');
+    background-position: center;
+    background-size: cover;
+  }
 }
 
 @mixin img-main-greet-part-artist {
-    .bg-artist {
-        background-image: url("../assets/images/Morten Harket.png");
-        background-position: center;
-        background-size: cover;
-    }
+  .bg-artist {
+    background-image: url('../assets/images/Morten Harket.png');
+    background-position: center;
+    background-size: cover;
+  }
 }
 
 @mixin image-subscription-part($class-name, $img-name) {
-    .img-#{$class-name} {
-        background-image: url("../assets/images/#{$img-name}");
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
+  .img-#{$class-name} {
+    background-image: url('../assets/images/#{$img-name}');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }

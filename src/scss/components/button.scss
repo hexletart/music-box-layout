@@ -1,107 +1,110 @@
 // BUTTON
 @mixin btn {
-    .btn {
-        display: block;
-        box-sizing: border-box;
-        height: auto;
-        text-decoration: none;
-        color: $white;
-        text-align: center;
-        text-transform: uppercase;
-        border-radius: px-rem(5px);
-        cursor: pointer;
-    }
+  .btn {
+    border-radius: px-rem(5px);
+    box-sizing: border-box;
+    color: $white;
+    cursor: pointer;
+    display: block;
+    height: auto;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
 }
 
 @mixin btn-green {
-    .btn-green {
-        background-color: $green;
-        border: 1px solid $green;
-        padding: px-rem(20px 30px);
-        width: inherit;
-        line-height: 1rem;
-        @include btn-decoration-shadow($green-hover, 0.15s);
-    }
+  .btn-green {
+    @include btn-decoration-shadow($green-hover, 0.15s);
+    background-color: $green;
+    border: 1px solid $green;
+    line-height: 1rem;
+    padding: px-rem(20px 30px);
+    width: inherit;
+  }
 }
 
 @mixin btn-purple {
-    .btn-purple {
-        img {
-            width: 20px;
-            filter: invert(100%);
-        }
+  .btn-purple {
 
-        @include grid-repeat-rows-columns-position-gap(1, min-content, 2, min-content, flex-start, center, px-rem(16px));
-        background-color: $purple;
-        border: 1px solid $purple;
-        padding: px-rem(20px 30px);
-        width: px-rem(200px);
-        @include btn-decoration-shadow($purple-hover, 0.15s);
+    @include grid-repeat-rows-columns-position-gap(1, min-content, 2, min-content, flex-start, center, px-rem(16px));
+    @include btn-decoration-shadow($purple-hover, 0.15s);
+    background-color: $purple;
+    border: 1px solid $purple;
+    padding: px-rem(20px 30px);
+    width: px-rem(200px);
+
+    img {
+      filter: invert(100%);
+      width: 20px;
     }
+  }
 }
 
 @mixin btn-red-opt-1 {
-    .btn-red-opt-1 {
-        padding: px-rem(16px 40px);
-        background-color: $red;
-        width: fit-content;
-        border-radius: px-rem(32px);
-        text-transform: inherit;
-        border: 1px solid $red;
-        @include btn-decoration-shadow($red-hover, 0.15s);
-    }
+  .btn-red-opt-1 {
+    @include btn-decoration-shadow($red-hover, 0.15s);
+    background-color: $red;
+    border: 1px solid $red;
+    border-radius: px-rem(32px);
+    padding: px-rem(16px 40px);
+    text-transform: inherit;
+    width: fit-content;
+  }
 }
 
 @mixin btn-red-opt-2 {
-    .btn-red-opt-2 {
-        img {
-            width: 20px;
-            filter: invert(100%);
-        }
+  .btn-red-opt-2 {
 
-        @include grid-repeat-rows-columns-position-gap(1, min-content, 2, min-content, flex-start, center, px-rem(16px));
-        background-color: $red;
-        border: 1px solid $red;
-        padding: px-rem(20px 30px);
-        width: px-rem(200px);
-        @include btn-decoration-shadow($red-hover, 0.15s);
+    @include grid-repeat-rows-columns-position-gap(1, min-content, 2, min-content, flex-start, center, px-rem(16px));
+    @include btn-decoration-shadow($red-hover, 0.15s);
+    background-color: $red;
+    border: 1px solid $red;
+    padding: px-rem(20px 30px);
+    width: px-rem(200px);
+
+    img {
+      filter: invert(100%);
+      width: 20px;
     }
+  }
 }
 
 @mixin btn-transparent-opt-1 {
-    .btn-transparent-opt-1 {
-        border: 1px solid $white;
-        padding: px-rem(20px 30px);
-        @include btn-decoration-transparent-orange;
-    }
+  .btn-transparent-opt-1 {
+    @include btn-decoration-transparent-orange;
+    border: 1px solid $white;
+    padding: px-rem(20px 30px);
+  }
 }
 
 @mixin btn-transparent-opt-2 {
-    .btn-transparent-opt-2 {
-        padding: px-rem(16px 30px);
-        border: 1px solid $dark-gray;
-        width: fit-content;
-        color: $dark-gray;
-        @include btn-decoration-shadow($white, 0.15s);
-    }
+  .btn-transparent-opt-2 {
+    @include btn-decoration-shadow($white, 0.15s);
+    border: 1px solid $dark-gray;
+    color: $dark-gray;
+    padding: px-rem(16px 30px);
+    width: fit-content;
+  }
 }
 
 //SHADOW, PSEUDO-CLASS
 @mixin btn-decoration-shadow($color, $transition-time) {
-    &:hover {
-        transition: box-shadow #{$transition-time};
-        box-shadow: inset px-rem(0 0 8px 2px) $color;
-    }
+  &:hover {
+    box-shadow: inset px-rem(0 0 8px 2px) $color;
+    transition: box-shadow #{$transition-time};
+  }
 
-    &:active {
-        box-shadow: inset px-rem(0 0 8px 4px) $color;
-    }
+  &:active {
+    box-shadow: inset px-rem(0 0 8px 4px) $color;
+  }
 }
 
 @mixin btn-decoration-transparent-orange {
-    @include btn-decoration-shadow($white, 0.15s);
-    &:hover + p {
-        transition: color 0.15s;
-        color: $orange;
-    }
+  @include btn-decoration-shadow($white, 0.15s);
+
+  &:hover + p {
+    color: $orange;
+    transition: color 0.15s;
+  }
 }

@@ -1,13 +1,13 @@
 @mixin price-value {
-    .price-value {
-        font-size: px-rem(64px);
-        line-height: 1em;
-    }
+  .price-value {
+    font-size: px-rem(64px);
+    line-height: 1em;
+  }
 }
 
 @mixin price-unit {
-    .price-unit {
-        font-size: px-rem(32px);
-        text-transform: uppercase;
-    }
+  .price-unit {
+    font-size: px-rem(32px);
+    text-transform: uppercase;
+  }
 }

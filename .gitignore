@@ -1,3 +1,6 @@
 style.css.map
 testing.scss
 node_modules
+package-lock.json
+package.json
+.stylelintrc.json

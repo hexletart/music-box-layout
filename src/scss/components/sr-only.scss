@@ -1,13 +1,13 @@
 @mixin sr-only {
-.sr-only {
+  .sr-only {
+    border: 0;
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
     position: absolute;
   
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    border: 0;
-    overflow: hidden;
-  
     white-space: nowrap;
+  
+    width: 1px;
   }
 }

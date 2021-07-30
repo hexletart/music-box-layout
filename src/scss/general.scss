@@ -1,15 +1,14 @@
 @font-face {
-    font-family: "Roboto";
-    src: url("../assets/fonts/Roboto-Regular.ttf");
+  font-family: 'Roboto';
+  src: url('../assets/fonts/Roboto-Regular.ttf');
 }
 
 @font-face {
-    font-family: "Roboto-Bold";
-    src: url("../assets/fonts/Roboto-Bold.ttf");
+  font-family: 'Roboto-Bold';
+  src: url('../assets/fonts/Roboto-Bold.ttf');
 }
 
-@include html("Roboto", sans-serif, px-rem(16px), 1.5, $dark-gray, $black);
-
+@include html('Roboto', sans-serif, px-rem(16px), 1.5, $dark-gray, $black);
 
 body,
 header,
@@ -17,16 +16,14 @@ main,
 section,
 footer,
 section > div {
-    width: 100%;
+  width: 100%;
 }
 
 body,
 main,
 section {
-    @include flex-column-center-center;
+  @include flex-column-center-center;
 }
-
-
 
 body,
 main,
@@ -34,26 +31,26 @@ h1,
 h2,
 h3,
 h4 {
-    margin: 0;
+  margin: 0;
 }
 
 header,
 div,
 section {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 img {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 @include heading-set(h1, px-rem(60px), px-rem(90px), Roboto-Bold, $white, 700, uppercase);
@@ -67,20 +64,19 @@ li {
 @include width(px-rem(270px), min);
 @include width(px-rem(1200px), max);
 @include width(px-rem(1240px), max);
-@include width(px-rem(570px));
 @include width(px-rem(270px));
+@include width(px-rem(570px));
 @include width-height(px-rem(25px));
 @include width-height(px-rem(570px), px-rem(25px));
 
 @include mar-ver(0);
 @include mar-ver(px-rem(64px));
-@include mar-ver(px-rem(30px), px-rem(24px));
 @include mar-ver(px-rem(40px), 0);
 @include mar-ver(0, px-rem(40px));
+@include mar-ver(px-rem(30px), px-rem(24px));
 @include mar-ver(px-rem(20px), px-rem(200px));
 
 @include mar-side(top, px-rem(32px));
-@include mar-side(bottom, px-rem(48px));
 @include mar-side(right, px-rem(16px));
 @include mar-side(right, px-rem(24px));
 @include mar-side(right, px-rem(88px));
@@ -97,24 +93,26 @@ li {
 @include pad-ver(3rem);
 @include pad-ver(px-rem(100px));
 @include pad-ver(px-rem(200px));
-@include pad-ver(px-rem(62px), px-rem(72px));
 @include pad-ver(px-rem(40px), px-rem(48px));
 @include pad-ver(px-rem(50px), px-rem(23px));
+@include pad-ver(px-rem(62px), px-rem(72px));
 
 @include pad-side(top, px-rem(100px));
 @include pad-side(right, px-rem(16px));
 
 @include no-wrap;
+@include relative;
 
+@include index-header-desktop;
+@include index-artist-desktop;
 @include price-value;
 @include price-unit;
-
-@include btn;
 
 @include sr-only;
 
 @include footer-bg-gradient;
 
+@include btn;
 @include btn-green;
 @include btn-purple;
 @include btn-red-opt-1;
@@ -124,332 +122,333 @@ li {
 
 @include img-main-greet-part-index;
 @include img-main-greet-part-artist;
-@include image-subscription-part(subscribe-first, "subscribe_1.png");
-@include image-subscription-part(subscribe-second, "subscribe_2.png");
-@include image-subscription-part(subscribe-third, "subscribe_3.png");
-
-@include relative;
-
-@include index-header-desktop;
-@include index-artist-desktop;
+@include image-subscription-part(subscribe-first, 'subscribe_1.png');
+@include image-subscription-part(subscribe-second, 'subscribe_2.png');
+@include image-subscription-part(subscribe-third, 'subscribe_3.png');
 
 .greet-part {
-    @include flex-column-center-center;
+  @include flex-column-center-center;
 
-    h1,
-    h2,
-    > p {
-        width: inherit;
-        text-align: center;
-    }
+  h1,
+  h2,
+  > p {
+    text-align: center;
+    width: inherit;
+  }
 
-    form {
-        max-width: px-rem(570px);
-        width: 100%;
-    }
+  form {
+    max-width: px-rem(570px);
+    width: 100%;
+  }
 
-    &-top {
-        position: absolute;
-        padding-top: px-rem(25px);
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        @include flex-row-space-between-center;
+  &-top {
+    @include flex-row-space-between-center;
+    left: 0;
+    margin: 0 auto;
+    padding-top: px-rem(25px);
+    position: absolute;
+    right: 0;
+    top: 0;
 
-        &-left {
-            @include grid-repeat-rows-columns-position-gap(1, min-content, 2, auto, flex-start, center, px-rem(90px));
+    &-left {
+      @include grid-repeat-rows-columns-position-gap(1, min-content, 2, auto, flex-start, center, px-rem(90px));
 
-            p,
-            a,
-            ul {
-                font-size: px-rem(11px);
-            }
+      p,
+      a,
+      ul {
+        font-size: px-rem(11px);
+      }
 
-            &-logo {
-                @include grid-repeat-rows-columns-position-gap(1, auto, 2, min-content, flex-start, center, px-rem(16px));
+      a {
+        color: inherit;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
 
-                p {
-                    text-transform: uppercase;
-                    white-space: nowrap;
-                    margin: 0;
-                }
-            }
+      p {
+        margin: 0;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
 
-            ul {
-                @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
-                li {
-                    color: $dark-gray;
-        
-                    a {
-                        text-transform: uppercase;
-                        color: inherit;
-                        text-decoration: none;
-                    }
-                }
-            }
+      li {
+        color: $dark-gray;
+      }
+
+      &-logo {
+        @include grid-repeat-rows-columns-position-gap(1, auto, 2, min-content, flex-start, center, px-rem(16px));
+      }
+
+      ul {
+        @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
+
+        li {
+          color: $dark-gray;
         }
-
-        &-right {
-            @include flex-row-flex-end-center;
-            input[type=text],
-            input[type=email] {
-                height: inherit;
-                @include greet-part-input-search;
-
-                &::placeholder {
-                    text-transform: uppercase;
-                    font-size: px-rem(13.3px);
-                    color: $gray-placeholder;
-                }
-            }
-        }
+      }
     }
 
-    &-form {
-        @include flex-row-space-between-center;
-        width: inherit;
+    &-right {
+      @include flex-row-flex-end-center;
 
-        input {
-            @include greet-part-input-main;
+      input[type='text'],
+      input[type='email'] {
+        @include greet-part-input-search;
+        height: inherit;
 
-            &::placeholder {
-                color: $white;
-                font-size: px-rem(14px);
-                font-weight: bold;
-            }
+        &::placeholder {
+          color: $gray-placeholder;
+          font-size: px-rem(13.3px);
+          text-transform: uppercase;
         }
+      }
     }
+  }
+
+  &-form {
+    @include flex-row-space-between-center;
+    width: inherit;
+
+    input {
+      @include greet-part-input-main;
+
+      &::placeholder {
+        color: $white;
+        font-size: px-rem(14px);
+        font-weight: bold;
+      }
+    }
+  }
 }
 
 .greet-artist {
-    h1,
-    h2,
-    > p {
-        width: inherit;
-        text-align: left;
-    }
+  h1,
+  h2,
+  > p {
+    text-align: left;
+    width: inherit;
+  }
 
-    &-buttons {
-        @include grid-repeat-rows-columns-position-gap(1, min-content, 2, min-content, flex-start, center, px-rem(24px));
-    }
+  &-buttons {
+    @include grid-repeat-rows-columns-position-gap(1, min-content, 2, min-content, flex-start, center, px-rem(24px));
+  }
 }
 
 .subscription-part {
-    color: white;
+  color: white;
 
-    p,
-    h2 {
-        text-align: center;
+  p,
+  h2 {
+    text-align: center;
+  }
+
+  h3 {
+    line-height: 1.5;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &-option {
+    @include flex-row-space-between-flex-start;
+    margin: 0 auto;
+    width: 100%;
+
+    &-card {
+      @include grid-repeat-rows-position-gap(4, auto, center, flex-start);
+      border-radius: px-rem(18px);
+      width: px-rem(369px);
+
+      &-price {
+        @include grid-repeat-columns-position-gap(2, min-content, center, flex-start, px-rem(16px));
+      }
     }
-
-    h3 {
-        text-transform: uppercase;
-        line-height: 1.5;
-        text-align: center;
-    }
-
-    &-option {
-        @include flex-row-space-between-flex-start;
-        margin: 0 auto;
-        width: 100%;
-
-        &-card {
-            @include grid-repeat-rows-position-gap(4, auto, center, flex-start);
-            border-radius: px-rem(18px);
-            width: px-rem(369px);
-
-            &-price {
-                @include grid-repeat-columns-position-gap(2, min-content, center, flex-start, px-rem(16px));
-            }
-        }
-    }
+  }
 }
 
 .news-part {
-    img {
-        width: inherit;
-    }
+  img {
+    width: inherit;
+  }
 
-    h2 {
-        text-align: center;
-    }
+  h2 {
+    text-align: center;
+  }
 
-    h3 {
-        text-transform: capitalize;
-        font-size: px-rem(30px);
-    }
+  h3 {
+    font-size: px-rem(30px);
+    text-transform: capitalize;
+  }
 
-    &-index {
-        @include grid-repeat-rows-gap(2, auto, px-rem(65px));
+  &-index {
+    @include grid-repeat-rows-gap(2, auto, px-rem(65px));
 
-        &-first,
-        &-second {
-            @include grid-repeat-rows-columns-gap(1, auto, 2, auto, px-rem(50px));
+    &-first,
+    &-second {
+      @include grid-repeat-rows-columns-gap(1, auto, 2, auto, px-rem(50px));
 
-            &-content {
-                &-footer {
-                    &-author {
-                        @include grid-repeat-columns-position-gap(3, min-content, flex-start, center, px-rem(16px));
-                        white-space: nowrap;
+      &-content {
+        &-footer {
+          &-author {
+            @include grid-repeat-columns-position-gap(3, min-content, flex-start, center, px-rem(16px));
+            white-space: nowrap;
 
-                        > p:nth-child(2) {
-                            text-transform: uppercase;
-                            color: $orange;
-                        }
-
-                        * {
-                            margin: 0;
-                        }
-                    }
-                }
+            > p:nth-child(2) {
+              color: $orange;
+              text-transform: uppercase;
             }
+
+            * {
+              margin: 0;
+            }
+          }
         }
+      }
     }
+  }
 }
 
 .mobile-app {
-    img {
-        margin: 0 auto;
-    }
+  img {
+    margin: 0 auto;
+  }
 
-    h2 {
-        text-align: center;
-    }
+  h2 {
+    text-align: center;
+  }
 
-    &-index {
-        @include grid-repeat-rows-columns-gap(1, auto, 2, 50%);
+  &-index {
+    @include grid-repeat-rows-columns-gap(1, auto, 2, 50%);
 
-        &-content {
-            * {
-                text-align: left;
-            }
-        }
+    &-content {
+      * {
+        text-align: left;
+      }
     }
+  }
 }
 
 .track-list,
 .discography-list,
 .artist-list {
-    h3 {
-        font-family: "Roboto-Bold", sans-serif;
-        font-weight: 700;
-    }
+  h3 {
+    font-family: 'Roboto-Bold', sans-serif;
+    font-weight: 700;
+  }
 
-    p {
-        margin: 0;
-        color: $gray;
-    }
+  p {
+    color: $gray;
+    margin: 0;
+  }
 }
 
 .track-list {
-    h3,
-    p {
-        font-size: px-rem(12.8px);
-        line-height: px-rem(19.2px);
-        white-space: nowrap;
-    }
+  h3,
+  p {
+    font-size: px-rem(12.8px);
+    line-height: px-rem(19.2px);
+    white-space: nowrap;
+  }
 
-    h3 {
-        text-transform: uppercase;
-    }
+  h3 {
+    text-transform: uppercase;
+  }
 
-    img {
-        height: px-rem(55px);
-    }
+  img {
+    height: px-rem(55px);
+  }
 
-    &-body {
-        @include grid-repeat-rows-gap-columns-gap(3, auto, 25px, 2, auto, 50px);
-        width: inherit;
+  &-body {
+    @include grid-repeat-rows-gap-columns-gap(3, auto, 25px, 2, auto, 50px);
+    width: inherit;
 
-        &-position {
-            @include flex-row-space-between-center;
-            max-width: px-rem(545px);
+    &-position {
+      @include flex-row-space-between-center;
+      max-width: px-rem(545px);
 
-            &-left {
-                @include grid-repeat-rows-columns-position-gap(1, auto, 2, auto, flex-start, center, px-rem(15px));
+      &-left {
+        @include grid-repeat-rows-columns-position-gap(1, auto, 2, auto, flex-start, center, px-rem(15px));
 
-                &-name {
-                    @include grid-repeat-rows-columns-gap(2, min-content, 1, min-content);
-                }
-            }
+        &-name {
+          @include grid-repeat-rows-columns-gap(2, min-content, 1, min-content);
         }
+      }
     }
+  }
 }
 
 .discography-list,
 .artist-list {
-    h3 {
-        font-size: px-rem(18px);
-        line-height: px-rem(27px);
-        text-transform: capitalize;
-    }
+  h3 {
+    font-size: px-rem(18px);
+    line-height: px-rem(27px);
+    text-transform: capitalize;
+  }
 
-    img {
-        width: px-rem(250px);
-    }
+  img {
+    width: px-rem(250px);
+  }
 
-    &-body {
-        @include grid-repeat-rows-gap-columns-gap-position(2, auto, px-rem(25px), 4, auto, px-rem(50px), flex-start, flex-start);
-        width: inherit;
+  &-body {
+    @include grid-repeat-rows-gap-columns-gap-position(2, auto, px-rem(25px), 4, auto, px-rem(50px), flex-start, flex-start);
+    width: inherit;
 
-        &-position {
-            @include grid-repeat-rows-columns-gap(2, auto, 1, min-content, px-rem(18px));
-        }
+    &-position {
+      @include grid-repeat-rows-columns-gap(2, auto, 1, min-content, px-rem(18px));
     }
+  }
 }
 
 .artist-list {
-    h3,
-    p {
-        text-align: center;
-    }
+  h3,
+  p {
+    text-align: center;
+  }
 }
 
 .footer {
-    h2 {
-        font-size: px-rem(18px);
-        line-height: px-rem(27px);
-        text-transform: uppercase;
-        margin-bottom: px-rem(16px);
+  h2 {
+    font-size: px-rem(18px);
+    line-height: px-rem(27px);
+    margin-bottom: px-rem(16px);
+    text-transform: uppercase;
+  }
+
+  a,
+  p {
+    color: $gray;
+    margin: 0;
+    text-decoration: none;
+  }
+
+  &-top,
+  &-bottom {
+    @include flex-column-center-center;
+    width: inherit;
+  }
+
+  &-top {
+    border-bottom: 1px solid $dark-gray;
+
+    &-content {
+      @include flex-row-space-between-flex-start;
+      width: 100%;
+
+      &-subscrabe-icon {
+        @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
+      }
     }
+  }
 
-    a,
-    p {
-        color: $gray;
-        margin: 0;
-        text-decoration: none;
+  &-bottom {
+    @include flex-column-flex-start-center;
+
+    &-content {
+      @include grid-repeat-rows-columns-position-gap(1, auto, 5, min-content, flex-start, center);
+      width: 100%;
+
+      * {
+        display: inline-block;
+      }
     }
-
-    &-top,
-    &-bottom {
-        width: inherit;
-        @include flex-column-center-center;
-    }
-
-    &-top {
-        border-bottom: 1px solid $dark-gray;
-
-        &-content {
-            @include flex-row-space-between-flex-start;
-            width: 100%;
-
-            &-subscrabe-icon {
-                @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
-            }
-        }
-    }
-
-    &-bottom {
-        @include flex-column-flex-start-center;
-
-        &-content {
-            width: 100%;
-            @include grid-repeat-rows-columns-position-gap(1, auto, 5, min-content, flex-start, center);
-            
-            * {
-                display: inline-block;
-            }
-        }
-    }
+  }
 }

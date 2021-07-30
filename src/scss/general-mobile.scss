@@ -1,179 +1,179 @@
 @media screen and (max-width: 1240px) {
-    @include heading-set(h1, px-rem(30px), px-rem(45px), Roboto-Bold, $white, 700, uppercase);
-    @include heading-set(h2, px-rem(18px), px-rem(27px), Roboto-Bold, $white, 700, uppercase);
-    @include heading-set(h3, px-rem(16px), px-rem(24px), Roboto-Bold, $white, 700);
-    @include heading-set(h4, px-rem(18px), px-rem(24px), Roboto, $white, 400);
+  @include heading-set(h1, px-rem(30px), px-rem(45px), Roboto-Bold, $white, 700, uppercase);
+  @include heading-set(h2, px-rem(18px), px-rem(27px), Roboto-Bold, $white, 700, uppercase);
+  @include heading-set(h3, px-rem(16px), px-rem(24px), Roboto-Bold, $white, 700);
+  @include heading-set(h4, px-rem(18px), px-rem(24px), Roboto, $white, 400);
 
-    @include index-header-mobile;
+  @include pad-ver(px-rem(25px));
 
-    @include pad-ver(px-rem(25px));
+  @include pad-side(bottom, px-rem(76px));
+  @include pad-side(top, px-rem(50px));
 
-    @include pad-side(bottom, px-rem(76px));
-    @include pad-side(top, px-rem(50px));
+  @include index-header-mobile;
 
-    .greet-part {
-        &-top {
-            @include flex-column-flex-start-flex-start;
+  .greet-part {
+    &-top {
+      @include flex-column-flex-start-flex-start;
 
-            &-left {
-                @include grid-repeat-rows-columns-position-gap(2, min-content, 1, auto, flex-start, flex-start, px-rem(16px));
-                margin-bottom: px-rem(16px);
-
-                p {
-                    margin-right: 0;
-                }
-
-                ul {
-                    @include grid-repeat-rows-columns-position-gap(4, min-content, 1, auto, flex-start, flex-start, 0);
-                }
-            }
-
-            &-right {
-                width: 100%;
-
-                input {
-                    width: inherit;
-                }
-            }
-        }
+      &-left {
+        @include grid-repeat-rows-columns-position-gap(2, min-content, 1, auto, flex-start, flex-start, px-rem(16px));
+        margin-bottom: px-rem(16px);
 
         p {
-            margin-top: px-rem(16px);
+          margin-right: 0;
         }
 
-        &-form {
-            @include flex-column-flex-start-center;
-
-            input {
-                width: 100%;
-            }
+        ul {
+          @include grid-repeat-rows-columns-position-gap(4, min-content, 1, auto, flex-start, flex-start, 0);
         }
+      }
+
+      &-right {
+        width: 100%;
+
+        input {
+          width: inherit;
+        }
+      }
     }
 
-    .greet-artist {
-        &-buttons {
-            @include grid-repeat-rows-columns-position-gap(2, min-content, 1, min-content, flex-start, center, px-rem(24px));
-        }
+    p {
+      margin-top: px-rem(16px);
     }
 
-    .subscription-part {
-        h3 {
-            margin-top: px-rem(16px);
-            font-weight: 400;
-        }
+    &-form {
+      @include flex-column-flex-start-center;
 
-        &-option {
-            @include flex-column-flex-start-center;
-            width: inherit;
+      input {
+        width: 100%;
+      }
+    }
+  }
 
-            &-card {
-                height: px-rem(595px);
-                overflow-y: hidden;
-                width: px-rem(374px);
+  .greet-artist {
+    &-buttons {
+      @include grid-repeat-rows-columns-position-gap(2, min-content, 1, min-content, flex-start, center, px-rem(24px));
+    }
+  }
 
-                &:nth-child(-n + 2) {
-                    margin-bottom: px-rem(50px);
-                }
-            }
-        }
+  .subscription-part {
+    h3 {
+      font-weight: 400;
+      margin-top: px-rem(16px);
     }
 
-    .news-part {
-        h3 {
-            font-size: px-rem(16px);
-            font-family: "Roboto", sans-serif;
-            font-weight: 400;
+    &-option {
+      @include flex-column-flex-start-center;
+      width: inherit;
+
+      &-card {
+        height: px-rem(595px);
+        overflow-y: hidden;
+        width: px-rem(374px);
+
+        &:nth-child(-n + 2) {
+          margin-bottom: px-rem(50px);
         }
+      }
+    }
+  }
 
-        &-index {
-            &-first,
-            &-second {
-                @include grid-repeat-rows-columns-gap(2, auto, 1, auto, px-rem(50px));
-                align-items: center;
-
-                > img {
-                    width: 100%;
-                }
-
-                &-content {
-                    &-top {
-                        p {
-                            margin-top: px-rem(16px);
-                            margin-bottom: px-rem(24px);
-                        }
-                    }
-                }
-            }
-
-            &-second {
-                > img {
-                    order: 1;
-                }
-
-                &-content {
-                    order: 2;
-                }
-            }
-        }
+  .news-part {
+    h3 {
+      font-family: 'Roboto', sans-serif;
+      font-size: px-rem(16px);
+      font-weight: 400;
     }
 
-    .mobile-app {
-        &-index {
-            @include grid-repeat-rows-columns-gap(2, auto, 1, auto);
+    &-index {
+      &-first,
+      &-second {
+        @include grid-repeat-rows-columns-gap(2, auto, 1, auto, px-rem(50px));
+        align-items: center;
 
-            img {
-                order: 1;
-            }
-
-            &-content {
-                order: 2;
-            }
+        > img {
+          width: 100%;
         }
+
+        &-content {
+          &-top {
+            p {
+              margin-bottom: px-rem(24px);
+              margin-top: px-rem(16px);
+            }
+          }
+        }
+      }
+
+      &-second {
+        > img {
+          order: 1;
+        }
+
+        &-content {
+          order: 2;
+        }
+      }
+    }
+  }
+
+  .mobile-app {
+    &-index {
+      @include grid-repeat-rows-columns-gap(2, auto, 1, auto);
+
+      img {
+        order: 1;
+      }
+
+      &-content {
+        order: 2;
+      }
+    }
+  }
+
+  .track-list {
+    &-body {
+      @include grid-repeat-rows-columns-gap(6, auto, 1, auto);
+
+      &-position {
+        max-width: none;
+      }
+    }
+  }
+
+  .discography-list,
+  .artist-list {
+    img {
+      width: px-rem(137px);
     }
 
-    .track-list {
-        &-body {
-            @include grid-repeat-rows-columns-gap(6, auto, 1, auto);
+    &-body {
+      @include grid-repeat-rows-columns-gap(3, auto, 2, auto);
+    }
+  }
 
-            &-position {
-                max-width: none;
-            }
-        }
+  .footer {
+    &-top-content,
+    &-bottom-content {
+      max-width: px-rem(850px);
+      padding-left: px-rem(20px);
+      padding-right: px-rem(20px);
     }
 
-    .discography-list,
-    .artist-list {
-        img {
-            width: px-rem(137px);
-        }
+    &-top-content {
+      @include grid-repeat-rows-columns-gap(4, auto, 1, 100%, px-rem(30px));
 
-        &-body {
-            @include grid-repeat-rows-columns-gap(3, auto, 2, auto);
-        }
+      &-part {
+        width: inherit;
+      }
     }
 
-    .footer {
-        &-top-content,
-        &-bottom-content {
-            padding-left: px-rem(20px);
-            padding-right: px-rem(20px);
-            max-width: px-rem(850px);
-        }
+    &-bottom-content {
+      @include grid-repeat-rows-columns-gap(5, auto, 1, 100%, px-rem(16px));
 
-        &-top-content {
-            @include grid-repeat-rows-columns-gap(4, auto, 1, 100%, px-rem(30px));
-
-            &-part {
-                width: inherit;
-            }
-        }
-
-        &-bottom-content {
-            @include grid-repeat-rows-columns-gap(5, auto, 1, 100%, px-rem(16px));
-
-            * {
-                width: 100%;
-            }
-        }
+      * {
+        width: 100%;
+      }
     }
+  }
 }

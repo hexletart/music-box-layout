@@ -1,740 +1,740 @@
 // HTML
 @mixin html($font-type, $serif-type, $font-size, $line-height, $color, $color-bg) {
-    html {
-        font-family: #{$font-type}, #{$serif-type};
-        font-size: #{$font-size};
-        line-height: #{$line-height};
-        color: #{$color};
-        background-color: #{$color-bg};
-    }
+  html {
+    background-color: #{$color-bg};
+    color: #{$color};
+    font-family: #{$font-type}, #{$serif-type};
+    font-size: #{$font-size};
+    line-height: #{$line-height};
+  }
 }
 
 // FONT
 @mixin heading-set($heading-type, $font-size, $line-height, $font-family, $color, $font-weight, $text-transfom: null) {
-    @if $text-transfom== "null" {
-        #{$heading-type} {
-            color: $color;
-            font-size: #{$font-size};
-            line-height: #{$line-height};
-            font-family: "#{$font-family}", sans-serif;
-            font-weight: #{$font-weight};
-        }
-    } @else {
-        #{$heading-type} {
-            color: $color;
-            font-size: #{$font-size};
-            line-height: #{$line-height};
-            font-family: "#{$font-family}", sans-serif;
-            font-weight: #{$font-weight};
-            text-transform: #{$text-transfom};
-        }
+  @if $text-transfom== 'null' {
+    #{$heading-type} {
+      color: $color;
+      font-family: '#{$font-family}', sans-serif;
+      font-size: #{$font-size};
+      font-weight: #{$font-weight};
+      line-height: #{$line-height};
     }
+  } @else {
+    #{$heading-type} {
+      color: $color;
+      font-family: '#{$font-family}', sans-serif;
+      font-size: #{$font-size};
+      font-weight: #{$font-weight};
+      line-height: #{$line-height};
+      text-transform: #{$text-transfom};
+    }
+  }
 }
 
 @mixin paragraphs-fixed {
-    @each $value in $font-size {
-        .p-#{rem-selector-name(#{$value})} {
-            font-size: #{$value};
-            line-height: 1.5;
-        }
+  @each $value in $font-size {
+    .p-#{rem-selector-name(#{$value})} {
+      font-size: #{$value};
+      line-height: 1.5;
     }
+  }
 }
 
 // PADDING AND MARGIN
 @mixin pad-ver($padding-t, $padding-b: null) {
-    @if $padding-b == null {
-        .pad-ver-#{rem-selector-name(#{$padding-t})} {
-            padding-top: #{$padding-t};
-            padding-bottom: #{$padding-t};
-        }
-    } @else {
-        .pad-ver-#{rem-selector-name(#{$padding-t})}-#{rem-selector-name(#{$padding-b})} {
-            padding-top: #{$padding-t};
-            padding-bottom: #{$padding-b};
-        }
+  @if $padding-b == null {
+    .pad-ver-#{rem-selector-name(#{$padding-t})} {
+      padding-bottom: #{$padding-t};
+      padding-top: #{$padding-t};
     }
+  } @else {
+    .pad-ver-#{rem-selector-name(#{$padding-t})}-#{rem-selector-name(#{$padding-b})} {
+      padding-bottom: #{$padding-b};
+      padding-top: #{$padding-t};
+    }
+  }
 }
 
 @mixin pad-gor($padding-r, $padding-l: null) {
-    @if $padding-l == null {
-        .pad-gor-#{rem-selector-name(#{$padding-r})} {
-            padding-right: #{$padding-r};
-            padding-left: #{$padding-r};
-        }
-    } @else {
-        .pad-gor-#{rem-selector-name(#{$padding-r})}-#{rem-selector-name(#{$padding-l})} {
-            padding-right: #{$padding-r};
-            padding-left: #{$padding-l};
-        }
+  @if $padding-l == null {
+    .pad-gor-#{rem-selector-name(#{$padding-r})} {
+      padding-left: #{$padding-r};
+      padding-right: #{$padding-r};
     }
+  } @else {
+    .pad-gor-#{rem-selector-name(#{$padding-r})}-#{rem-selector-name(#{$padding-l})} {
+      padding-left: #{$padding-l};
+      padding-right: #{$padding-r};
+    }
+  }
 }
 
 @mixin mar-ver($margin-t, $margin-b: null) {
-    @if $margin-b == null {
-        .mar-ver-#{rem-selector-name(#{$margin-t})} {
-            margin-top: #{$margin-t};
-            margin-bottom: #{$margin-t};
-        }
-    } @else {
-        .mar-ver-#{rem-selector-name(#{$margin-t})}-#{rem-selector-name(#{$margin-b})} {
-            margin-top: #{$margin-t};
-            margin-bottom: #{$margin-b};
-        }
+  @if $margin-b == null {
+    .mar-ver-#{rem-selector-name(#{$margin-t})} {
+      margin-bottom: #{$margin-t};
+      margin-top: #{$margin-t};
     }
+  } @else {
+    .mar-ver-#{rem-selector-name(#{$margin-t})}-#{rem-selector-name(#{$margin-b})} {
+      margin-bottom: #{$margin-b};
+      margin-top: #{$margin-t};
+    }
+  }
 }
 
 @mixin mar-gor($margin-r, $margin-l: null) {
-    @if $margin-l == null {
-        .mar-gor-#{rem-selector-name(#{$margin-r})} {
-            margin-right: #{$margin-r};
-            margin-left: #{$margin-r};
-        }
-    } @else {
-        .mar-gor-#{rem-selector-name(#{$margin-r})}-#{rem-selector-name(#{$margin-l})} {
-            margin-right: #{$margin-r};
-            margin-left: #{$margin-l};
-        }
+  @if $margin-l == null {
+    .mar-gor-#{rem-selector-name(#{$margin-r})} {
+      margin-left: #{$margin-r};
+      margin-right: #{$margin-r};
     }
+  } @else {
+    .mar-gor-#{rem-selector-name(#{$margin-r})}-#{rem-selector-name(#{$margin-l})} {
+      margin-left: #{$margin-l};
+      margin-right: #{$margin-r};
+    }
+  }
 }
 
 @mixin mar-side($margin-s, $margin) {
-    .mar-#{$margin-s}-#{rem-selector-name(#{$margin})} {
-        margin-#{$margin-s}: #{$margin};
-    }
+  .mar-#{$margin-s}-#{rem-selector-name(#{$margin})} {
+    margin-#{$margin-s}: #{$margin};
+  }
 }
 
 @mixin pad-side($padding-s, $padding) {
-    .pad-#{$padding-s}-#{rem-selector-name(#{$padding})} {
-        padding-#{$padding-s}: #{$padding};
-    }
+  .pad-#{$padding-s}-#{rem-selector-name(#{$padding})} {
+    padding-#{$padding-s}: #{$padding};
+  }
 }
 
 // WIDTH AND HEIGHT
 @mixin width($width, $min-max: null) {
-    @if $min-max == null {
-        .w-#{rem-selector-name(#{$width})} {
-            width: #{$width};
-        }
-    } @else {
-        .#{$min-max}-w-#{rem-selector-name(#{$width})} {
-            #{$min-max}-width: #{$width};
-        }
+  @if $min-max == null {
+    .w-#{rem-selector-name(#{$width})} {
+      width: #{$width};
     }
+  } @else {
+    .#{$min-max}-w-#{rem-selector-name(#{$width})} {
+      #{$min-max}-width: #{$width};
+    }
+  }
 }
 
 @mixin height($height, $min-max: null) {
-    @if $min-max == null {
-        .h-#{rem-selector-name(#{$height})} {
-            height: #{$height};
-        }
-    } @else {
-        .#{$min-max}-h-#{rem-selector-name(#{$height})} {
-            #{$min-max}-height: #{$height};
-        }
+  @if $min-max == null {
+    .h-#{rem-selector-name(#{$height})} {
+      height: #{$height};
     }
+  } @else {
+    .#{$min-max}-h-#{rem-selector-name(#{$height})} {
+      #{$min-max}-height: #{$height};
+    }
+  }
 }
 
 @mixin width-height($width, $height: null) {
-    @if $height == null {
-        .wh-#{rem-selector-name(#{$width})} {
-            width: #{$width};
-            height: #{$width};
-        }
-    } @else {
-        .wh-#{rem-selector-name(#{$width})}-#{rem-selector-name(#{$height})} {
-            width: #{$width};
-            height: #{$height};
-        }
+  @if $height == null {
+    .wh-#{rem-selector-name(#{$width})} {
+      height: #{$width};
+      width: #{$width};
     }
+  } @else {
+    .wh-#{rem-selector-name(#{$width})}-#{rem-selector-name(#{$height})} {
+      height: #{$height};
+      width: #{$width};
+    }
+  }
 }
 
 // TEXT
 @mixin no-wrap {
-    .no-wrap {
-        white-space: nowrap;
-    }
+  .no-wrap {
+    white-space: nowrap;
+  }
 }
 
 // COLOR
 @mixin color($color-name, $color) {
-    .#{$color-name} {
-        color: $color;
-    }
+  .#{$color-name} {
+    color: $color;
+  }
 }
 
 // FLEX-MIXIN
 // row
 @mixin flex {
-    display: flex;
+  display: flex;
 }
 
 @mixin flex-row {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 @mixin flex-row-flex-start {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 @mixin flex-row-flex-start-stretch {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 @mixin flex-row-flex-start-flex-start {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 @mixin flex-row-flex-start-center {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 @mixin flex-row-flex-start-flex-end {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-end;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 @mixin flex-row-center-stretch {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 @mixin flex-row-center-flex-start {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 @mixin flex-row-center-center {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 @mixin flex-row-center-flex-end {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 @mixin flex-row-flex-end-stretch {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 @mixin flex-row-flex-end-flex-start {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 @mixin flex-row-flex-end-center {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 @mixin flex-row-flex-end-flex-end {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-end;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 @mixin flex-row-space-between-stretch {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 @mixin flex-row-space-between-flex-start {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 @mixin flex-row-space-between-center {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 @mixin flex-row-space-between-flex-end {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 @mixin flex-row-space-around-stretch {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 @mixin flex-row-space-around-flex-start {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 @mixin flex-row-space-around-center {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 @mixin flex-row-space-around-flex-end {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 @mixin flex-row-space-evenly-stretch {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 @mixin flex-row-space-evenly-flex-start {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 @mixin flex-row-space-evenly-center {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 @mixin flex-row-space-evenly-flex-end {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 // column
 @mixin flex-column {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 @mixin flex-column-flex-start {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 @mixin flex-column-flex-start-stretch {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 @mixin flex-column-flex-start-flex-start {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 @mixin flex-column-flex-start-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 @mixin flex-column-flex-start-flex-end {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 @mixin flex-column-center-stretch {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @mixin flex-column-center-flex-start {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @mixin flex-column-center-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @mixin flex-column-center-flex-end {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @mixin flex-column-flex-end-stretch {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 @mixin flex-column-flex-end-flex-start {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 @mixin flex-column-flex-end-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 @mixin flex-column-flex-end-flex-end {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 @mixin flex-column-space-between-stretch {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @mixin flex-column-space-between-flex-start {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @mixin flex-column-space-between-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @mixin flex-column-space-between-flex-end {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @mixin flex-column-space-around-stretch {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 @mixin flex-column-space-around-flex-start {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 @mixin flex-column-space-around-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @mixin flex-column-space-around-flex-end {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @mixin flex-column-space-evenly-stretch {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 @mixin flex-column-space-evenly-flex-start {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 @mixin flex-column-space-evenly-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @mixin flex-column-space-evenly-flex-end {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 // GRID-MIXIN
 // row
 @mixin grid-repeat-rows-gap($rows-amount, $rows-value, $row-gap: null) {
-    @if $row-gap == null {
-        display: grid;
-        grid-template-rows: repeat($rows-amount, #{$rows-value});
-    } @else {
-        display: grid;
-        grid-template-rows: repeat($rows-amount, #{$rows-value});
-        grid-row-gap: #{$row-gap};
-    }
+  @if $row-gap == null {
+    display: grid;
+    grid-template-rows: repeat($rows-amount, #{$rows-value});
+  } @else {
+    display: grid;
+    grid-template-rows: repeat($rows-amount, #{$rows-value});
+    grid-row-gap: #{$row-gap};
+  }
 }
 
 @mixin grid-certain-rows-gap($rows, $row-gap: null) {
-    @if $row-gap == null {
-        display: grid;
-        grid-template-rows: #{$rows};
-    } @else {
-        display: grid;
-        grid-template-rows: #{$rows};
-        grid-row-gap: #{$row-gap};
-    }
+  @if $row-gap == null {
+    display: grid;
+    grid-template-rows: #{$rows};
+  } @else {
+    display: grid;
+    grid-template-rows: #{$rows};
+    grid-row-gap: #{$row-gap};
+  }
 }
 
 @mixin grid-repeat-rows-position-gap($rows-amount, $rows-value, $justify-content, $align-items, $row-gap: null) {
-    @if $row-gap == null {
-        display: grid;
-        grid-template-rows: repeat($rows-amount, #{$rows-value});
-        justify-content: $justify-content;
-        align-items: $align-items;
-    } @else {
-        display: grid;
-        grid-template-rows: repeat($rows-amount, #{$rows-value});
-        grid-row-gap: #{$row-gap};
-        justify-content: $justify-content;
-        align-items: $align-items;
-    }
+  @if $row-gap == null {
+    display: grid;
+    grid-template-rows: repeat($rows-amount, #{$rows-value});
+    justify-content: $justify-content;
+    align-items: $align-items;
+  } @else {
+    display: grid;
+    grid-template-rows: repeat($rows-amount, #{$rows-value});
+    grid-row-gap: #{$row-gap};
+    justify-content: $justify-content;
+    align-items: $align-items;
+  }
 }
 
 @mixin grid-certain-rows-position-gap($rows, $justify-content, $align-items, $row-gap: null) {
-    @if $row-gap == null {
-        display: grid;
-        grid-template-rows: #{$rows};
-        justify-content: $justify-content;
-        align-items: $align-items;
-    } @else {
-        display: grid;
-        grid-template-rows: #{$rows};
-        grid-row-gap: #{$row-gap};
-        justify-content: $justify-content;
-        align-items: $align-items;
-    }
+  @if $row-gap == null {
+    display: grid;
+    grid-template-rows: #{$rows};
+    justify-content: $justify-content;
+    align-items: $align-items;
+  } @else {
+    display: grid;
+    grid-template-rows: #{$rows};
+    grid-row-gap: #{$row-gap};
+    justify-content: $justify-content;
+    align-items: $align-items;
+  }
 }
 
 // column
 @mixin grid-repeat-columns-gap($columns-amount, $columns-value, $column-gap: null) {
-    @if $column-gap == null {
-        display: grid;
-        grid-template-columns: repeat($columns-amount, #{$columns-value});
-    } @else {
-        display: grid;
-        grid-template-columns: repeat($columns-amount, #{$columns-value});
-        grid-column-gap: #{$column-gap};
-    }
+  @if $column-gap == null {
+    display: grid;
+    grid-template-columns: repeat($columns-amount, #{$columns-value});
+  } @else {
+    display: grid;
+    grid-template-columns: repeat($columns-amount, #{$columns-value});
+    grid-column-gap: #{$column-gap};
+  }
 }
 
 @mixin grid-certain-columns-gap($columns, $column-gap: null) {
-    @if $column-gap == null {
-        display: grid;
-        grid-template-columns: #{$columns};
-    } @else {
-        display: grid;
-        grid-template-columns: #{$columns};
-        grid-column-gap: #{$column-gap};
-    }
+  @if $column-gap == null {
+    display: grid;
+    grid-template-columns: #{$columns};
+  } @else {
+    display: grid;
+    grid-template-columns: #{$columns};
+    grid-column-gap: #{$column-gap};
+  }
 }
 
 @mixin grid-repeat-columns-position-gap($columns-amount, $columns-value, $justify-content, $align-items, $column-gap: null) {
-    @if $column-gap == null {
-        display: grid;
-        grid-template-columns: repeat($columns-amount, #{$columns-value});
-        justify-content: $justify-content;
-        align-items: $align-items;
-    } @else {
-        display: grid;
-        grid-template-columns: repeat($columns-amount, #{$columns-value});
-        grid-column-gap: #{$column-gap};
-        justify-content: $justify-content;
-        align-items: $align-items;
-    }
+  @if $column-gap == null {
+    display: grid;
+    grid-template-columns: repeat($columns-amount, #{$columns-value});
+    justify-content: $justify-content;
+    align-items: $align-items;
+  } @else {
+    display: grid;
+    grid-template-columns: repeat($columns-amount, #{$columns-value});
+    grid-column-gap: #{$column-gap};
+    justify-content: $justify-content;
+    align-items: $align-items;
+  }
 }
 
 @mixin grid-certain-columns-position-gap($columns, $justify-content, $align-items, $column-gap: null) {
-    @if $column-gap == null {
-        display: grid;
-        grid-template-columns: #{$columns};
-        justify-content: $justify-content;
-        align-items: $align-items;
-    } @else {
-        display: grid;
-        grid-template-columns: #{$columns};
-        grid-column-gap: #{$column-gap};
-        justify-content: $justify-content;
-        align-items: $align-items;
-    }
+  @if $column-gap == null {
+    display: grid;
+    grid-template-columns: #{$columns};
+    justify-content: $justify-content;
+    align-items: $align-items;
+  } @else {
+    display: grid;
+    grid-template-columns: #{$columns};
+    grid-column-gap: #{$column-gap};
+    justify-content: $justify-content;
+    align-items: $align-items;
+  }
 }
 
 // both
 @mixin grid-repeat-rows-columns-gap($rows-amount, $rows-value, $columns-amount, $columns-value, $grid-gap: null) {
-    @if $grid-gap == null {
-        display: grid;
-        grid-template-rows: repeat($rows-amount, #{$rows-value});
-        grid-template-columns: repeat($columns-amount, #{$columns-value});
-    } @else {
-        display: grid;
-        grid-template-rows: repeat($rows-amount, #{$rows-value});
-        grid-template-columns: repeat($columns-amount, #{$columns-value});
-        grid-gap: #{$grid-gap};
-    }
+  @if $grid-gap == null {
+    display: grid;
+    grid-template-rows: repeat($rows-amount, #{$rows-value});
+    grid-template-columns: repeat($columns-amount, #{$columns-value});
+  } @else {
+    display: grid;
+    grid-template-rows: repeat($rows-amount, #{$rows-value});
+    grid-template-columns: repeat($columns-amount, #{$columns-value});
+    grid-gap: #{$grid-gap};
+  }
 }
 
 @mixin grid-certain-rows-columns-gap($rows, $columns, $grid-gap: null) {
-    @if $grid-gap == null {
-        display: grid;
-        grid-template-rows: #{$rows};
-        grid-template-columns: #{$columns};
-    } @else {
-        display: grid;
-        grid-template-rows: #{$rows};
-        grid-template-columns: #{$columns};
-        grid-gap: #{$grid-gap};
-    }
+  @if $grid-gap == null {
+    display: grid;
+    grid-template-rows: #{$rows};
+    grid-template-columns: #{$columns};
+  } @else {
+    display: grid;
+    grid-template-rows: #{$rows};
+    grid-template-columns: #{$columns};
+    grid-gap: #{$grid-gap};
+  }
 }
 
 @mixin grid-repeat-rows-columns-position-gap($rows-amount, $rows-value, $columns-amount, $columns-value, $justify-content, $align-items, $grid-gap: null) {
-    @if $grid-gap == null {
-        display: grid;
-        grid-template-rows: repeat($rows-amount, #{$rows-value});
-        grid-template-columns: repeat($columns-amount, #{$columns-value});
-        justify-content: $justify-content;
-        align-items: $align-items;
-    } @else {
-        display: grid;
-        grid-template-rows: repeat($rows-amount, #{$rows-value});
-        grid-template-columns: repeat($columns-amount, #{$columns-value});
-        grid-gap: #{$grid-gap};
-        justify-content: $justify-content;
-        align-items: $align-items;
-    }
+  @if $grid-gap == null {
+    display: grid;
+    grid-template-rows: repeat($rows-amount, #{$rows-value});
+    grid-template-columns: repeat($columns-amount, #{$columns-value});
+    justify-content: $justify-content;
+    align-items: $align-items;
+  } @else {
+    display: grid;
+    grid-template-rows: repeat($rows-amount, #{$rows-value});
+    grid-template-columns: repeat($columns-amount, #{$columns-value});
+    grid-gap: #{$grid-gap};
+    justify-content: $justify-content;
+    align-items: $align-items;
+  }
 }
 
 @mixin grid-certain-rows-columns-position-gap($rows, $columns, $justify-content, $align-items, $grid-gap: null) {
-    @if $grid-gap == null {
-        display: grid;
-        grid-template-rows: #{$rows};
-        grid-template-columns: #{$columns};
-        justify-content: $justify-content;
-        align-items: $align-items;
-    } @else {
-        display: grid;
-        grid-template-rows: #{$rows};
-        grid-template-columns: #{$columns};
-        grid-gap: #{$grid-gap};
-        justify-content: $justify-content;
-        align-items: $align-items;
-    }
+  @if $grid-gap == null {
+    display: grid;
+    grid-template-rows: #{$rows};
+    grid-template-columns: #{$columns};
+    justify-content: $justify-content;
+    align-items: $align-items;
+  } @else {
+    display: grid;
+    grid-template-rows: #{$rows};
+    grid-template-columns: #{$columns};
+    grid-gap: #{$grid-gap};
+    justify-content: $justify-content;
+    align-items: $align-items;
+  }
 }
 
 @mixin grid-repeat-rows-gap-columns-gap($rows-amount, $rows-value, $rows-gap, $columns-amount, $columns-value, $columns-gap) {
-    display: grid;
-    grid-template-rows: repeat($rows-amount, #{$rows-value});
-    grid-template-columns: repeat($columns-amount, #{$columns-value});
-    grid-row-gap: #{$rows-gap};
-    grid-column-gap: #{$columns-gap};
+  display: grid;
+  grid-column-gap: #{$columns-gap};
+  grid-row-gap: #{$rows-gap};
+  grid-template-columns: repeat($columns-amount, #{$columns-value});
+  grid-template-rows: repeat($rows-amount, #{$rows-value});
 }
 
 @mixin grid-certain-rows-gap-columns-gap($rows, $rows-gap, $columns, $columns-gap) {
-    display: grid;
-    grid-template-rows: #{$rows};
-    grid-template-columns: #{$columns};
-    grid-row-gap: #{$rows-gap};
-    grid-column-gap: #{$columns-gap};
+  display: grid;
+  grid-column-gap: #{$columns-gap};
+  grid-row-gap: #{$rows-gap};
+  grid-template-columns: #{$columns};
+  grid-template-rows: #{$rows};
 }
 
 @mixin grid-repeat-rows-gap-columns-gap-position($rows-amount, $rows-value, $rows-gap, $columns-amount, $columns-value, $columns-gap, $justify-content, $align-items) {
-    display: grid;
-    grid-template-rows: repeat($rows-amount, #{$rows-value});
-    grid-template-columns: repeat($columns-amount, #{$columns-value});
-    grid-row-gap: #{$rows-gap};
-    grid-column-gap: #{$columns-gap};
-    justify-content: $justify-content;
-    align-items: $align-items;
+  align-items: $align-items;
+  display: grid;
+  grid-column-gap: #{$columns-gap};
+  grid-row-gap: #{$rows-gap};
+  grid-template-columns: repeat($columns-amount, #{$columns-value});
+  grid-template-rows: repeat($rows-amount, #{$rows-value});
+  justify-content: $justify-content;
 }
 
 @mixin grid-certain-rows-gap-columns-gap-position($rows, $rows-gap, $columns, $columns-gap, $justify-content, $align-items) {
-    display: grid;
-    grid-template-rows: #{$rows};
-    grid-template-columns: #{$columns};
-    grid-row-gap: #{$rows-gap};
-    grid-column-gap: #{$columns-gap};
-    justify-content: $justify-content;
-    align-items: $align-items;
+  align-items: $align-items;
+  display: grid;
+  grid-column-gap: #{$columns-gap};
+  grid-row-gap: #{$rows-gap};
+  grid-template-columns: #{$columns};
+  grid-template-rows: #{$rows};
+  justify-content: $justify-content;
 }
 
 //POSITION
 
 @mixin relative {
-    .relative {
-        position: relative;
-    }
+  .relative {
+    position: relative;
+  }
 }
