@@ -661,6 +661,7 @@ h4 {
 .subscription-part p,
 .subscription-part h2 {
   text-align: center;
+  margin-top: 100px;
 }
 .subscription-part h3 {
   line-height: 1.5;
