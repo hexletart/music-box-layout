@@ -1,14 +1,14 @@
 @font-face {
-  font-family: 'Roboto';
-  src: url('../assets/fonts/Roboto-Regular.ttf');
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Regular.ttf");
 }
 
 @font-face {
-  font-family: 'Roboto-Bold';
-  src: url('../assets/fonts/Roboto-Bold.ttf');
+  font-family: "Roboto-Bold";
+  src: url("../assets/fonts/Roboto-Bold.ttf");
 }
 
-@include html('Roboto', sans-serif, px-rem(16px), 1.5, $dark-gray, $black);
+@include html("Roboto", sans-serif, px-rem(16px), 1.5, $dark-gray, $black);
 
 body,
 header,
@@ -122,9 +122,9 @@ li {
 
 @include img-main-greet-part-index;
 @include img-main-greet-part-artist;
-@include image-subscription-part(subscribe-first, 'subscribe_1.png');
-@include image-subscription-part(subscribe-second, 'subscribe_2.png');
-@include image-subscription-part(subscribe-third, 'subscribe_3.png');
+@include image-subscription-part(subscribe-first, "subscribe_1.png");
+@include image-subscription-part(subscribe-second, "subscribe_2.png");
+@include image-subscription-part(subscribe-third, "subscribe_3.png");
 
 .greet-part {
   @include flex-column-center-center;
@@ -191,8 +191,8 @@ li {
     &-right {
       @include flex-row-flex-end-center;
 
-      input[type='text'],
-      input[type='email'] {
+      input[type="text"],
+      input[type="email"] {
         @include greet-part-input-search;
         height: inherit;
 
@@ -206,16 +206,21 @@ li {
   }
 
   &-form {
-    @include flex-row-space-between-center;
+    @include flex-column-flex-start-flex-start;
     width: inherit;
 
-    input {
-      @include greet-part-input-main;
+    &-top {
+      @include flex-row-space-between-center;
+      width: inherit;
 
-      &::placeholder {
-        color: $white;
-        font-size: px-rem(14px);
-        font-weight: bold;
+      input {
+        @include greet-part-input-main;
+
+        &::placeholder {
+          color: $white;
+          font-size: px-rem(14px);
+          font-weight: bold;
+        }
       }
     }
   }
@@ -331,7 +336,7 @@ li {
 .discography-list,
 .artist-list {
   h3 {
-    font-family: 'Roboto-Bold', sans-serif;
+    font-family: "Roboto-Bold", sans-serif;
     font-weight: 700;
   }
 

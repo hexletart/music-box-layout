@@ -614,13 +614,20 @@ h4 {
   text-transform: uppercase;
 }
 .greet-part-form {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: inherit;
+}
+.greet-part-form-top {
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: inherit;
 }
-.greet-part-form input {
+.greet-part-form-top input {
   background-color: transparent;
   border-bottom-width: 2px;
   border-color: #cacaca;
@@ -634,7 +641,7 @@ h4 {
   font-weight: bold;
   text-align: left;
 }
-.greet-part-form input::placeholder {
+.greet-part-form-top input::placeholder {
   color: #fff;
   font-size: 0.875rem;
   font-weight: bold;
@@ -980,13 +987,13 @@ h4 {
   .greet-part p {
     margin-top: 1rem;
   }
-  .greet-part-form {
+  .greet-part-form-top {
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
-  .greet-part-form input {
+  .greet-part-form-top input {
     width: 100%;
   }
 
