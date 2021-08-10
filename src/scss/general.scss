@@ -191,8 +191,7 @@ li {
     &-right {
       @include flex-row-flex-end-center;
 
-      input[type="text"],
-      input[type="email"] {
+      input {
         @include greet-part-input-search;
         height: inherit;
 
