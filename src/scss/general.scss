@@ -194,7 +194,7 @@ li {
       input {
         height: inherit;
 
-        &[type="text"] {
+        &[type="search"] {
           @include greet-part-input-search;
         }
 

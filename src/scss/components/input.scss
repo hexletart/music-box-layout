@@ -1,6 +1,6 @@
 @mixin greet-part-input-search {
   background-color: $dark;
-  border: 2px solid $dark;
+  border: inherit;
   border-radius: px-rem(50px);
   box-sizing: border-box;
   color: $white;

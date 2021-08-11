@@ -601,9 +601,9 @@ h4 {
 .greet-part-top-right input {
   height: inherit;
 }
-.greet-part-top-right input[type=text] {
+.greet-part-top-right input[type=search] {
   background-color: #3c3b3d;
-  border: 2px solid #3c3b3d;
+  border: inherit;
   border-radius: 3.125rem;
   box-sizing: border-box;
   color: #fff;
