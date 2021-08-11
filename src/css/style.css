@@ -598,17 +598,17 @@ h4 {
   flex-direction: row;
   justify-content: flex-end;
 }
-.greet-part-top-right input[type=text],
-.greet-part-top-right input[type=email] {
+.greet-part-top-right input {
+  height: inherit;
+}
+.greet-part-top-right input[type=text] {
   background-color: #3c3b3d;
   border: none;
   border-radius: 3.125rem;
   box-sizing: border-box;
   color: #fff;
-  height: inherit;
 }
-.greet-part-top-right input[type=text]::placeholder,
-.greet-part-top-right input[type=email]::placeholder {
+.greet-part-top-right input::placeholder {
   color: #757575;
   font-size: 0.83125rem;
   text-transform: uppercase;
@@ -627,7 +627,7 @@ h4 {
   justify-content: space-between;
   width: inherit;
 }
-.greet-part-form-top input {
+.greet-part-form-top input[type=text], .greet-part-form-top input[type=email] {
   background-color: transparent;
   border-bottom-width: 2px;
   border-color: #cacaca;

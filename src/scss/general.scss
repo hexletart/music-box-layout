@@ -192,8 +192,11 @@ li {
       @include flex-row-flex-end-center;
 
       input {
-        @include greet-part-input-search;
         height: inherit;
+
+        &[type="text"] {
+          @include greet-part-input-search;
+        }
 
         &::placeholder {
           color: $gray-placeholder;
@@ -213,7 +216,10 @@ li {
       width: inherit;
 
       input {
-        @include greet-part-input-main;
+        &[type="text"],
+        &[type="email"] {
+          @include greet-part-input-main;
+        }
 
         &::placeholder {
           color: $white;
