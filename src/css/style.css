@@ -603,7 +603,7 @@ h4 {
 }
 .greet-part-top-right input[type=text] {
   background-color: #3c3b3d;
-  border: none;
+  border: 2px solid #3c3b3d;
   border-radius: 3.125rem;
   box-sizing: border-box;
   color: #fff;
