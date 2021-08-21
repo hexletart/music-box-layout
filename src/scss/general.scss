@@ -1,14 +1,20 @@
 @font-face {
-  font-family: "Roboto";
-  src: url("../assets/fonts/Roboto-Regular.ttf");
+  font-family: 'Roboto';
+  src: url('../assets/fonts/Roboto-Regular.ttf');
 }
 
 @font-face {
-  font-family: "Roboto-Bold";
-  src: url("../assets/fonts/Roboto-Bold.ttf");
+  font-family: 'Roboto-Bold';
+  src: url('../assets/fonts/Roboto-Bold.ttf');
 }
 
-@include html("Roboto", sans-serif, px-rem(16px), 1.5, $dark-gray, $black);
+@include html('Roboto', sans-serif, px-rem(16px), 1.5, $dark-gray, $black);
+
+header,
+div,
+section {
+  box-sizing: border-box;
+}
 
 body,
 header,
@@ -34,12 +40,6 @@ h4 {
   margin: 0;
 }
 
-header,
-div,
-section {
-  box-sizing: border-box;
-}
-
 img {
   vertical-align: middle;
 }
@@ -57,9 +57,7 @@ li {
 @include heading-set(h2, px-rem(38px), px-rem(57px), Roboto-Bold, $white, 700, uppercase);
 @include heading-set(h3, px-rem(24px), px-rem(45px), Roboto, $white, 400);
 @include heading-set(h4, px-rem(18px), px-rem(27px), Roboto-Bold, $white, 700);
-
 @include paragraphs-fixed;
-
 @include height(px-rem(50px));
 @include width(px-rem(270px), min);
 @include width(px-rem(1200px), max);
@@ -68,14 +66,12 @@ li {
 @include width(px-rem(570px));
 @include width-height(px-rem(25px));
 @include width-height(px-rem(570px), px-rem(25px));
-
 @include mar-ver(0);
 @include mar-ver(px-rem(64px));
 @include mar-ver(px-rem(40px), 0);
 @include mar-ver(0, px-rem(40px));
 @include mar-ver(px-rem(30px), px-rem(24px));
 @include mar-ver(px-rem(20px), px-rem(200px));
-
 @include mar-side(top, px-rem(32px));
 @include mar-side(right, px-rem(16px));
 @include mar-side(right, px-rem(24px));
@@ -84,11 +80,9 @@ li {
 @include mar-side(bottom, px-rem(48px));
 @include mar-side(bottom, px-rem(50px));
 @include mar-side(bottom, px-rem(100px));
-
 @include pad-gor(px-rem(10px));
 @include pad-gor(px-rem(20px));
 @include pad-gor(px-rem(24px));
-
 @include pad-ver(2rem);
 @include pad-ver(3rem);
 @include pad-ver(px-rem(100px));
@@ -96,22 +90,16 @@ li {
 @include pad-ver(px-rem(40px), px-rem(48px));
 @include pad-ver(px-rem(50px), px-rem(23px));
 @include pad-ver(px-rem(62px), px-rem(72px));
-
 @include pad-side(top, px-rem(100px));
 @include pad-side(right, px-rem(16px));
-
 @include no-wrap;
 @include relative;
-
 @include index-header-desktop;
 @include index-artist-desktop;
 @include price-value;
 @include price-unit;
-
 @include sr-only;
-
 @include footer-bg-gradient;
-
 @include btn;
 @include btn-green;
 @include btn-purple;
@@ -119,12 +107,11 @@ li {
 @include btn-red-opt-2;
 @include btn-transparent-opt-1;
 @include btn-transparent-opt-2;
-
 @include img-main-greet-part-index;
 @include img-main-greet-part-artist;
-@include image-subscription-part(subscribe-first, "subscribe_1.png");
-@include image-subscription-part(subscribe-second, "subscribe_2.png");
-@include image-subscription-part(subscribe-third, "subscribe_3.png");
+@include image-subscription-part(subscribe-first, 'subscribe_1.png');
+@include image-subscription-part(subscribe-second, 'subscribe_2.png');
+@include image-subscription-part(subscribe-third, 'subscribe_3.png');
 
 .greet-part {
   @include flex-column-center-center;
@@ -132,23 +119,25 @@ li {
   h1,
   h2,
   > p {
-    text-align: center;
     width: inherit;
+
+    text-align: center;
   }
 
   form {
-    max-width: px-rem(570px);
     width: 100%;
+    max-width: px-rem(570px);
   }
 
   &-top {
     @include flex-row-space-between-center;
+    position: absolute;
+    top: 0;
+    right: 0;
     left: 0;
+
     margin: 0 auto;
     padding-top: px-rem(25px);
-    position: absolute;
-    right: 0;
-    top: 0;
 
     &-left {
       @include grid-repeat-rows-columns-position-gap(1, min-content, 2, auto, flex-start, center, px-rem(90px));
@@ -161,14 +150,15 @@ li {
 
       a {
         color: inherit;
-        text-decoration: none;
         text-transform: uppercase;
+        text-decoration: none;
       }
 
       p {
         margin: 0;
-        text-transform: uppercase;
+
         white-space: nowrap;
+        text-transform: uppercase;
       }
 
       li {
@@ -194,7 +184,7 @@ li {
       input {
         height: inherit;
 
-        &[type="search"] {
+        &[type='search'] {
           @include greet-part-input-search;
         }
 
@@ -216,15 +206,15 @@ li {
       width: inherit;
 
       input {
-        &[type="text"],
-        &[type="email"] {
+        &[type='text'],
+        &[type='email'] {
           @include greet-part-input-main;
         }
 
         &::placeholder {
           color: $white;
-          font-size: px-rem(14px);
           font-weight: bold;
+          font-size: px-rem(14px);
         }
       }
     }
@@ -235,8 +225,9 @@ li {
   h1,
   h2,
   > p {
-    text-align: left;
     width: inherit;
+
+    text-align: left;
   }
 
   &-buttons {
@@ -245,7 +236,7 @@ li {
 }
 
 .subscription-part {
-  color: white;
+  color: $white;
 
   p,
   h2 {
@@ -260,16 +251,124 @@ li {
 
   &-option {
     @include flex-row-space-between-flex-start;
-    margin: 0 auto;
     width: 100%;
+    margin: 0 auto;
 
     &-card {
       @include grid-repeat-rows-position-gap(4, auto, center, flex-start);
-      border-radius: px-rem(18px);
       width: px-rem(369px);
+
+      border-radius: px-rem(18px);
 
       &-price {
         @include grid-repeat-columns-position-gap(2, min-content, center, flex-start, px-rem(16px));
+      }
+    }
+  }
+}
+
+.track-list,
+.discography-list,
+.artist-list {
+  h3 {
+    font-weight: 700;
+    font-family: 'Roboto-Bold', sans-serif;
+  }
+
+  p {
+    margin: 0;
+
+    color: $gray;
+  }
+}
+
+.track-list {
+  h3,
+  p {
+    font-size: px-rem(12.8px);
+    line-height: px-rem(19.2px);
+    white-space: nowrap;
+  }
+
+  h3 {
+    text-transform: uppercase;
+  }
+
+  img {
+    height: px-rem(55px);
+  }
+
+  &-body {
+    @include grid-repeat-rows-gap-columns-gap(3, auto, 25px, 2, auto, 50px);
+    width: inherit;
+
+    &-position {
+      @include flex-row-space-between-center;
+      max-width: px-rem(545px);
+
+      &-left {
+        @include grid-repeat-rows-columns-position-gap(1, auto, 2, auto, flex-start, center, px-rem(15px));
+
+        &-name {
+          @include grid-repeat-rows-columns-gap(2, min-content, 1, min-content);
+        }
+      }
+    }
+  }
+}
+
+.artist-list {
+  h3,
+  p {
+    text-align: center;
+  }
+}
+
+.footer {
+  h2 {
+    margin-bottom: px-rem(16px);
+
+    font-size: px-rem(18px);
+    line-height: px-rem(27px);
+    text-transform: uppercase;
+  }
+
+  a,
+  p {
+    margin: 0;
+
+    color: $gray;
+    text-decoration: none;
+  }
+
+  &-top,
+  &-bottom {
+    @include flex-column-center-center;
+    width: inherit;
+  }
+
+  &-top {
+    border-bottom: 1px solid $dark-gray;
+
+    &-content {
+      @include flex-row-space-between-flex-start;
+      width: 100%;
+
+      &-subscrabe-icon {
+        @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
+      }
+    }
+  }
+
+  &-bottom {
+    @include flex-column-flex-start-center;
+
+    &-content {
+      @include grid-repeat-rows-columns-position-gap(1, auto, 5, min-content, flex-start, center);
+      width: 100%;
+
+      * {
+        display: inline-block;
       }
     }
   }
@@ -337,55 +436,6 @@ li {
   }
 }
 
-.track-list,
-.discography-list,
-.artist-list {
-  h3 {
-    font-family: "Roboto-Bold", sans-serif;
-    font-weight: 700;
-  }
-
-  p {
-    color: $gray;
-    margin: 0;
-  }
-}
-
-.track-list {
-  h3,
-  p {
-    font-size: px-rem(12.8px);
-    line-height: px-rem(19.2px);
-    white-space: nowrap;
-  }
-
-  h3 {
-    text-transform: uppercase;
-  }
-
-  img {
-    height: px-rem(55px);
-  }
-
-  &-body {
-    @include grid-repeat-rows-gap-columns-gap(3, auto, 25px, 2, auto, 50px);
-    width: inherit;
-
-    &-position {
-      @include flex-row-space-between-center;
-      max-width: px-rem(545px);
-
-      &-left {
-        @include grid-repeat-rows-columns-position-gap(1, auto, 2, auto, flex-start, center, px-rem(15px));
-
-        &-name {
-          @include grid-repeat-rows-columns-gap(2, min-content, 1, min-content);
-        }
-      }
-    }
-  }
-}
-
 .discography-list,
 .artist-list {
   h3 {
@@ -404,61 +454,6 @@ li {
 
     &-position {
       @include grid-repeat-rows-columns-gap(2, auto, 1, min-content, px-rem(18px));
-    }
-  }
-}
-
-.artist-list {
-  h3,
-  p {
-    text-align: center;
-  }
-}
-
-.footer {
-  h2 {
-    font-size: px-rem(18px);
-    line-height: px-rem(27px);
-    margin-bottom: px-rem(16px);
-    text-transform: uppercase;
-  }
-
-  a,
-  p {
-    color: $gray;
-    margin: 0;
-    text-decoration: none;
-  }
-
-  &-top,
-  &-bottom {
-    @include flex-column-center-center;
-    width: inherit;
-  }
-
-  &-top {
-    border-bottom: 1px solid $dark-gray;
-
-    &-content {
-      @include flex-row-space-between-flex-start;
-      width: 100%;
-
-      &-subscrabe-icon {
-        @include grid-repeat-rows-columns-position-gap(1, auto, 4, min-content, flex-start, center, px-rem(24px));
-      }
-    }
-  }
-
-  &-bottom {
-    @include flex-column-flex-start-center;
-
-    &-content {
-      @include grid-repeat-rows-columns-position-gap(1, auto, 5, min-content, flex-start, center);
-      width: 100%;
-
-      * {
-        display: inline-block;
-      }
     }
   }
 }

@@ -3,12 +3,9 @@
   @include heading-set(h2, px-rem(18px), px-rem(27px), Roboto-Bold, $white, 700, uppercase);
   @include heading-set(h3, px-rem(16px), px-rem(24px), Roboto-Bold, $white, 700);
   @include heading-set(h4, px-rem(18px), px-rem(24px), Roboto, $white, 400);
-
   @include pad-ver(px-rem(25px));
-
   @include pad-side(bottom, px-rem(76px));
   @include pad-side(top, px-rem(50px));
-
   @include index-header-mobile;
 
   .greet-part {
@@ -58,8 +55,9 @@
 
   .subscription-part {
     h3 {
-      font-weight: 400;
       margin-top: px-rem(16px);
+
+      font-weight: 400;
     }
 
     &-option {
@@ -67,9 +65,9 @@
       width: inherit;
 
       &-card {
+        width: px-rem(374px);
         height: px-rem(595px);
         overflow-y: hidden;
-        width: px-rem(374px);
 
         &:nth-child(-n + 2) {
           margin-bottom: px-rem(50px);
@@ -80,9 +78,9 @@
 
   .news-part {
     h3 {
-      font-family: 'Roboto', sans-serif;
-      font-size: px-rem(16px);
       font-weight: 400;
+      font-size: px-rem(16px);
+      font-family: 'Roboto', sans-serif;
     }
 
     &-index {
@@ -98,8 +96,8 @@
         &-content {
           &-top {
             p {
-              margin-bottom: px-rem(24px);
               margin-top: px-rem(16px);
+              margin-bottom: px-rem(24px);
             }
           }
         }
@@ -155,8 +153,8 @@
   .footer {
     &-top-content,
     &-bottom-content {
-      padding-left: px-rem(20px);
       padding-right: px-rem(20px);
+      padding-left: px-rem(20px);
     }
 
     &-top-content {

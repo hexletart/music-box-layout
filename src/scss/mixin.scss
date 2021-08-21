@@ -1,11 +1,12 @@
 // HTML
 @mixin html($font-type, $serif-type, $font-size, $line-height, $color, $color-bg) {
   html {
-    background-color: #{$color-bg};
     color: #{$color};
-    font-family: #{$font-type}, #{$serif-type};
     font-size: #{$font-size};
+    font-family: #{$font-type}, #{$serif-type};
     line-height: #{$line-height};
+
+    background-color: #{$color-bg};
   }
 }
 
@@ -14,17 +15,19 @@
   @if $text-transfom== 'null' {
     #{$heading-type} {
       color: $color;
-      font-family: '#{$font-family}', sans-serif;
-      font-size: #{$font-size};
       font-weight: #{$font-weight};
+      font-size: #{$font-size};
+      font-family: '#{$font-family}', sans-serif;
       line-height: #{$line-height};
     }
-  } @else {
+  }
+
+  @else {
     #{$heading-type} {
       color: $color;
-      font-family: '#{$font-family}', sans-serif;
-      font-size: #{$font-size};
       font-weight: #{$font-weight};
+      font-size: #{$font-size};
+      font-family: '#{$font-family}', sans-serif;
       line-height: #{$line-height};
       text-transform: #{$text-transfom};
     }
@@ -44,13 +47,15 @@
 @mixin pad-ver($padding-t, $padding-b: null) {
   @if $padding-b == null {
     .pad-ver-#{rem-selector-name(#{$padding-t})} {
+      padding-top: #{$padding-t};
       padding-bottom: #{$padding-t};
-      padding-top: #{$padding-t};
     }
-  } @else {
+  }
+
+  @else {
     .pad-ver-#{rem-selector-name(#{$padding-t})}-#{rem-selector-name(#{$padding-b})} {
-      padding-bottom: #{$padding-b};
       padding-top: #{$padding-t};
+      padding-bottom: #{$padding-b};
     }
   }
 }
@@ -58,13 +63,15 @@
 @mixin pad-gor($padding-r, $padding-l: null) {
   @if $padding-l == null {
     .pad-gor-#{rem-selector-name(#{$padding-r})} {
+      padding-right: #{$padding-r};
       padding-left: #{$padding-r};
-      padding-right: #{$padding-r};
     }
-  } @else {
+  }
+
+  @else {
     .pad-gor-#{rem-selector-name(#{$padding-r})}-#{rem-selector-name(#{$padding-l})} {
-      padding-left: #{$padding-l};
       padding-right: #{$padding-r};
+      padding-left: #{$padding-l};
     }
   }
 }
@@ -72,13 +79,15 @@
 @mixin mar-ver($margin-t, $margin-b: null) {
   @if $margin-b == null {
     .mar-ver-#{rem-selector-name(#{$margin-t})} {
+      margin-top: #{$margin-t};
       margin-bottom: #{$margin-t};
-      margin-top: #{$margin-t};
     }
-  } @else {
+  }
+
+  @else {
     .mar-ver-#{rem-selector-name(#{$margin-t})}-#{rem-selector-name(#{$margin-b})} {
-      margin-bottom: #{$margin-b};
       margin-top: #{$margin-t};
+      margin-bottom: #{$margin-b};
     }
   }
 }
@@ -86,13 +95,15 @@
 @mixin mar-gor($margin-r, $margin-l: null) {
   @if $margin-l == null {
     .mar-gor-#{rem-selector-name(#{$margin-r})} {
+      margin-right: #{$margin-r};
       margin-left: #{$margin-r};
-      margin-right: #{$margin-r};
     }
-  } @else {
+  }
+
+  @else {
     .mar-gor-#{rem-selector-name(#{$margin-r})}-#{rem-selector-name(#{$margin-l})} {
-      margin-left: #{$margin-l};
       margin-right: #{$margin-r};
+      margin-left: #{$margin-l};
     }
   }
 }
@@ -115,7 +126,9 @@
     .w-#{rem-selector-name(#{$width})} {
       width: #{$width};
     }
-  } @else {
+  }
+
+  @else {
     .#{$min-max}-w-#{rem-selector-name(#{$width})} {
       #{$min-max}-width: #{$width};
     }
@@ -127,7 +140,9 @@
     .h-#{rem-selector-name(#{$height})} {
       height: #{$height};
     }
-  } @else {
+  }
+
+  @else {
     .#{$min-max}-h-#{rem-selector-name(#{$height})} {
       #{$min-max}-height: #{$height};
     }
@@ -137,13 +152,15 @@
 @mixin width-height($width, $height: null) {
   @if $height == null {
     .wh-#{rem-selector-name(#{$width})} {
+      width: #{$width};
       height: #{$width};
-      width: #{$width};
     }
-  } @else {
+  }
+
+  @else {
     .wh-#{rem-selector-name(#{$width})}-#{rem-selector-name(#{$height})} {
-      height: #{$height};
       width: #{$width};
+      height: #{$height};
     }
   }
 }
@@ -180,170 +197,170 @@
 }
 
 @mixin flex-row-flex-start-stretch {
-  align-items: stretch;
   display: flex;
   flex-direction: row;
+  align-items: stretch;
   justify-content: flex-start;
 }
 
 @mixin flex-row-flex-start-flex-start {
-  align-items: flex-start;
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
   justify-content: flex-start;
 }
 
 @mixin flex-row-flex-start-center {
-  align-items: center;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: flex-start;
 }
 
 @mixin flex-row-flex-start-flex-end {
-  align-items: flex-end;
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
   justify-content: flex-start;
 }
 
 @mixin flex-row-center-stretch {
-  align-items: stretch;
   display: flex;
   flex-direction: row;
+  align-items: stretch;
   justify-content: center;
 }
 
 @mixin flex-row-center-flex-start {
-  align-items: flex-start;
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
   justify-content: center;
 }
 
 @mixin flex-row-center-center {
-  align-items: center;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
 }
 
 @mixin flex-row-center-flex-end {
-  align-items: flex-end;
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
   justify-content: center;
 }
 
 @mixin flex-row-flex-end-stretch {
-  align-items: stretch;
   display: flex;
   flex-direction: row;
+  align-items: stretch;
   justify-content: flex-end;
 }
 
 @mixin flex-row-flex-end-flex-start {
-  align-items: flex-start;
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
   justify-content: flex-end;
 }
 
 @mixin flex-row-flex-end-center {
-  align-items: center;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: flex-end;
 }
 
 @mixin flex-row-flex-end-flex-end {
-  align-items: flex-end;
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
   justify-content: flex-end;
 }
 
 @mixin flex-row-space-between-stretch {
-  align-items: stretch;
   display: flex;
   flex-direction: row;
+  align-items: stretch;
   justify-content: space-between;
 }
 
 @mixin flex-row-space-between-flex-start {
-  align-items: flex-start;
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
 @mixin flex-row-space-between-center {
-  align-items: center;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 
 @mixin flex-row-space-between-flex-end {
-  align-items: flex-end;
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
   justify-content: space-between;
 }
 
 @mixin flex-row-space-around-stretch {
-  align-items: stretch;
   display: flex;
   flex-direction: row;
+  align-items: stretch;
   justify-content: space-around;
 }
 
 @mixin flex-row-space-around-flex-start {
-  align-items: flex-start;
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
   justify-content: space-around;
 }
 
 @mixin flex-row-space-around-center {
-  align-items: center;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 
 @mixin flex-row-space-around-flex-end {
-  align-items: flex-end;
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
   justify-content: space-between;
 }
 
 @mixin flex-row-space-evenly-stretch {
-  align-items: stretch;
   display: flex;
   flex-direction: row;
+  align-items: stretch;
   justify-content: space-evenly;
 }
 
 @mixin flex-row-space-evenly-flex-start {
-  align-items: flex-start;
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
   justify-content: space-evenly;
 }
 
 @mixin flex-row-space-evenly-center {
-  align-items: center;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 
 @mixin flex-row-space-evenly-flex-end {
-  align-items: flex-end;
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
   justify-content: space-between;
 }
 
@@ -360,170 +377,170 @@
 }
 
 @mixin flex-column-flex-start-stretch {
-  align-items: stretch;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   justify-content: flex-start;
 }
 
 @mixin flex-column-flex-start-flex-start {
-  align-items: flex-start;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: flex-start;
 }
 
 @mixin flex-column-flex-start-center {
-  align-items: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: flex-start;
 }
 
 @mixin flex-column-flex-start-flex-end {
-  align-items: flex-end;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   justify-content: flex-start;
 }
 
 @mixin flex-column-center-stretch {
-  align-items: stretch;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   justify-content: center;
 }
 
 @mixin flex-column-center-flex-start {
-  align-items: flex-start;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
 }
 
 @mixin flex-column-center-center {
-  align-items: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
 @mixin flex-column-center-flex-end {
-  align-items: flex-end;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   justify-content: center;
 }
 
 @mixin flex-column-flex-end-stretch {
-  align-items: stretch;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   justify-content: flex-end;
 }
 
 @mixin flex-column-flex-end-flex-start {
-  align-items: flex-start;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: flex-end;
 }
 
 @mixin flex-column-flex-end-center {
-  align-items: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: flex-end;
 }
 
 @mixin flex-column-flex-end-flex-end {
-  align-items: flex-end;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   justify-content: flex-end;
 }
 
 @mixin flex-column-space-between-stretch {
-  align-items: stretch;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   justify-content: space-between;
 }
 
 @mixin flex-column-space-between-flex-start {
-  align-items: flex-start;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
 @mixin flex-column-space-between-center {
-  align-items: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
 }
 
 @mixin flex-column-space-between-flex-end {
-  align-items: flex-end;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   justify-content: space-between;
 }
 
 @mixin flex-column-space-around-stretch {
-  align-items: stretch;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   justify-content: space-around;
 }
 
 @mixin flex-column-space-around-flex-start {
-  align-items: flex-start;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: space-around;
 }
 
 @mixin flex-column-space-around-center {
-  align-items: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
 }
 
 @mixin flex-column-space-around-flex-end {
-  align-items: flex-end;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   justify-content: space-between;
 }
 
 @mixin flex-column-space-evenly-stretch {
-  align-items: stretch;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   justify-content: space-evenly;
 }
 
 @mixin flex-column-space-evenly-flex-start {
-  align-items: flex-start;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: space-evenly;
 }
 
 @mixin flex-column-space-evenly-center {
-  align-items: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
 }
 
 @mixin flex-column-space-evenly-flex-end {
-  align-items: flex-end;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   justify-content: space-between;
 }
 
@@ -533,10 +550,12 @@
   @if $row-gap == null {
     display: grid;
     grid-template-rows: repeat($rows-amount, #{$rows-value});
-  } @else {
+  }
+
+  @else {
     display: grid;
-    grid-template-rows: repeat($rows-amount, #{$rows-value});
     grid-row-gap: #{$row-gap};
+    grid-template-rows: repeat($rows-amount, #{$rows-value});
   }
 }
 
@@ -544,10 +563,12 @@
   @if $row-gap == null {
     display: grid;
     grid-template-rows: #{$rows};
-  } @else {
+  }
+
+  @else {
     display: grid;
-    grid-template-rows: #{$rows};
     grid-row-gap: #{$row-gap};
+    grid-template-rows: #{$rows};
   }
 }
 
@@ -555,14 +576,16 @@
   @if $row-gap == null {
     display: grid;
     grid-template-rows: repeat($rows-amount, #{$rows-value});
-    justify-content: $justify-content;
     align-items: $align-items;
-  } @else {
+    justify-content: $justify-content;
+  }
+
+  @else {
     display: grid;
-    grid-template-rows: repeat($rows-amount, #{$rows-value});
     grid-row-gap: #{$row-gap};
-    justify-content: $justify-content;
+    grid-template-rows: repeat($rows-amount, #{$rows-value});
     align-items: $align-items;
+    justify-content: $justify-content;
   }
 }
 
@@ -570,14 +593,16 @@
   @if $row-gap == null {
     display: grid;
     grid-template-rows: #{$rows};
-    justify-content: $justify-content;
     align-items: $align-items;
-  } @else {
+    justify-content: $justify-content;
+  }
+
+  @else {
     display: grid;
-    grid-template-rows: #{$rows};
     grid-row-gap: #{$row-gap};
-    justify-content: $justify-content;
+    grid-template-rows: #{$rows};
     align-items: $align-items;
+    justify-content: $justify-content;
   }
 }
 
@@ -586,10 +611,12 @@
   @if $column-gap == null {
     display: grid;
     grid-template-columns: repeat($columns-amount, #{$columns-value});
-  } @else {
+  }
+
+  @else {
     display: grid;
-    grid-template-columns: repeat($columns-amount, #{$columns-value});
     grid-column-gap: #{$column-gap};
+    grid-template-columns: repeat($columns-amount, #{$columns-value});
   }
 }
 
@@ -597,10 +624,12 @@
   @if $column-gap == null {
     display: grid;
     grid-template-columns: #{$columns};
-  } @else {
+  }
+
+  @else {
     display: grid;
-    grid-template-columns: #{$columns};
     grid-column-gap: #{$column-gap};
+    grid-template-columns: #{$columns};
   }
 }
 
@@ -608,14 +637,16 @@
   @if $column-gap == null {
     display: grid;
     grid-template-columns: repeat($columns-amount, #{$columns-value});
-    justify-content: $justify-content;
     align-items: $align-items;
-  } @else {
+    justify-content: $justify-content;
+  }
+
+  @else {
     display: grid;
-    grid-template-columns: repeat($columns-amount, #{$columns-value});
     grid-column-gap: #{$column-gap};
-    justify-content: $justify-content;
+    grid-template-columns: repeat($columns-amount, #{$columns-value});
     align-items: $align-items;
+    justify-content: $justify-content;
   }
 }
 
@@ -623,14 +654,16 @@
   @if $column-gap == null {
     display: grid;
     grid-template-columns: #{$columns};
-    justify-content: $justify-content;
     align-items: $align-items;
-  } @else {
+    justify-content: $justify-content;
+  }
+
+  @else {
     display: grid;
-    grid-template-columns: #{$columns};
     grid-column-gap: #{$column-gap};
-    justify-content: $justify-content;
+    grid-template-columns: #{$columns};
     align-items: $align-items;
+    justify-content: $justify-content;
   }
 }
 
@@ -640,11 +673,13 @@
     display: grid;
     grid-template-rows: repeat($rows-amount, #{$rows-value});
     grid-template-columns: repeat($columns-amount, #{$columns-value});
-  } @else {
+  }
+
+  @else {
     display: grid;
+    grid-gap: #{$grid-gap};
     grid-template-rows: repeat($rows-amount, #{$rows-value});
     grid-template-columns: repeat($columns-amount, #{$columns-value});
-    grid-gap: #{$grid-gap};
   }
 }
 
@@ -653,11 +688,13 @@
     display: grid;
     grid-template-rows: #{$rows};
     grid-template-columns: #{$columns};
-  } @else {
+  }
+
+  @else {
     display: grid;
+    grid-gap: #{$grid-gap};
     grid-template-rows: #{$rows};
     grid-template-columns: #{$columns};
-    grid-gap: #{$grid-gap};
   }
 }
 
@@ -666,15 +703,17 @@
     display: grid;
     grid-template-rows: repeat($rows-amount, #{$rows-value});
     grid-template-columns: repeat($columns-amount, #{$columns-value});
-    justify-content: $justify-content;
     align-items: $align-items;
-  } @else {
+    justify-content: $justify-content;
+  }
+
+  @else {
     display: grid;
+    grid-gap: #{$grid-gap};
     grid-template-rows: repeat($rows-amount, #{$rows-value});
     grid-template-columns: repeat($columns-amount, #{$columns-value});
-    grid-gap: #{$grid-gap};
-    justify-content: $justify-content;
     align-items: $align-items;
+    justify-content: $justify-content;
   }
 }
 
@@ -683,51 +722,53 @@
     display: grid;
     grid-template-rows: #{$rows};
     grid-template-columns: #{$columns};
-    justify-content: $justify-content;
     align-items: $align-items;
-  } @else {
+    justify-content: $justify-content;
+  }
+
+  @else {
     display: grid;
+    grid-gap: #{$grid-gap};
     grid-template-rows: #{$rows};
     grid-template-columns: #{$columns};
-    grid-gap: #{$grid-gap};
-    justify-content: $justify-content;
     align-items: $align-items;
+    justify-content: $justify-content;
   }
 }
 
 @mixin grid-repeat-rows-gap-columns-gap($rows-amount, $rows-value, $rows-gap, $columns-amount, $columns-value, $columns-gap) {
   display: grid;
-  grid-column-gap: #{$columns-gap};
   grid-row-gap: #{$rows-gap};
-  grid-template-columns: repeat($columns-amount, #{$columns-value});
+  grid-column-gap: #{$columns-gap};
   grid-template-rows: repeat($rows-amount, #{$rows-value});
+  grid-template-columns: repeat($columns-amount, #{$columns-value});
 }
 
 @mixin grid-certain-rows-gap-columns-gap($rows, $rows-gap, $columns, $columns-gap) {
   display: grid;
-  grid-column-gap: #{$columns-gap};
   grid-row-gap: #{$rows-gap};
-  grid-template-columns: #{$columns};
+  grid-column-gap: #{$columns-gap};
   grid-template-rows: #{$rows};
+  grid-template-columns: #{$columns};
 }
 
 @mixin grid-repeat-rows-gap-columns-gap-position($rows-amount, $rows-value, $rows-gap, $columns-amount, $columns-value, $columns-gap, $justify-content, $align-items) {
-  align-items: $align-items;
   display: grid;
-  grid-column-gap: #{$columns-gap};
   grid-row-gap: #{$rows-gap};
-  grid-template-columns: repeat($columns-amount, #{$columns-value});
+  grid-column-gap: #{$columns-gap};
   grid-template-rows: repeat($rows-amount, #{$rows-value});
+  grid-template-columns: repeat($columns-amount, #{$columns-value});
+  align-items: $align-items;
   justify-content: $justify-content;
 }
 
 @mixin grid-certain-rows-gap-columns-gap-position($rows, $rows-gap, $columns, $columns-gap, $justify-content, $align-items) {
-  align-items: $align-items;
   display: grid;
-  grid-column-gap: #{$columns-gap};
   grid-row-gap: #{$rows-gap};
-  grid-template-columns: #{$columns};
+  grid-column-gap: #{$columns-gap};
   grid-template-rows: #{$rows};
+  grid-template-columns: #{$columns};
+  align-items: $align-items;
   justify-content: $justify-content;
 }
 

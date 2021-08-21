@@ -4,7 +4,9 @@
   @each $value in $values {
     @if $value == 0 {
       $result: append($result, 0);
-    } @else {
+    }
+
+    @else {
       $result: append($result, (($value / $rem) * 1rem));
     }
   }
