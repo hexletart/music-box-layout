@@ -1,14 +1,14 @@
 @font-face {
-  font-family: 'Roboto';
-  src: url('../assets/fonts/Roboto-Regular.ttf');
+  font-family: Roboto;
+  src: url("../assets/fonts/Roboto-Regular.ttf");
 }
 
 @font-face {
-  font-family: 'Roboto-Bold';
-  src: url('../assets/fonts/Roboto-Bold.ttf');
+  font-family: Roboto-Bold;
+  src: url("../assets/fonts/Roboto-Bold.ttf");
 }
 
-@include html('Roboto', sans-serif, px-rem(16px), 1.5, $dark-gray, $black);
+@include html("Roboto", sans-serif, px-rem(16px), 1.5, $dark-gray, $black);
 
 header,
 div,
@@ -109,9 +109,9 @@ li {
 @include btn-transparent-opt-2;
 @include img-main-greet-part-index;
 @include img-main-greet-part-artist;
-@include image-subscription-part(subscribe-first, 'subscribe_1.png');
-@include image-subscription-part(subscribe-second, 'subscribe_2.png');
-@include image-subscription-part(subscribe-third, 'subscribe_3.png');
+@include image-subscription-part(subscribe-first, "subscribe_1.png");
+@include image-subscription-part(subscribe-second, "subscribe_2.png");
+@include image-subscription-part(subscribe-third, "subscribe_3.png");
 
 .greet-part {
   @include flex-column-center-center;
@@ -184,7 +184,7 @@ li {
       input {
         height: inherit;
 
-        &[type='search'] {
+        &[type="search"] {
           @include greet-part-input-search;
         }
 
@@ -206,8 +206,8 @@ li {
       width: inherit;
 
       input {
-        &[type='text'],
-        &[type='email'] {
+        &[type="text"],
+        &[type="email"] {
           @include greet-part-input-main;
         }
 
@@ -272,7 +272,7 @@ li {
 .artist-list {
   h3 {
     font-weight: 700;
-    font-family: 'Roboto-Bold', sans-serif;
+    font-family: Roboto-Bold, sans-serif;
   }
 
   p {
@@ -449,7 +449,8 @@ li {
   }
 
   &-body {
-    @include grid-repeat-rows-gap-columns-gap-position(2, auto, px-rem(25px), 4, auto, px-rem(50px), flex-start, flex-start);
+    @include grid-repeat-rows-gap-columns-gap-position(2, auto, px-rem(25px), 4, auto, px-rem(50px),
+    flex-start, flex-start);
     width: inherit;
 
     &-position {
