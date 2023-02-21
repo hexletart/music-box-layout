@@ -146,6 +146,7 @@ li {
       a,
       ul {
         font-size: px-rem(11px);
+        font-weight: 700;
       }
 
       a {
@@ -156,7 +157,6 @@ li {
 
       p {
         margin: 0;
-        font-weight: 700;
         white-space: nowrap;
         text-transform: uppercase;
       }
@@ -167,6 +167,10 @@ li {
 
       &-logo {
         @include grid-repeat-rows-columns-position-gap(1, auto, 2, min-content, flex-start, center, px-rem(16px));
+
+        p {
+          color: $white;
+        }
       }
 
       ul {
