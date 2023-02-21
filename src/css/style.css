@@ -946,7 +946,7 @@ h4 {
     grid-template-columns: repeat(1, auto);
     align-items: flex-start;
     justify-content: flex-start;
-    margin-bottom: 1rem;
+    margin-bottom: 1.125rem;
   }
   .greet-part-top-left p {
     margin-right: 0;
