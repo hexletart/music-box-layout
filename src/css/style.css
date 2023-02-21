@@ -933,6 +933,9 @@ h4 {
   .pad-top-3-125rem {
     padding-top: 3.125rem;
   }
+  .pad-top-3rem {
+    padding-top: 3rem;
+  }
   .greet-part-top {
     display: flex;
     flex-direction: column;
