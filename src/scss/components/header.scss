@@ -55,21 +55,3 @@
   }
 }
 
-@mixin index-header-mobile {
-  .index-header-mobile {
-    li {
-      a {
-        font-weight: 700;
-        font-family: Roboto-Bold, sans-serif;
-      }
-
-      &:nth-child(3) {
-        color: $white;
-      }
-
-      &:first-child {
-        color: $gray;
-      }
-    }
-  }
-}

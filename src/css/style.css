@@ -602,7 +602,7 @@ h4 {
   height: inherit;
 }
 .greet-part-top-right input[type=search] {
-  box-sizing: border-box;
+  box-sizing: content-box;
   color: #fff;
   background-color: #3c3b3d;
   border: inherit;
@@ -926,16 +926,6 @@ h4 {
   }
   .pad-top-3-125rem {
     padding-top: 3.125rem;
-  }
-  .index-header-mobile li a {
-    font-weight: 700;
-    font-family: Roboto-Bold, sans-serif;
-  }
-  .index-header-mobile li:nth-child(3) {
-    color: #fff;
-  }
-  .index-header-mobile li:first-child {
-    color: #e0e0e0;
   }
   .greet-part-top {
     display: flex;
