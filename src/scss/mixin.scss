@@ -12,7 +12,7 @@
 
 // FONT
 @mixin heading-set($heading-type, $font-size, $line-height, $font-family, $color, $font-weight, $text-transfom: null) {
-  @if $text-transfom == "null" {
+  @if not $text-transfom {
     #{$heading-type} {
       color: $color;
       font-weight: #{$font-weight};
@@ -43,7 +43,7 @@
 
 // PADDING AND MARGIN
 @mixin pad-ver($padding-t, $padding-b: null) {
-  @if $padding-b == null {
+  @if not $padding-b {
     .pad-ver-#{rem-selector-name(#{$padding-t})} {
       padding-top: #{$padding-t};
       padding-bottom: #{$padding-t};
@@ -57,7 +57,7 @@
 }
 
 @mixin pad-gor($padding-r, $padding-l: null) {
-  @if $padding-l == null {
+  @if not $padding-l {
     .pad-gor-#{rem-selector-name(#{$padding-r})} {
       padding-right: #{$padding-r};
       padding-left: #{$padding-r};
@@ -71,7 +71,7 @@
 }
 
 @mixin mar-ver($margin-t, $margin-b: null) {
-  @if $margin-b == null {
+  @if not $margin-b {
     .mar-ver-#{rem-selector-name(#{$margin-t})} {
       margin-top: #{$margin-t};
       margin-bottom: #{$margin-t};
@@ -85,7 +85,7 @@
 }
 
 @mixin mar-gor($margin-r, $margin-l: null) {
-  @if $margin-l == null {
+  @if not $margin-l {
     .mar-gor-#{rem-selector-name(#{$margin-r})} {
       margin-right: #{$margin-r};
       margin-left: #{$margin-r};
@@ -112,7 +112,7 @@
 
 // WIDTH AND HEIGHT
 @mixin width($width, $min-max: null) {
-  @if $min-max == null {
+  @if not $min-max {
     .w-#{rem-selector-name(#{$width})} {
       width: #{$width};
     }
@@ -124,7 +124,7 @@
 }
 
 @mixin height($height, $min-max: null) {
-  @if $min-max == null {
+  @if not $min-max {
     .h-#{rem-selector-name(#{$height})} {
       height: #{$height};
     }
@@ -136,7 +136,7 @@
 }
 
 @mixin width-height($width, $height: null) {
-  @if $height == null {
+  @if not $height {
     .wh-#{rem-selector-name(#{$width})} {
       width: #{$width};
       height: #{$width};
@@ -531,7 +531,7 @@
 // GRID-MIXIN
 // row
 @mixin grid-repeat-rows-gap($rows-amount, $rows-value, $row-gap: null) {
-  @if $row-gap == null {
+  @if not $row-gap {
     display: grid;
     grid-template-rows: repeat($rows-amount, #{$rows-value});
   } @else {
@@ -542,7 +542,7 @@
 }
 
 @mixin grid-certain-rows-gap($rows, $row-gap: null) {
-  @if $row-gap == null {
+  @if not $row-gap {
     display: grid;
     grid-template-rows: #{$rows};
   } @else {
@@ -553,7 +553,7 @@
 }
 
 @mixin grid-repeat-rows-position-gap($rows-amount, $rows-value, $justify-content, $align-items, $row-gap: null) {
-  @if $row-gap == null {
+  @if not $row-gap {
     display: grid;
     grid-template-rows: repeat($rows-amount, #{$rows-value});
     align-items: $align-items;
@@ -568,7 +568,7 @@
 }
 
 @mixin grid-certain-rows-position-gap($rows, $justify-content, $align-items, $row-gap: null) {
-  @if $row-gap == null {
+  @if not $row-gap {
     display: grid;
     grid-template-rows: #{$rows};
     align-items: $align-items;
@@ -584,7 +584,7 @@
 
 // column
 @mixin grid-repeat-columns-gap($columns-amount, $columns-value, $column-gap: null) {
-  @if $column-gap == null {
+  @if not $column-gap {
     display: grid;
     grid-template-columns: repeat($columns-amount, #{$columns-value});
   } @else {
@@ -595,7 +595,7 @@
 }
 
 @mixin grid-certain-columns-gap($columns, $column-gap: null) {
-  @if $column-gap == null {
+  @if not $column-gap {
     display: grid;
     grid-template-columns: #{$columns};
   } @else {
@@ -607,7 +607,7 @@
 
 @mixin grid-repeat-columns-position-gap($columns-amount, $columns-value,
 $justify-content, $align-items, $column-gap: null) {
-  @if $column-gap == null {
+  @if not $column-gap {
     display: grid;
     grid-template-columns: repeat($columns-amount, #{$columns-value});
     align-items: $align-items;
@@ -622,7 +622,7 @@ $justify-content, $align-items, $column-gap: null) {
 }
 
 @mixin grid-certain-columns-position-gap($columns, $justify-content, $align-items, $column-gap: null) {
-  @if $column-gap == null {
+  @if not $column-gap {
     display: grid;
     grid-template-columns: #{$columns};
     align-items: $align-items;
@@ -638,7 +638,7 @@ $justify-content, $align-items, $column-gap: null) {
 
 // both
 @mixin grid-repeat-rows-columns-gap($rows-amount, $rows-value, $columns-amount, $columns-value, $grid-gap: null) {
-  @if $grid-gap == null {
+  @if not $grid-gap {
     display: grid;
     grid-template-rows: repeat($rows-amount, #{$rows-value});
     grid-template-columns: repeat($columns-amount, #{$columns-value});
@@ -651,7 +651,7 @@ $justify-content, $align-items, $column-gap: null) {
 }
 
 @mixin grid-certain-rows-columns-gap($rows, $columns, $grid-gap: null) {
-  @if $grid-gap == null {
+  @if not $grid-gap {
     display: grid;
     grid-template-rows: #{$rows};
     grid-template-columns: #{$columns};
@@ -665,7 +665,7 @@ $justify-content, $align-items, $column-gap: null) {
 
 @mixin grid-repeat-rows-columns-position-gap($rows-amount, $rows-value, $columns-amount,
 $columns-value, $justify-content, $align-items, $grid-gap: null) {
-  @if $grid-gap == null {
+  @if not $grid-gap {
     display: grid;
     grid-template-rows: repeat($rows-amount, #{$rows-value});
     grid-template-columns: repeat($columns-amount, #{$columns-value});
@@ -682,7 +682,7 @@ $columns-value, $justify-content, $align-items, $grid-gap: null) {
 }
 
 @mixin grid-certain-rows-columns-position-gap($rows, $columns, $justify-content, $align-items, $grid-gap: null) {
-  @if $grid-gap == null {
+  @if not $grid-gap {
     display: grid;
     grid-template-rows: #{$rows};
     grid-template-columns: #{$columns};
