@@ -529,6 +529,7 @@ h4 {
 .greet-part h2,
 .greet-part > p {
   width: inherit;
+  color: #fff;
   text-align: center;
 }
 .greet-part form {
