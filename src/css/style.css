@@ -923,9 +923,9 @@ h4 {
     font-family: "Roboto", sans-serif;
     line-height: 1.5rem;
   }
-  .pad-ver-1-5625rem {
-    padding-top: 1.5625rem;
-    padding-bottom: 1.5625rem;
+  .pad-ver-248px {
+    padding-top: 248px;
+    padding-bottom: 248px;
   }
   .pad-bottom-4-75rem {
     padding-bottom: 4.75rem;
@@ -946,7 +946,7 @@ h4 {
     grid-template-columns: repeat(1, auto);
     align-items: flex-start;
     justify-content: flex-start;
-    margin-bottom: 1.125rem;
+    margin-bottom: 1rem;
   }
   .greet-part-top-left p {
     margin-right: 0;
