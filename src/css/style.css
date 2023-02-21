@@ -567,6 +567,7 @@ h4 {
 }
 .greet-part-top-left p {
   margin: 0;
+  font-weight: 700;
   white-space: nowrap;
   text-transform: uppercase;
 }
