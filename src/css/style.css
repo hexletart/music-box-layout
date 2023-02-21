@@ -326,7 +326,7 @@ h4 {
 
 .index-artist-desktop li a {
   font-weight: 700;
-  font-family: "Roboto-Bold", sans-serif;
+  font-family: Roboto-Bold, sans-serif;
 }
 .index-artist-desktop li:first-child {
   color: #e0e0e0;
@@ -502,19 +502,19 @@ h4 {
 }
 
 .img-subscribe-first {
-  background-image: url("../assets/images/subscribe_1.png");
+  background-image: url(../assets/images/subscribe_1.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .img-subscribe-second {
-  background-image: url("../assets/images/subscribe_2.png");
+  background-image: url(../assets/images/subscribe_2.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .img-subscribe-third {
-  background-image: url("../assets/images/subscribe_3.png");
+  background-image: url(../assets/images/subscribe_3.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -929,7 +929,7 @@ h4 {
   }
   .index-header-mobile li a {
     font-weight: 700;
-    font-family: "Roboto-Bold", sans-serif;
+    font-family: Roboto-Bold, sans-serif;
   }
   .index-header-mobile li:nth-child(3) {
     color: #fff;
