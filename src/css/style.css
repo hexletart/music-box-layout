@@ -1,9 +1,9 @@
 @font-face {
-  font-family: "Roboto";
+  font-family: Roboto;
   src: url("../assets/fonts/Roboto-Regular.ttf");
 }
 @font-face {
-  font-family: "Roboto-Bold";
+  font-family: Roboto-Bold;
   src: url("../assets/fonts/Roboto-Bold.ttf");
 }
 html {
@@ -697,7 +697,7 @@ h4 {
 .discography-list h3,
 .artist-list h3 {
   font-weight: 700;
-  font-family: "Roboto-Bold", sans-serif;
+  font-family: Roboto-Bold, sans-serif;
 }
 .track-list p,
 .discography-list p,
@@ -720,8 +720,7 @@ h4 {
 }
 .track-list-body {
   display: grid;
-  grid-row-gap: 25px;
-  grid-column-gap: 50px;
+  grid-gap: 25px 50px;
   grid-template-rows: repeat(3, auto);
   grid-template-columns: repeat(2, auto);
   width: inherit;
@@ -872,8 +871,7 @@ h4 {
 .discography-list-body,
 .artist-list-body {
   display: grid;
-  grid-row-gap: 1.5625rem;
-  grid-column-gap: 3.125rem;
+  grid-gap: 1.5625rem 3.125rem;
   grid-template-rows: repeat(2, auto);
   grid-template-columns: repeat(4, auto);
   align-items: flex-start;
@@ -1013,7 +1011,7 @@ h4 {
   .news-part h3 {
     font-weight: 400;
     font-size: 1rem;
-    font-family: "Roboto", sans-serif;
+    font-family: Roboto, sans-serif;
   }
   .news-part-index-first, .news-part-index-second {
     display: grid;
