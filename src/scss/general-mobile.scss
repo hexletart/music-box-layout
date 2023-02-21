@@ -3,7 +3,7 @@
   @include heading-set(h2, px-rem(18px), px-rem(27px), Roboto-Bold, $white, 700, uppercase);
   @include heading-set(h3, px-rem(16px), px-rem(24px), Roboto-Bold, $white, 700);
   @include heading-set(h4, px-rem(18px), px-rem(24px), Roboto, $white, 400);
-  @include pad-ver(248px);
+  @include pad-ver(px-rem(25px));
   @include pad-side(bottom, px-rem(76px));
   @include pad-side(top, px-rem(50px));
 
