@@ -14,4 +14,4 @@ The project demonstrates the page layout of the "Music Box" music portal, which 
 
 **Technology stack:**
 
-HTML, SASS, CSS, Surge, Git, GitHub, GitHub Actions (CI), Stylelint, Surge.
+HTML, SASS, CSS, Surge, Git, GitHub, GitHub Actions (CI), Stylelint.
